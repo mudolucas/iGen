@@ -10,6 +10,7 @@ target 'iGen' do
   pod 'Firebase/Database'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
   target 'iGenTests' do
     inherit! :search_paths
