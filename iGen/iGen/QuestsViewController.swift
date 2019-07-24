@@ -1,7 +1,7 @@
 import UIKit
 
 // HELPERS
-struct tableData{
+private struct tableData{
     var opened = Bool()
     var title = String()
     var questsData = [Quests]()
@@ -39,7 +39,7 @@ class QuestsViewController: UITableViewController{
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! tableViewOutlets
             cell.questTitleCell.text = tableViewData[indexPath.section].title
-            cell.backgroundColor = UIColor(red: 93/255, green: 188/255, blue: 210/255, alpha: 1.0)
+            cell.backgroundColor = DesignHelper.colorDarkBlue()
             cell.rewardCell?.text = nil
             cell.iconImage.image = nil
             return cell
@@ -69,7 +69,16 @@ class QuestsViewController: UITableViewController{
         }
     }
     
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        
+    }
     
+    @IBAction func done(segue:UIStoryboardSegue) {
+        let newQuest = segue.source as! addQuestViewController
+        print(newQuest.questTitle)
+        tableViewData[0].questsData.append(Quests(title: newQuest.questTitle, reward: newQuest.questReward))
+        tableView.reloadData()
+    }
     
     
     
