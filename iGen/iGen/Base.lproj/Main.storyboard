@@ -295,11 +295,19 @@
                                 <color key="textColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edW-8b-7cy">
+                                <rect key="frame" x="20" y="461" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9FX-2D-s7x"/>
                     </view>
                     <connections>
+                        <outlet property="deadlineTextField" destination="edW-8b-7cy" id="bHG-vD-Bfw"/>
                         <outlet property="rewardTextField" destination="3xq-35-1lG" id="D8v-WA-ct6"/>
                         <outlet property="selectionList" destination="Ez1-MF-gml" id="EIa-y4-kjS"/>
                         <outlet property="titleTextField" destination="tpl-Jh-g64" id="abU-O8-5ev"/>
