@@ -9,30 +9,38 @@
 import UIKit
 //import SelectionList
 
-class addQuestViewController: UIViewController {
-    var questTitle:String = ""
-    var questReward:String = ""
-    var selectedFrequency:Int = 0
+class addQuestViewController: UIViewController, UITextFieldDelegate {
+    var newQuestTitle:String = ""
+    var newQuestReward:String = ""
+    var newQuestFrequency:Int = -1
+    var newQuestDeadline:String = ""
+    private var datePicker: UIDatePicker?
     
     @IBOutlet weak var rewardTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var selectionList: SelectionList!
     @IBOutlet weak var deadlineTextField: UITextField!
     
-    private var datePicker: UIDatePicker?
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDesign()
         setUpDatePicker()
+        rewardTextField.delegate = self
     }
     
-   
-    
+    @IBAction func send(_ sender: Any) {
+        if (true){
+            self.performSegue(withIdentifier: "doneCreatingQuestSegue", sender: nil)
+        }
+    }
     // GATHER THE INFORMATION INPUTED BY THE USER TO TRANSFER TO THE NEXT SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            questTitle = titleTextField.text!
-            questReward = rewardTextField.text!
-            //selectedFrequency = selectionList.selectedIndex!
+        newQuestTitle = titleTextField.text!
+        newQuestReward = rewardTextField.text!
+        if let selectedIndex:Int? = selectionList.selectedIndex{
+            newQuestFrequency = selectedIndex ?? -1
+        }
+        newQuestDeadline = deadlineTextField.text!
     }
     
     //DISMISS THE DATE PICKER EVEN IF THE USER DIDN'T CHANGE ANYTHING
@@ -48,15 +56,22 @@ class addQuestViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // SET UP THE DATE  PICKER INTO A TEXT FIELD
     private func setUpDatePicker(){
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
+        datePicker?.minimumDate = Date()
         deadlineTextField.inputView = datePicker
         datePicker?.addTarget(self, action: #selector(addQuestViewController.dateChanged(datePicker:)), for: .valueChanged)
-        let tapGestureDatePicker = UITapGestureRecognizer(target: self, action: #selector(addQuestViewController.viewTapper(gestureRecognizer:)))
-        view.addGestureRecognizer(tapGestureDatePicker)
+        //let tapGestureDatePicker = UITapGestureRecognizer(target: self, action: #selector(addQuestViewController.viewTapper(gestureRecognizer:)))
+        //view.addGestureRecognizer(tapGestureDatePicker)
     }
     
+    
+    //SETTING THE REWARD TEXT FIELD INPUT TO BE NUMBERS ONLY
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return string.isEmpty || string.rangeOfCharacter(from: NSCharacterSet.decimalDigits) != nil
+    }
     
     private func viewDesign(){
         //FREQUENCY LIST
@@ -66,19 +81,18 @@ class addQuestViewController: UIViewController {
         selectionList.deselectionImage = UIImage(named: "o")
         selectionList.isSelectionMarkTrailing = false // to put checkmark on left side
         selectionList.rowHeight = 40.0
+        selectionList.selectedIndex = 0
         
         selectionList.tableView.separatorColor = UIColor.clear
         selectionList.setupCell = { (cell: UITableViewCell, _: Int) in
-            cell.textLabel?.textColor = DesignHelper.colorDarkAssBlue()
+            cell.textLabel?.textColor = DesignHelper.colorDarkestBlue()
             cell.textLabel?.font = UIFont(name:"Avenir", size:15)
         }
     
         //TEXT FIELDS
         titleTextField.placeholder = "Title"
-        titleTextField.textColor = DesignHelper.colorDarkAssBlue()
-        rewardTextField.textColor = DesignHelper.colorDarkAssBlue()
-        rewardTextField.keyboardType = .numberPad
-        rewardTextField.placeholder = "Reward"
+        titleTextField.textColor = DesignHelper.colorDarkestBlue()
+        rewardTextField.textColor = DesignHelper.colorDarkestBlue()
         deadlineTextField.placeholder = "Pick a date"
     }
 }

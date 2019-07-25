@@ -9,9 +9,9 @@
 import Foundation
 
 enum Frequency{
-    case everyday
-    case one_time_only
+    case one_time_only 
     case weekly
+    case everyday
 }
 enum Status{
     case active
@@ -24,16 +24,16 @@ class Quests{
     var title:String
     var reward:Int
     var status:Status
-    //var frequency:Frequency
-    // Data Created
-    //Data Completed
-    // deadline
+    var frequency:Frequency
+    var deadline:String
     
-    public init(title: String, reward:String) {
+    public init(title: String, reward:String,frequency:Frequency,deadline:String) {
         self.title = title
         self.status = .active
         let rwd = Int(reward) ?? 0
         self.reward = rwd
+        self.frequency = frequency
+        self.deadline = deadline
     }
     
 }

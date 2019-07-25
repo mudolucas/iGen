@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class DesignHelper{
-    class func colorDarkAssBlue() -> UIColor{
+    class func colorDarkestBlue() -> UIColor{
         // COLOR 1B4965
         return UIColor(red: 27/255, green: 73/255, blue: 101/255, alpha: 1.0)
     }
