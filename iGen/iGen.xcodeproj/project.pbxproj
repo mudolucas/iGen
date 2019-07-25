@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */; };
+		3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D122EA5068005F4ACA /* Sara.storyboard */; };
+		3F3A11D422EA523D005F4ACA /* Lia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D322EA523D005F4ACA /* Lia.storyboard */; };
+		3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D522EA5248005F4ACA /* Daniel.storyboard */; };
 		3F83306822E6192C0067CBFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F83306722E6192C0067CBFB /* ViewController.swift */; };
 		3F89210E22E6187300EF2193 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F89210D22E6187300EF2193 /* GoogleService-Info.plist */; };
 		3FA80C3A22E7B8E400B36517 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA80C3922E7B8E400B36517 /* Quests.swift */; };
@@ -48,6 +52,10 @@
 		18BA21222B5E094F14BCB6B5 /* Pods_iGenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		226A9A9229CB0F8EB5FA0FEF /* Pods-iGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGen.release.xcconfig"; path = "Target Support Files/Pods-iGen/Pods-iGen.release.xcconfig"; sourceTree = "<group>"; };
 		2E4ADB65A4B790304DD751A0 /* Pods-iGenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.release.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
+		3F3A11D122EA5068005F4ACA /* Sara.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sara.storyboard; sourceTree = "<group>"; };
+		3F3A11D322EA523D005F4ACA /* Lia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lia.storyboard; sourceTree = "<group>"; };
+		3F3A11D522EA5248005F4ACA /* Daniel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Daniel.storyboard; sourceTree = "<group>"; };
 		3F83306722E6192C0067CBFB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F89210D22E6187300EF2193 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3FA80C3922E7B8E400B36517 /* Quests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
@@ -151,6 +159,10 @@
 			children = (
 				8F8F516322E2669800623B34 /* AppDelegate.swift */,
 				8F8F516722E2669800623B34 /* Main.storyboard */,
+				3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */,
+				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
+				3F3A11D322EA523D005F4ACA /* Lia.storyboard */,
+				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
 				3F83306722E6192C0067CBFB /* ViewController.swift */,
 				8F8F516A22E2669A00623B34 /* Assets.xcassets */,
 				8F8F516C22E2669A00623B34 /* LaunchScreen.storyboard */,
@@ -292,7 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F8F516E22E2669A00623B34 /* LaunchScreen.storyboard in Resources */,
+				3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */,
 				3F89210E22E6187300EF2193 /* GoogleService-Info.plist in Resources */,
+				3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */,
+				3F3A11D422EA523D005F4ACA /* Lia.storyboard in Resources */,
+				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
 			);
