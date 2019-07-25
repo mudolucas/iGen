@@ -119,6 +119,8 @@ class ViewController: UIViewController {
             self.ref?.child("users/\(userID!)/pin").setValue(pin)
             self.ref?.child("users/\(userID!)/email").setValue(userEmail)
             self.ref?.child("users/\(userID!)/uid").setValue(userID)
+            self.ref?.child("users/\(userID!)/quests").setValue([""])
+            self.ref?.child("users/\(userID!)/parentMode").setValue(true)
         }
     }
 
