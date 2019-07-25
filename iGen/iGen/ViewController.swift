@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     var ref: DatabaseReference?
     
-    
     @IBAction func pressCreateAccount(_ sender: Any) {
     }
     
@@ -55,7 +54,6 @@ class ViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
-                    
                 }
             }
         }
@@ -97,7 +95,6 @@ class ViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
-                    
                 
   
                 }
@@ -117,8 +114,11 @@ class ViewController: UIViewController {
         } else {
             ref = Database.database().reference()
             let userID = Auth.auth().currentUser?.uid
+            let userEmail = Auth.auth().currentUser?.email
             let pin = pinTextField.text
             self.ref?.child("users/\(userID!)/pin").setValue(pin)
+            self.ref?.child("users/\(userID!)/email").setValue(userEmail)
+            self.ref?.child("users/\(userID!)/uid").setValue(userID)
         }
     }
 
