@@ -8,16 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="nag-t1-JJV">
             <objects>
-                <viewController storyboardIdentifier="tutorial" id="v7s-V2-Khs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorial" id="v7s-V2-Khs" customClass="TutorialViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TNe-CU-1cd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="14r-d2-zY5">
+                                <rect key="frame" x="188" y="716" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BKZ-zo-o5U">
-                                <rect key="frame" x="0.0" y="32" width="414" height="864"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="vct-ot-9UK"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="yDP-z8-KHs"/>
@@ -27,6 +33,10 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="at5-7v-4Je"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="14r-d2-zY5" id="q6s-e1-uk7"/>
+                        <outlet property="scrollView" destination="BKZ-zo-o5U" id="Skx-iE-RKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYg-Ed-Xhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
