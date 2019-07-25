@@ -232,7 +232,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="quests" storyboardName="Quest" referencedIdentifier="quests" id="p8j-mG-2f8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffd-ch-efa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="-368"/>
+            <point key="canvasLocation" x="950" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FFq-uX-19F">
