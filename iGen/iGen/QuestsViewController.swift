@@ -21,6 +21,7 @@ class QuestsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewData = [tableData(opened: false, title: "Active", questsData: []),tableData(opened: false, title: "Completed", questsData: [])]
+        
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -97,7 +98,10 @@ class QuestsViewController: UITableViewController{
         default:
             f = .one_time_only
         }
-        tableViewData[0].questsData.append(Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f,deadline: newQuest.newQuestDeadline))
+        let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f, deadline: newQuest.newQuestDeadline)
+        tableViewData[0].questsData.append(toAddQuest)
+        toAddQuest.addQuest()
+        
         tableView.reloadData()
     }
 }

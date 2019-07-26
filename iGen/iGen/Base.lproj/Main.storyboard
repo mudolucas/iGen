@@ -42,14 +42,6 @@
                                     <segue destination="kKf-U2-Hyi" kind="show" id="dz3-ZC-VXf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjE-bz-6AU">
-                                <rect key="frame" x="158" y="599" width="98" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go To Quests"/>
-                                <connections>
-                                    <segue destination="p8j-mG-2f8" kind="show" id="f5d-iO-LPa"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -61,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
+            <point key="canvasLocation" x="439" y="110"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fdq-Ue-bfa">
@@ -113,12 +105,12 @@
                         <outlet property="loginEmail" destination="vzW-hb-sQI" id="pLq-8d-1g3"/>
                         <outlet property="loginPassword" destination="fBk-aJ-4xZ" id="Xw5-ft-qnO"/>
                         <outlet property="view" destination="kMb-0V-dbP" id="FjS-3h-I0h"/>
-                        <segue destination="iCh-Xb-zSG" kind="show" id="D9v-1b-QmY"/>
+                        <segue destination="cdg-jE-Z40" kind="show" id="QTk-ih-nmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuG-T7-4wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="785"/>
+            <point key="canvasLocation" x="438" y="829"/>
         </scene>
         <!--tutorial-->
         <scene sceneID="IdB-AN-fM9">
@@ -126,7 +118,35 @@
                 <viewControllerPlaceholder storyboardIdentifier="tutorial" storyboardName="Sara" referencedIdentifier="tutorial" id="iCh-Xb-zSG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZr-Uh-SFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="726"/>
+            <point key="canvasLocation" x="1199" y="737"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6dT-vj-zOA">
+            <objects>
+                <viewController storyboardIdentifier="questTest" id="cdg-jE-Z40" customClass="ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="quest" id="zEX-HH-XFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjE-bz-6AU">
+                                <rect key="frame" x="158" y="382" width="98" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go To Quests"/>
+                                <connections>
+                                    <segue destination="p8j-mG-2f8" kind="show" id="f5d-iO-LPa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DNe-P6-Ow5"/>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="zEX-HH-XFJ" id="ny3-77-QKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlx-QY-0PF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="813"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ubs-Se-k1K">
@@ -165,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dme-9Z-9LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="131"/>
+            <point key="canvasLocation" x="1975" y="110"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HPh-lL-RWx">
@@ -219,12 +239,12 @@
                         <outlet property="emailTextField" destination="DWw-BV-CA6" id="Knd-lC-nq8"/>
                         <outlet property="passwordTextField" destination="8HI-cf-tmJ" id="9I7-RD-xH4"/>
                         <outlet property="view" destination="KcK-Fl-nAA" id="Y9m-ca-qu0"/>
-                        <segue destination="iCh-Xb-zSG" kind="show" id="LQ2-x6-Kit"/>
+                        <segue destination="cdg-jE-Z40" kind="show" id="w3p-M8-t9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4B-j2-wxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="131"/>
+            <point key="canvasLocation" x="1199" y="110"/>
         </scene>
         <!--quests-->
         <scene sceneID="2Wf-y7-feV">
@@ -232,7 +252,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="quests" storyboardName="Quest" referencedIdentifier="quests" id="p8j-mG-2f8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffd-ch-efa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="-100"/>
+            <point key="canvasLocation" x="2347" y="556"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FFq-uX-19F">
@@ -254,6 +274,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D9v-1b-QmY"/>
+        <segue reference="w3p-M8-t9Y"/>
     </inferredMetricsTieBreakers>
 </document>
