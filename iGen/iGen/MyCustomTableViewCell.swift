@@ -29,12 +29,17 @@ class MyCustomTableViewCell: UITableViewCell {
             print("button is pressed to on AKA childMode is ON!!!")
         } else {
             print("button is pressed to OFF --> go into the popup")
-            // sender.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
-            
-            
-            
+            // CALL TO GO TO NEXT VIEW CONTROLLER
+            //tableView()
+           
+
         }
     }
+
+    
+
+    
 }
+
 
 

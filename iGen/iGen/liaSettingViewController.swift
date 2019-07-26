@@ -22,7 +22,26 @@ class liaSettingViewController: UIViewController {
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-}
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "cellToAlert", sender: self)
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //if let destination = segue.destination as? UIViewController {
+            
+           // destination.product = productArray[(tblAppleProducts.indexPathForSelectedRow?.row)!]
+            
+            //tblAppleProducts.deselectRow(at: tblAppleProducts.indexPathForSelectedRow!, animated: true)
+            
+        }
+    }
+    
+
 
 
 extension UIViewController: UITableViewDataSource, UITableViewDelegate {

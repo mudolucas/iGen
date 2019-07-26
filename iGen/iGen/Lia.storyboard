@@ -35,11 +35,27 @@
                     <navigationItem key="navigationItem" title="Settings" id="8ZO-IK-13I"/>
                     <connections>
                         <outlet property="tableView" destination="ZNA-v3-slA" id="KTO-sU-ZE7"/>
+                        <segue destination="aRN-my-5BD" kind="show" identifier="cellToAlert" id="sGq-EF-pyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g05-ei-TPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250.7246376811595" y="-262.5"/>
+            <point key="canvasLocation" x="3332" y="-270"/>
+        </scene>
+        <!--Lia Alert Password View Controller-->
+        <scene sceneID="r1k-j1-8BO">
+            <objects>
+                <viewController storyboardIdentifier="alert" id="aRN-my-5BD" customClass="liaAlertPasswordViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4BL-WB-TfR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BQa-V8-Fz8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7BY-b1-RqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4212" y="-263"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="46f-a8-Doj">
