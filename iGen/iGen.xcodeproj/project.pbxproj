@@ -20,6 +20,7 @@
 		553D503D22EA573700EFFCC2 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D503C22EA573700EFFCC2 /* TutorialViewController.swift */; };
 		553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D504022EA5CCB00EFFCC2 /* Slide.swift */; };
 		553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553D504222EA5D1200EFFCC2 /* Slide.xib */; };
+		559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559551E122EB68A6003E3FEF /* KidViewController.swift */; };
 		56A0F88E2E6654645BEC27AC /* Pods_iGenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BA21222B5E094F14BCB6B5 /* Pods_iGenUITests.framework */; };
 		67CC08621F84D8FD3E707DE5 /* Pods_iGenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */; };
 		8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */; };
@@ -68,6 +69,7 @@
 		553D503C22EA573700EFFCC2 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		553D504022EA5CCB00EFFCC2 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		553D504222EA5D1200EFFCC2 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		559551E122EB68A6003E3FEF /* KidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidViewController.swift; sourceTree = "<group>"; };
 		6481EA1BE883923E34359232 /* Pods-iGenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.debug.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		66FCB0F6BAFC8FE7802F9F82 /* Pods-iGenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenUITests.release.xcconfig"; path = "Target Support Files/Pods-iGenUITests/Pods-iGenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				8F8F516322E2669800623B34 /* AppDelegate.swift */,
 				8F8F516722E2669800623B34 /* Main.storyboard */,
 				3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */,
+				559551E122EB68A6003E3FEF /* KidViewController.swift */,
 				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
 				553D503B22EA570D00EFFCC2 /* Tutotrial Code */,
 				3F3A11D322EA523D005F4ACA /* Lia.storyboard */,
@@ -448,6 +451,7 @@
 				553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */,
 				8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */,
 				3FA80C3E22E7B91900B36517 /* addQuestViewController.swift in Sources */,
+				559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
