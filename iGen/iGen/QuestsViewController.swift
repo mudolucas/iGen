@@ -100,6 +100,7 @@ class QuestsViewController: UITableViewController{
         let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f, deadline: newQuest.newQuestDeadline)
         tableViewData[0].questsData.append(toAddQuest)
         toAddQuest.addQuest()
+        
         tableView.reloadData()
     }
 }
