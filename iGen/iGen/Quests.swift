@@ -64,4 +64,3 @@ class Quests{
         ref?.updateChildValues(childUpdates)
     }
 }
-
