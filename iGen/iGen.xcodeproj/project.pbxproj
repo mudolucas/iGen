@@ -29,6 +29,10 @@
 		8F8F516E22E2669A00623B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8F516C22E2669A00623B34 /* LaunchScreen.storyboard */; };
 		8F8F517922E2669A00623B34 /* iGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F517822E2669A00623B34 /* iGenTests.swift */; };
 		8F8F518422E2669A00623B34 /* iGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F518322E2669A00623B34 /* iGenUITests.swift */; };
+		AE1581DD22EB788A00ED9427 /* liaAlertPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1581DC22EB788A00ED9427 /* liaAlertPasswordViewController.swift */; };
+		AEC64C1522EA63AC00D5DC37 /* liaSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC64C1422EA63AC00D5DC37 /* liaSettingViewController.swift */; };
+		AEC64C1822EA64CF00D5DC37 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC64C1622EA64CF00D5DC37 /* MyCustomTableViewCell.swift */; };
+		AEC64C1922EA64CF00D5DC37 /* MyCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC64C1722EA64CF00D5DC37 /* MyCustomTableViewCell.xib */; };
 		FB68FEEFE2B0808B94799EC3 /* Pods_iGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,10 @@
 		8F8F517F22E2669A00623B34 /* iGenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iGenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8F518322E2669A00623B34 /* iGenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iGenUITests.swift; sourceTree = "<group>"; };
 		8F8F518522E2669A00623B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE1581DC22EB788A00ED9427 /* liaAlertPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liaAlertPasswordViewController.swift; sourceTree = "<group>"; };
+		AEC64C1422EA63AC00D5DC37 /* liaSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liaSettingViewController.swift; sourceTree = "<group>"; };
+		AEC64C1622EA64CF00D5DC37 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
+		AEC64C1722EA64CF00D5DC37 /* MyCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCustomTableViewCell.xib; sourceTree = "<group>"; };
 		CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -179,8 +187,10 @@
 				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
 				553D503B22EA570D00EFFCC2 /* Tutotrial Code */,
 				3F3A11D322EA523D005F4ACA /* Lia.storyboard */,
+				AE1581DC22EB788A00ED9427 /* liaAlertPasswordViewController.swift */,
 				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
 				3F83306722E6192C0067CBFB /* ViewController.swift */,
+				AEC64C1422EA63AC00D5DC37 /* liaSettingViewController.swift */,
 				8F8F516A22E2669A00623B34 /* Assets.xcassets */,
 				8F8F516C22E2669A00623B34 /* LaunchScreen.storyboard */,
 				8F8F516F22E2669A00623B34 /* Info.plist */,
@@ -190,6 +200,8 @@
 				3FA80C3D22E7B91900B36517 /* addQuestViewController.swift */,
 				3FA80C3F22E7B93300B36517 /* SectionList.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
+				AEC64C1622EA64CF00D5DC37 /* MyCustomTableViewCell.swift */,
+				AEC64C1722EA64CF00D5DC37 /* MyCustomTableViewCell.xib */,
 			);
 			path = iGen;
 			sourceTree = "<group>";
@@ -326,6 +338,7 @@
 				3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */,
 				3F3A11D422EA523D005F4ACA /* Lia.storyboard in Resources */,
 				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
+				AEC64C1922EA64CF00D5DC37 /* MyCustomTableViewCell.xib in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
 				553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */,
@@ -442,8 +455,11 @@
 				3FA80C3A22E7B8E400B36517 /* Quests.swift in Sources */,
 				3FA80C3C22E7B90000B36517 /* QuestsViewController.swift in Sources */,
 				553D503D22EA573700EFFCC2 /* TutorialViewController.swift in Sources */,
+				AE1581DD22EB788A00ED9427 /* liaAlertPasswordViewController.swift in Sources */,
 				3F83306822E6192C0067CBFB /* ViewController.swift in Sources */,
 				8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */,
+				AEC64C1522EA63AC00D5DC37 /* liaSettingViewController.swift in Sources */,
+				AEC64C1822EA64CF00D5DC37 /* MyCustomTableViewCell.swift in Sources */,
 				3FA80C4022E7B93300B36517 /* SectionList.swift in Sources */,
 				553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */,
 				8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */,
