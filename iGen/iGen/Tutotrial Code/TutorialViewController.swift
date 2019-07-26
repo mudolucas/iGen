@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TutorialViewController: UIViewController, UIScrollViewDelegate {
+class TutorialViewController: UIViewController {
     
     
     @IBOutlet weak var scrollView: UIScrollView!

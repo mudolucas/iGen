@@ -21,6 +21,7 @@ class QuestsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewData = [tableData(opened: false, title: "Active", questsData: []),tableData(opened: false, title: "Completed", questsData: [])]
+        
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE

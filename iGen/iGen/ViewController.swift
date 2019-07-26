@@ -127,6 +127,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Quests.viewDatabaseQuests()
         // Do any additional setup after loading the view.
     }
 

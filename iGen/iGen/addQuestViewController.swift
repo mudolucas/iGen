@@ -29,17 +29,19 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: Any) {
-        if (true){
+        if (rewardTextField!.text != "" && titleTextField!.text != "" && selectionList.selectedIndex != -1 && deadlineTextField.text != ""){
             self.performSegue(withIdentifier: "doneCreatingQuestSegue", sender: nil)
+        }else{
+            let alert = UIAlertController(title:"Please, fill out all the fields", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     // GATHER THE INFORMATION INPUTED BY THE USER TO TRANSFER TO THE NEXT SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         newQuestTitle = titleTextField.text!
         newQuestReward = rewardTextField.text!
-        if let selectedIndex:Int? = selectionList.selectedIndex{
-            newQuestFrequency = selectedIndex ?? -1
-        }
+        newQuestFrequency = selectionList.selectedIndex! ?? -1
         newQuestDeadline = deadlineTextField.text!
     }
     

@@ -63,6 +63,25 @@ class Quests{
                            "/users/\(userID)/\(key)/": quest]
         ref?.updateChildValues(childUpdates)
     }
-}
     
-
+    class func viewDatabaseQuests() {
+        ref = Database.database().reference().child("quests")
+        let userID = Auth.auth().currentUser?.uid
+       // let something = ref?.child("quests").queryOrdered(byChild: "uid").queryEqual(toValue: userID)
+      //  print(something)
+        ref?.observe(.childAdded, with: { (snapshot) in
+            
+            //Convert the info of the data into a string variable
+            if let getData = snapshot.value as? [String:Any] {
+                
+                print(getData)
+                
+                let titles = getData["title"] as? String
+                
+                print("\(titles)")
+                
+            }
+            
+        })
+    }
+}
