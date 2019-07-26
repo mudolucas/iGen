@@ -39,12 +39,4 @@ class Quests{
         self.frequency = frequency
         self.deadline = deadline
     }
-    
-    /*func createQuest(questTitle:String, reward:Int,deadline:String,frequency:Frequency){
-        ref = Database.database().reference()
-        let userID = Auth.auth().currentUser?.uid
-        self.ref?.child("Quest")
-        
-    }*/
-    
 }
