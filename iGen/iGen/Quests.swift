@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 enum Frequency{
     case one_time_only 
@@ -20,7 +24,7 @@ enum Status{
 }
 
 class Quests{
-    
+    var ref: DatabaseReference?
     var title:String
     var reward:Int
     var status:Status
@@ -35,5 +39,12 @@ class Quests{
         self.frequency = frequency
         self.deadline = deadline
     }
+    
+    /*func createQuest(questTitle:String, reward:Int,deadline:String,frequency:Frequency){
+        ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        self.ref?.child("Quest")
+        
+    }*/
     
 }

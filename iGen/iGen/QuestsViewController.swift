@@ -59,6 +59,7 @@ class QuestsViewController: UITableViewController{
     
     // WHEN A ROW IS SELECTED, RUN THIS FUNCTION
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //EXAPND OR NOT CERTAIN SECTION
         if indexPath.row == 0{
             if tableViewData[indexPath.section].opened == true{
                 tableViewData[indexPath.section].opened = false
@@ -74,11 +75,9 @@ class QuestsViewController: UITableViewController{
     
     //DELETE A ROW
     //MARK: IMPLEMENT DELETE!!
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-    {
-        if indexPath.row != 0
-        {
-            
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if indexPath.row != 0{
+            tableViewData[indexPath.section].questsData.remove(at: indexPath.row)
         }
     }
     
