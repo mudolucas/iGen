@@ -20,7 +20,8 @@ class QuestsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewData = [tableData(opened: false, title: "Active", questsData: []),tableData(opened: false, title: "Completed", questsData: [])]
+        tableViewData = [tableData(opened: true, title: "Active", questsData:Quests.loadAllQuestsForUser()),tableData(opened: false, title: "Completed", questsData: [])]
+        tableView.tableFooterView = UIView(frame: .zero)
         
     }
     
@@ -87,21 +88,10 @@ class QuestsViewController: UITableViewController{
     
     @IBAction func done(_ unwindSegue: UIStoryboardSegue) {
         let newQuest = unwindSegue.source as! addQuestViewController
-        var f:Frequency
-        switch newQuest.newQuestFrequency {
-        case 0:
-            f = .one_time_only
-        case 1:
-            f = .weekly
-        case 2:
-            f = .everyday
-        default:
-            f = .one_time_only
-        }
-        let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f, deadline: newQuest.newQuestDeadline)
+        let rwd = Int(newQuest.newQuestReward) ?? 0
+        let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: rwd, frequency: newQuest.newQuestFrequency, deadline: newQuest.newQuestDeadline,status: Status.active)
         tableViewData[0].questsData.append(toAddQuest)
-        toAddQuest.addQuest()
-        
+        toAddQuest.saveQuestIntoDatabase()
         tableView.reloadData()
     }
 }
