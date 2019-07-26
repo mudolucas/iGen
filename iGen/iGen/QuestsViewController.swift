@@ -59,7 +59,6 @@ class QuestsViewController: UITableViewController{
     
     // WHEN A ROW IS SELECTED, RUN THIS FUNCTION
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //EXAPND OR NOT CERTAIN SECTION
         if indexPath.row == 0{
             if tableViewData[indexPath.section].opened == true{
                 tableViewData[indexPath.section].opened = false
@@ -75,9 +74,11 @@ class QuestsViewController: UITableViewController{
     
     //DELETE A ROW
     //MARK: IMPLEMENT DELETE!!
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        if indexPath.row != 0{
-            tableViewData[indexPath.section].questsData.remove(at: indexPath.row)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if indexPath.row != 0
+        {
+            
         }
     }
     
@@ -96,7 +97,9 @@ class QuestsViewController: UITableViewController{
         default:
             f = .one_time_only
         }
-        tableViewData[0].questsData.append(Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f,deadline: newQuest.newQuestDeadline))
+        let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f, deadline: newQuest.newQuestDeadline)
+        tableViewData[0].questsData.append(toAddQuest)
+        toAddQuest.addQuest()
         tableView.reloadData()
     }
 }
