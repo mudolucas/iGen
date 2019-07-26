@@ -13,7 +13,7 @@ import FirebaseStorage
 var ref: DatabaseReference?
 
 enum Frequency{
-    case one_time_only
+    case one_time_only 
     case weekly
     case everyday
     
@@ -54,13 +54,14 @@ class Quests{
         let userID = Auth.auth().currentUser?.uid
         guard let key = ref?.child("quests").childByAutoId().key else { return }
         let quest = ["uid": userID,
-                     "title": self.title,
-                     "reward": self.reward,
-                     "freqeuncy": self.frequency.description,
-                     "deadline": self.deadline
+                    "title": self.title,
+                    "reward": self.reward,
+                    "freqeuncy": self.frequency.description,
+                    "deadline": self.deadline
             ] as [String : Any]
         let childUpdates = ["/quests/\(key)": quest,
-                            "/users/\(userID)/\(key)/": quest]
+                           "/users/\(userID)/\(key)/": quest]
         ref?.updateChildValues(childUpdates)
     }
 }
+
