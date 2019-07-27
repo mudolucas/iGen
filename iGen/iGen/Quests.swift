@@ -43,6 +43,23 @@ class Quests{
         self.deadline = deadline
     }
     
+    init?(snapshot: DataSnapshot) {
+        guard
+        let getData = snapshot.value as? [String: AnyObject],
+        let title:String = getData["title"] as? String,
+        let reward:Int = getData["reward"] as? Int,
+        let deadline:String = getData["deadline"] as? String,
+        let frequency:Int = getData["frequency"] as? Int else{
+                return nil
+        }
+        
+        self.title = title
+        self.status = Status.active
+        self.reward = reward
+        self.frequency = frequency
+        self.deadline = deadline
+    }
+    
     func saveQuestIntoDatabase() {
         ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
@@ -57,22 +74,5 @@ class Quests{
             ] as [String : Any]
         let childUpdates = ["/quests/\(key)": quest]
         ref?.updateChildValues(childUpdates)
-    }
-    
-    class func loadAllQuestsForUser() -> [Quests] {
-        let userID = Auth.auth().currentUser?.uid
-        ref = Database.database().reference().child("quets")
-        var questsArray = [Quests]()
-        ref?.observe(.value, with: { (snapshot) in
-            //Convert the info of the data into a string variable
-            if let getData = snapshot.value as? [String:Any] {
-                let title:String = getData["title"] as! String
-                let reward:Int = getData["reward"] as! Int
-                let deadline:String = getData["deadline"] as! String
-                let frequency:Int = getData["frequency"] as! Int
-                questsArray.append(Quests(title: title, reward: reward, frequency: frequency, deadline: deadline, status: Status.active))
-            }
-            })
-        return questsArray
     }
 }

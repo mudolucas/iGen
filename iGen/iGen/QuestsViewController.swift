@@ -1,4 +1,8 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 // HELPERS
 private struct tableData{
@@ -20,9 +24,9 @@ class QuestsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewData = [tableData(opened: true, title: "Active", questsData:Quests.loadAllQuestsForUser()),tableData(opened: false, title: "Completed", questsData: [])]
-        //tableView.tableFooterView = UIView(frame: .zero)
-        
+        self.tableViewData = [tableData(opened: true, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+        loadQuests()
+        self.tableViewData[0].opened = true
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -94,5 +98,20 @@ class QuestsViewController: UITableViewController{
         tableViewData[0].questsData.append(toAddQuest)
         toAddQuest.saveQuestIntoDatabase()
         tableView.reloadData()
+    }
+    
+    func loadQuests(){
+        let ref = Database.database().reference().child("quests")
+        let userID = Auth.auth().currentUser?.uid
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
+        query.observe(.value, with: { (snapshot) in
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot{
+                    if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                        self.tableViewData[0].questsData.append(newQuest)
+                    }
+                }
+            }
+        })
     }
 }
