@@ -105,7 +105,7 @@
                         <outlet property="loginEmail" destination="vzW-hb-sQI" id="pLq-8d-1g3"/>
                         <outlet property="loginPassword" destination="fBk-aJ-4xZ" id="Xw5-ft-qnO"/>
                         <outlet property="view" destination="kMb-0V-dbP" id="FjS-3h-I0h"/>
-                        <segue destination="cdg-jE-Z40" kind="show" id="QTk-ih-nmR"/>
+                        <segue destination="aSj-Al-zXE" kind="show" id="s1W-Cv-JPn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuG-T7-4wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,34 +119,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZr-Uh-SFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199" y="737"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6dT-vj-zOA">
-            <objects>
-                <viewController storyboardIdentifier="questTest" id="cdg-jE-Z40" customClass="ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="quest" id="zEX-HH-XFJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjE-bz-6AU">
-                                <rect key="frame" x="158" y="382" width="98" height="107"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go To Quests"/>
-                                <connections>
-                                    <segue destination="p8j-mG-2f8" kind="show" id="f5d-iO-LPa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="DNe-P6-Ow5"/>
-                    </view>
-                    <connections>
-                        <outlet property="view" destination="zEX-HH-XFJ" id="ny3-77-QKw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlx-QY-0PF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1714" y="813"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ubs-Se-k1K">
@@ -172,6 +144,14 @@
                                 </state>
                                 <connections>
                                     <action selector="setPinPressed:" destination="aSj-Al-zXE" eventType="touchUpInside" id="hsK-UJ-32w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjE-bz-6AU">
+                                <rect key="frame" x="158" y="501" width="98" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go To Quests"/>
+                                <connections>
+                                    <segue destination="p8j-mG-2f8" kind="show" id="f5d-iO-LPa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -239,7 +219,7 @@
                         <outlet property="emailTextField" destination="DWw-BV-CA6" id="Knd-lC-nq8"/>
                         <outlet property="passwordTextField" destination="8HI-cf-tmJ" id="9I7-RD-xH4"/>
                         <outlet property="view" destination="KcK-Fl-nAA" id="Y9m-ca-qu0"/>
-                        <segue destination="cdg-jE-Z40" kind="show" id="w3p-M8-t9Y"/>
+                        <segue destination="aSj-Al-zXE" kind="show" id="X9d-kf-hDg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4B-j2-wxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,6 +254,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w3p-M8-t9Y"/>
+        <segue reference="s1W-Cv-JPn"/>
     </inferredMetricsTieBreakers>
 </document>
