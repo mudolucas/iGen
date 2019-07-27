@@ -10,7 +10,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
 
-var ref: DatabaseReference?
+private var ref: DatabaseReference?
 
 enum Status{
     case active
@@ -52,19 +52,18 @@ class Quests{
                     "reward": self.reward,
                     "frequency": self.frequency,
                     "deadline": self.deadline,
-                    "status":self.status.description
+                    "status":self.status.description,
+                    "id":key
             ] as [String : Any]
-        let childUpdates = ["/quests/\(key)": quest,
-                           "/users/\(userID)/\(key)/": quest]
+        let childUpdates = ["/quests/\(key)": quest]
         ref?.updateChildValues(childUpdates)
     }
     
     class func loadAllQuestsForUser() -> [Quests] {
-        ref = Database.database().reference().child("quests")
         let userID = Auth.auth().currentUser?.uid
+        ref = Database.database().reference().child("quets")
         var questsArray = [Quests]()
-        ref?.observe(.childAdded, with: { (snapshot) in
-            
+        ref?.observe(.value, with: { (snapshot) in
             //Convert the info of the data into a string variable
             if let getData = snapshot.value as? [String:Any] {
                 let title:String = getData["title"] as! String

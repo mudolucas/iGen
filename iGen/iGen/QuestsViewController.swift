@@ -12,7 +12,7 @@ class tableViewOutlets: UITableViewCell{
     @IBOutlet weak var rewardCell: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var sectionTitle: UILabel!
-    
+    //@IBOutlet weak var description: UILabel!
 }
 
 class QuestsViewController: UITableViewController{
@@ -21,7 +21,7 @@ class QuestsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewData = [tableData(opened: true, title: "Active", questsData:Quests.loadAllQuestsForUser()),tableData(opened: false, title: "Completed", questsData: [])]
-        tableView.tableFooterView = UIView(frame: .zero)
+        //tableView.tableFooterView = UIView(frame: .zero)
         
     }
     
@@ -55,6 +55,7 @@ class QuestsViewController: UITableViewController{
             cell.questTitleCell.text = quest.title
             cell.rewardCell?.text = String(quest.reward)
             cell.iconImage.image = UIImage(named: "Clock_icon")
+            cell.detailTextLabel?.text = "Deadline:  \(quest.deadline)"
             return cell
         }
     }
