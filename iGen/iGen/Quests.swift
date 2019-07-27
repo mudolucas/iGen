@@ -54,8 +54,7 @@ class Quests{
                     "deadline": self.deadline,
                     "status":self.status.description
             ] as [String : Any]
-        let childUpdates = ["/quests/\(key)": quest,
-                           "/users/\(userID)/\(key)/": quest]
+        let childUpdates = ["/quests/\(key)": quest]
         ref?.updateChildValues(childUpdates)
     }
     
