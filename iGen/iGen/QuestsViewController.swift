@@ -1,4 +1,8 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 // HELPERS
 private struct tableData{
@@ -12,7 +16,7 @@ class tableViewOutlets: UITableViewCell{
     @IBOutlet weak var rewardCell: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var sectionTitle: UILabel!
-    
+    //@IBOutlet weak var description: UILabel!
 }
 
 class QuestsViewController: UITableViewController{
@@ -20,8 +24,12 @@ class QuestsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewData = [tableData(opened: false, title: "Active", questsData: []),tableData(opened: false, title: "Completed", questsData: [])]
-        
+        self.tableViewData = [tableData(opened: true, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadQuests()
+        self.tableViewData[0].opened = true
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -53,7 +61,8 @@ class QuestsViewController: UITableViewController{
             let quest:Quests = tableViewData[indexPath.section].questsData[dataIndex]
             cell.questTitleCell.text = quest.title
             cell.rewardCell?.text = String(quest.reward)
-            cell.iconImage.image = UIImage(named: "Clock_icon")
+            cell.iconImage.image = DesignHelper.clockImageParent()
+            cell.detailTextLabel?.text = "Deadline:  \(quest.deadline)"
             return cell
         }
     }
@@ -77,31 +86,33 @@ class QuestsViewController: UITableViewController{
     //MARK: IMPLEMENT DELETE!!
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row != 0
-        {
-            
+        if indexPath.row != 0{
+            if editingStyle == .delete {
+                let quest = tableViewData[0].questsData[indexPath.row-1]
+                quest.quest_ref?.removeValue()
+                tableViewData[0].questsData.remove(at: indexPath.row-1)
+                self.tableView.reloadData()
+            }
         }
     }
     
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){}
     
-    @IBAction func done(_ unwindSegue: UIStoryboardSegue) {
-        let newQuest = unwindSegue.source as! addQuestViewController
-        var f:Frequency
-        switch newQuest.newQuestFrequency {
-        case 0:
-            f = .one_time_only
-        case 1:
-            f = .weekly
-        case 2:
-            f = .everyday
-        default:
-            f = .one_time_only
-        }
-        let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f, deadline: newQuest.newQuestDeadline)
-        tableViewData[0].questsData.append(toAddQuest)
-        toAddQuest.addQuest()
-        
-        tableView.reloadData()
+    @IBAction func done(_ unwindSegue: UIStoryboardSegue) {}
+    
+    private func loadQuests(){
+        self.tableViewData[0].questsData.removeAll()
+        let ref = Database.database().reference().child("quests")
+        let userID = Auth.auth().currentUser?.uid
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
+        query.observe(.value, with: { (snapshot) in
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot{
+                    if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                self.tableViewData[0].questsData.append(newQuest)
+                    }
+                }
+            }
+        })
     }
 }

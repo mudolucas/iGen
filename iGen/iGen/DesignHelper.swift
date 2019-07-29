@@ -24,3 +24,13 @@
             return UIImage(named: "clock_2")
         }
     }
+<<<<<<< HEAD
+||||||| merged common ancestors
+}
+=======
+    
+    class func clockImageParent() -> UIImage?{
+        return UIImage(named: "clock_2")
+    }
+}
+>>>>>>> dev

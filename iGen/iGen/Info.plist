@@ -23,7 +23,13 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
+<<<<<<< HEAD
 	<string>Daniel</string>
+||||||| merged common ancestors
+	<string>Main</string>
+=======
+	<string>Sara</string>
+>>>>>>> dev
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
