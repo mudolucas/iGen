@@ -22,6 +22,8 @@
 		553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553D504222EA5D1200EFFCC2 /* Slide.xib */; };
 		56A0F88E2E6654645BEC27AC /* Pods_iGenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BA21222B5E094F14BCB6B5 /* Pods_iGenUITests.framework */; };
 		661E971322EBD2E300812A24 /* AppGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E971222EBD2E300812A24 /* AppGroups.swift */; };
+		661E975122EF55F900812A24 /* AppTimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E975022EF55F900812A24 /* AppTimeSet.swift */; };
+		661E975322EF6A0D00812A24 /* newColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E975222EF6A0D00812A24 /* newColors.swift */; };
 		67CC08621F84D8FD3E707DE5 /* Pods_iGenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */; };
 		8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */; };
 		8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F516322E2669800623B34 /* AppDelegate.swift */; };
@@ -71,6 +73,8 @@
 		553D504222EA5D1200EFFCC2 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		6481EA1BE883923E34359232 /* Pods-iGenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.debug.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		661E971222EBD2E300812A24 /* AppGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroups.swift; sourceTree = "<group>"; };
+		661E975022EF55F900812A24 /* AppTimeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTimeSet.swift; sourceTree = "<group>"; };
+		661E975222EF6A0D00812A24 /* newColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newColors.swift; sourceTree = "<group>"; };
 		66FCB0F6BAFC8FE7802F9F82 /* Pods-iGenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenUITests.release.xcconfig"; path = "Target Support Files/Pods-iGenUITests/Pods-iGenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHelper.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				3F3A11D322EA523D005F4ACA /* Lia.storyboard */,
 				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
 				661E971222EBD2E300812A24 /* AppGroups.swift */,
+				661E975022EF55F900812A24 /* AppTimeSet.swift */,
 				3F83306722E6192C0067CBFB /* ViewController.swift */,
 				8F8F516A22E2669A00623B34 /* Assets.xcassets */,
 				8F8F516C22E2669A00623B34 /* LaunchScreen.storyboard */,
@@ -192,6 +197,7 @@
 				3FA80C3B22E7B90000B36517 /* QuestsViewController.swift */,
 				3FA80C3D22E7B91900B36517 /* addQuestViewController.swift */,
 				3FA80C3F22E7B93300B36517 /* SectionList.swift */,
+				661E975222EF6A0D00812A24 /* newColors.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
 			);
 			path = iGen;
@@ -444,6 +450,7 @@
 			files = (
 				3FA80C3A22E7B8E400B36517 /* Quests.swift in Sources */,
 				3FA80C3C22E7B90000B36517 /* QuestsViewController.swift in Sources */,
+				661E975122EF55F900812A24 /* AppTimeSet.swift in Sources */,
 				553D503D22EA573700EFFCC2 /* TutorialViewController.swift in Sources */,
 				3F83306822E6192C0067CBFB /* ViewController.swift in Sources */,
 				8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */,
@@ -451,6 +458,7 @@
 				553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */,
 				661E971322EBD2E300812A24 /* AppGroups.swift in Sources */,
 				8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */,
+				661E975322EF6A0D00812A24 /* newColors.swift in Sources */,
 				3FA80C3E22E7B91900B36517 /* addQuestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

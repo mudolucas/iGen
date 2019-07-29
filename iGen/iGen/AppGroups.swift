@@ -15,15 +15,18 @@ class AppGroups: UIViewController {
     
     @IBOutlet weak var productivityTimer: UITextField!
     
-     var lastClickedField : UITextField?
+    var lastClickedField : UITextField?
     
     private var datePicker: UIDatePicker?
-    
-    @IBAction func textFieldDidBeginEditing(_ textField: UITextField) {
-        lastClickedField = textField
-    }
+    private var educationdatePicker: UIDatePicker?
+    private var productivitydatePicker: UIDatePicker?
+    var userLimits = AppTimeSet(gameLimit: "Unlimited", educationLimit: "Unlimited", productivityLimit: "Unlimited")
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        gamesTimer.backgroundColor = newColors.colorLightBlue()
+        educationTimer.backgroundColor = newColors.colorLightBlue()
+        productivityTimer.backgroundColor = newColors.colorLightBlue()
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .countDownTimer
         datePicker?.addTarget(self, action: #selector(AppGroups.dateChanged(datePicker:)), for: .valueChanged)
@@ -45,18 +48,21 @@ class AppGroups: UIViewController {
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "HH:mm"
         gamesTimer.text = dateformatter.string(from: datePicker.date)
+        userLimits.changeGameLimit(newGameLimit: dateformatter.string(from: datePicker.date))
         view.endEditing(true)
     }
     @objc func edudateChanged(datePicker: UIDatePicker){
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "HH:mm"
         educationTimer.text = dateformatter.string(from: datePicker.date)
+        userLimits.changeEducationLimit(newEducationLimit: dateformatter.string(from: datePicker.date))
         view.endEditing(true)
     }
     @objc func prodateChanged(datePicker: UIDatePicker){
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "HH:mm"
         productivityTimer.text = dateformatter.string(from: datePicker.date)
+        userLimits.changeProductivityLimit(newProdcutivityLimit: dateformatter.string(from: datePicker.date))
         view.endEditing(true)
     }
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
@@ -64,6 +70,7 @@ class AppGroups: UIViewController {
         view.endEditing(true)
         
     }
+    
     
     
 

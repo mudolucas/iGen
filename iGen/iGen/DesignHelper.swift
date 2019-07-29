@@ -19,4 +19,5 @@ class DesignHelper{
         // COLOR 5DBCD2
         return UIColor(red: 93/255, green: 188/255, blue: 210/255, alpha: 1.0)
     }
+    
 }
