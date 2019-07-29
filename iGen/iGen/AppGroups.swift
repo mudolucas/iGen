@@ -24,25 +24,27 @@ class AppGroups: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(AppGroups.setGameUnlimited))
+        let gamesToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setGameUnlimited), blockSelect: #selector(AppGroups.setGameBlocked))
+        let educationToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setEducationUnlimited), blockSelect: #selector(AppGroups.setEducationBlocked))
+         let productivityToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setProductivityUnlimited), blockSelect: #selector(AppGroups.setProductivityBlocked))
         gamesTimer.backgroundColor = newColors.colorLightBlue()
         educationTimer.backgroundColor = newColors.colorLightBlue()
         productivityTimer.backgroundColor = newColors.colorLightBlue()
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .countDownTimer
-        gamesTimer.inputAccessoryView = toolBar
+        gamesTimer.inputAccessoryView = gamesToolBar
         datePicker?.addTarget(self, action: #selector(AppGroups.dateChanged(datePicker:)), for: .valueChanged)
         gamesTimer.inputView = datePicker
         educationdatePicker = UIDatePicker()
         educationdatePicker?.datePickerMode = .countDownTimer
         educationdatePicker?.addTarget(self, action: #selector(AppGroups.edudateChanged(datePicker:)), for: .valueChanged)
-        educationTimer.inputAccessoryView = toolBar
+        educationTimer.inputAccessoryView = educationToolBar
         educationTimer.inputView = educationdatePicker
         productivitydatePicker = UIDatePicker()
         productivitydatePicker?.datePickerMode = .countDownTimer
         productivitydatePicker?.addTarget(self, action: #selector(AppGroups.prodateChanged(datePicker:)), for: .valueChanged)
         productivityTimer.inputView = productivitydatePicker
-        productivityTimer.inputAccessoryView = toolBar
+        productivityTimer.inputAccessoryView = productivityToolBar
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AppGroups.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
@@ -78,6 +80,27 @@ class AppGroups: UIViewController {
         userLimits.changeGameLimit(newGameLimit: "Unlimited")
         gamesTimer.text = "Unlimited"
     }
+    @objc func setGameBlocked(){
+        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        gamesTimer.text = "Blocked"
+    }
+    @objc func setEducationUnlimited(){
+        userLimits.changeGameLimit(newGameLimit: "Unlimited")
+        educationTimer.text = "Unlimited"
+    }
+    @objc func setEducationBlocked(){
+        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        educationTimer.text = "Blocked"
+    }
+    @objc func setProductivityUnlimited(){
+        userLimits.changeGameLimit(newGameLimit: "Unlimited")
+        productivityTimer.text = "Unlimited"
+    }
+    @objc func setProductivityBlocked(){
+        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        productivityTimer.text = "Blocked"
+    }
+    
     
     
     
@@ -95,7 +118,7 @@ class AppGroups: UIViewController {
 }
 extension UIToolbar {
     
-    func ToolbarPiker(mySelect : Selector) -> UIToolbar {
+    func ToolbarPiker(unlimitedSelect : Selector, blockSelect : Selector) -> UIToolbar {
         
         let toolBar = UIToolbar()
         
@@ -104,8 +127,8 @@ extension UIToolbar {
         toolBar.tintColor = UIColor.black
         toolBar.sizeToFit()
         
-        let unlimitedButton = UIBarButtonItem(title: "Set Unlimited Time", style: UIBarButtonItem.Style.plain, target: self, action: mySelect)
-        let blockButton = UIBarButtonItem(title: "Block Usage", style: UIBarButtonItem.Style.plain, target: self, action: mySelect)
+        let unlimitedButton = UIBarButtonItem(title: "Set Unlimited Time", style: UIBarButtonItem.Style.plain, target: self, action: unlimitedSelect)
+        let blockButton = UIBarButtonItem(title: "Block Usage", style: UIBarButtonItem.Style.plain, target: self, action: blockSelect)
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         
         toolBar.setItems([blockButton, spaceButton, spaceButton, unlimitedButton], animated: false)
