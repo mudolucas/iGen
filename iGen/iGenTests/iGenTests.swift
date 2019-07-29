@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iGen
+
 
 class iGenTests: XCTestCase {
 
