@@ -26,24 +26,45 @@ class AppGroups: UIViewController {
         super.viewDidLoad()
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .countDownTimer
-        datePicker?.addTarget(self, action: #selector(AppGroups.dateSelected(datePicker:)), for: .valueChanged)
-        lastClickedField?.inputView = datePicker
+        datePicker?.addTarget(self, action: #selector(AppGroups.dateChanged(datePicker:)), for: .valueChanged)
+        gamesTimer.inputView = datePicker
+        educationdatePicker = UIDatePicker()
+        educationdatePicker?.datePickerMode = .countDownTimer
+        educationdatePicker?.addTarget(self, action: #selector(AppGroups.edudateChanged(datePicker:)), for: .valueChanged)
+        educationTimer.inputView = educationdatePicker
+        productivitydatePicker = UIDatePicker()
+        productivitydatePicker?.datePickerMode = .countDownTimer
+        productivitydatePicker?.addTarget(self, action: #selector(AppGroups.prodateChanged(datePicker:)), for: .valueChanged)
+        productivityTimer.inputView = productivitydatePicker
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AppGroups.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
+    
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "HH:mm"
-        lastClickedField?.text = dateformatter.string(from: datePicker.date)
+        gamesTimer.text = dateformatter.string(from: datePicker.date)
         view.endEditing(true)
     }
-    
+    @objc func edudateChanged(datePicker: UIDatePicker){
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "HH:mm"
+        educationTimer.text = dateformatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
+    @objc func prodateChanged(datePicker: UIDatePicker){
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "HH:mm"
+        productivityTimer.text = dateformatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
-        lastClickedField = nil
+        
         view.endEditing(true)
         
     }
+    
     
 
     /*
