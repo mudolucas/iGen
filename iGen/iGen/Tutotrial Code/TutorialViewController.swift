@@ -20,17 +20,17 @@ class TutorialViewController: UIViewController {
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.imageView.image = UIImage(named: "Placeholder-tutorial1")
         slide1.imageDesc.image = UIImage(named: "clock-icon")
-        slide1.labelDesc.text = "Set time limits on certain app categories."
+        slide1.labelDesc.text = "Set time limits on app categories"
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "Placeholder-tutorial2")
         slide2.imageDesc.image = UIImage(named: "dataset-icon")
-        slide2.labelDesc.text = "View you child's app time."
+        slide2.labelDesc.text = "Stay updated with the amount of time your kid is using apps."
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.imageView.image = UIImage(named: "Placeholder-tutorial3")
         slide3.imageDesc.image = UIImage(named: "quest-icon")
-        slide3.labelDesc.text = "Give your child quest to complete for additional screen time and avatar accesories."
+        slide3.labelDesc.text = "Incentivize good habits with screen time rewards."
         
         return [slide1, slide2, slide3]
         
