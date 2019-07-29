@@ -25,6 +25,9 @@ class QuestsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewData = [tableData(opened: true, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         loadQuests()
         self.tableViewData[0].opened = true
     }
@@ -58,7 +61,7 @@ class QuestsViewController: UITableViewController{
             let quest:Quests = tableViewData[indexPath.section].questsData[dataIndex]
             cell.questTitleCell.text = quest.title
             cell.rewardCell?.text = String(quest.reward)
-            cell.iconImage.image = UIImage(named: "Clock_icon")
+            cell.iconImage.image = DesignHelper.clockImageParent()
             cell.detailTextLabel?.text = "Deadline:  \(quest.deadline)"
             return cell
         }
@@ -83,24 +86,22 @@ class QuestsViewController: UITableViewController{
     //MARK: IMPLEMENT DELETE!!
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row != 0
-        {
-            
+        if indexPath.row != 0{
+            if editingStyle == .delete {
+                let quest = tableViewData[0].questsData[indexPath.row-1]
+                quest.quest_ref?.removeValue()
+                tableViewData[0].questsData.remove(at: indexPath.row-1)
+                self.tableView.reloadData()
+            }
         }
     }
     
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){}
     
-    @IBAction func done(_ unwindSegue: UIStoryboardSegue) {
-        let newQuest = unwindSegue.source as! addQuestViewController
-        let rwd = Int(newQuest.newQuestReward) ?? 0
-        let toAddQuest = Quests(title: newQuest.newQuestTitle, reward: rwd, frequency: newQuest.newQuestFrequency, deadline: newQuest.newQuestDeadline,status: Status.active)
-        tableViewData[0].questsData.append(toAddQuest)
-        toAddQuest.saveQuestIntoDatabase()
-        tableView.reloadData()
-    }
+    @IBAction func done(_ unwindSegue: UIStoryboardSegue) {}
     
-    func loadQuests(){
+    private func loadQuests(){
+        self.tableViewData[0].questsData.removeAll()
         let ref = Database.database().reference().child("quests")
         let userID = Auth.auth().currentUser?.uid
         let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
@@ -108,7 +109,7 @@ class QuestsViewController: UITableViewController{
             for child in snapshot.children{
                 if let snapshot = child as? DataSnapshot{
                     if let newQuest = Quests(snapshot: snapshot) as? Quests{
-                        self.tableViewData[0].questsData.append(newQuest)
+                self.tableViewData[0].questsData.append(newQuest)
                     }
                 }
             }

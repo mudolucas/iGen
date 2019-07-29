@@ -34,6 +34,7 @@ class Quests{
     var status:Status
     var frequency:Int
     var deadline:String
+    let quest_ref:DatabaseReference?
     
     public init(title: String, reward:Int,frequency:Int,deadline:String,status:Status) {
         self.title = title
@@ -41,6 +42,7 @@ class Quests{
         self.reward = reward
         self.frequency = frequency
         self.deadline = deadline
+        self.quest_ref = nil
     }
     
     init?(snapshot: DataSnapshot) {
@@ -49,12 +51,18 @@ class Quests{
         let title:String = getData["title"] as? String,
         let reward:Int = getData["reward"] as? Int,
         let deadline:String = getData["deadline"] as? String,
+        let status:String = getData["status"] as? String,
         let frequency:Int = getData["frequency"] as? Int else{
                 return nil
         }
-        
+        self.quest_ref = snapshot.ref
         self.title = title
-        self.status = Status.active
+        if (status == "active"){
+            self.status = Status.active
+        }
+        else{
+            self.status = Status.completed
+        }
         self.reward = reward
         self.frequency = frequency
         self.deadline = deadline

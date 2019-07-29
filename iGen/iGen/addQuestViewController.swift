@@ -10,10 +10,10 @@ import UIKit
 //import SelectionList
 
 class addQuestViewController: UIViewController, UITextFieldDelegate {
-    var newQuestTitle:String = ""
-    var newQuestReward:String = ""
-    var newQuestFrequency:Int = -1
-    var newQuestDeadline:String = ""
+//    var newQuestTitle:String = ""
+//    var newQuestReward:String = ""
+//    var newQuestFrequency:Int = -1
+//    var newQuestDeadline:String = ""
     private var datePicker: UIDatePicker?
     
     @IBOutlet weak var rewardTextField: UITextField!
@@ -30,20 +30,18 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func send(_ sender: Any) {
         if (rewardTextField!.text != "" && titleTextField!.text != "" && selectionList.selectedIndex != -1 && deadlineTextField.text != ""){
+            // Insert the new Quest into the DB
+            let toAddQuest = Quests(title: titleTextField.text!, reward: Int(rewardTextField.text!)!, frequency: selectionList.selectedIndex!, deadline: "07/29/2019",status: Status.active)
+            toAddQuest.saveQuestIntoDatabase()
             self.performSegue(withIdentifier: "doneCreatingQuestSegue", sender: nil)
         }else{
-            let alert = UIAlertController(title:"Please, fill out all the fields", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title:"Alert", message: "Please, fill out all the fields", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
     // GATHER THE INFORMATION INPUTED BY THE USER TO TRANSFER TO THE NEXT SEGUE
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        newQuestTitle = titleTextField.text!
-        newQuestReward = rewardTextField.text!
-        newQuestFrequency = selectionList.selectedIndex! ?? -1
-        newQuestDeadline = deadlineTextField.text!
-    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
     
     //DISMISS THE DATE PICKER EVEN IF THE USER DIDN'T CHANGE ANYTHING
     @objc func viewTapper(gestureRecognizer: UITapGestureRecognizer){
