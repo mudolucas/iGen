@@ -31,7 +31,7 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
     @IBAction func send(_ sender: Any) {
         if (rewardTextField!.text != "" && titleTextField!.text != "" && selectionList.selectedIndex != -1 && deadlineTextField.text != ""){
             // Insert the new Quest into the DB
-            let toAddQuest = Quests(title: titleTextField.text!, reward: Int(rewardTextField.text!)!, frequency: selectionList.selectedIndex!, deadline: "07/29/2019",status: Status.active)
+            let toAddQuest = Quests(title: titleTextField.text!, reward: Int(rewardTextField.text!)!, frequency: selectionList.selectedIndex!, deadline: deadlineTextField.text! ,status: Status.active)
             toAddQuest.saveQuestIntoDatabase()
             self.performSegue(withIdentifier: "doneCreatingQuestSegue", sender: nil)
         }else{

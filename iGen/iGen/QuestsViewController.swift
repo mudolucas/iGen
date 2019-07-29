@@ -82,8 +82,7 @@ class QuestsViewController: UITableViewController{
         }
     }
     
-    //DELETE A ROW
-    //MARK: IMPLEMENT DELETE!!
+    //DELETE A QUEST
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
         if indexPath.row != 0{
@@ -96,10 +95,12 @@ class QuestsViewController: UITableViewController{
         }
     }
     
+    //SEGUE FUNCTIONS
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){}
-    
     @IBAction func done(_ unwindSegue: UIStoryboardSegue) {}
+    @IBAction func cancelEditing(_ unwindSegue: UIStoryboardSegue) {}
     
+    //DB-related functions
     private func loadQuests(){
         self.tableViewData[0].questsData.removeAll()
         let ref = Database.database().reference().child("quests")
@@ -114,5 +115,15 @@ class QuestsViewController: UITableViewController{
                 }
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editQuest" {
+            let path = tableView.indexPathForSelectedRow?.row ?? 0
+            let destination = segue.destination as! editQuestViewController
+            destination.quest = self.tableViewData[0].questsData[path-1]
+            print(path)
+            print(destination.quest?.title)
+        }
     }
 }

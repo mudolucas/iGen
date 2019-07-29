@@ -23,4 +23,12 @@ class DesignHelper{
     class func clockImageParent() -> UIImage?{
         return UIImage(named: "clock_2")
     }
+    
+    class func checkedListIconImage() -> UIImage?{
+        return UIImage(named: "v")
+    }
+    
+    class func emptyListIconImage() -> UIImage?{
+        return UIImage(named: "o")
+    }
 }
