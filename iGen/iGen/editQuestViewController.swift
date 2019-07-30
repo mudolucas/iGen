@@ -15,12 +15,37 @@ class editQuestViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet private var selectionList: SelectionList!
     private var datePicker: UIDatePicker?
     var quest:Quests?
+    var index:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDesign()
         setUpDatePicker()
         rewardTextField.delegate = self
+    }
+    
+    @IBAction func doneEditing(_ sender: Any) {
+        if (rewardTextField!.text != "" && titleTextField!.text != "" && selectionList.selectedIndex != -1 && deadlineTextField.text != ""){
+            quest?.title = titleTextField.text!
+            quest?.reward = Int(rewardTextField.text!) ?? 0
+            quest?.frequency = selectionList.selectedIndex!
+            quest?.deadline = deadlineTextField.text!
+            // Insert the new Quest into the DB
+            /*let toAddQuest = Quests(title: titleTextField.text!, reward: Int(rewardTextField.text!)!, frequency: selectionList.selectedIndex!, deadline: deadlineTextField.text! ,status: Status.active)
+            toAddQuest.saveQuestIntoDatabase()*/
+            self.performSegue(withIdentifier: "doneEditing", sender: nil)
+        }else{
+            let alert = UIAlertController(title:"Alert", message: "Please, fill out all the fields", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "doneEditing" {
+            
+        }
     }
     
     
@@ -44,7 +69,9 @@ class editQuestViewController: UIViewController, UITextFieldDelegate{
         titleTextField.text = quest?.title
         titleTextField.textColor = DesignHelper.colorDarkestBlue()
         rewardTextField.textColor = DesignHelper.colorDarkestBlue()
-        rewardTextField.text = "\(quest?.reward)"
+        let int:Int = quest?.reward ?? 0
+        var rwd:String = String(int) ?? ""
+        rewardTextField.text = rwd
         deadlineTextField.text = quest?.deadline
     }
     
@@ -71,4 +98,5 @@ class editQuestViewController: UIViewController, UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return string.isEmpty || string.rangeOfCharacter(from: NSCharacterSet.decimalDigits) != nil
     }
+   
 }

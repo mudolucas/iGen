@@ -24,12 +24,11 @@ class QuestsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableViewData = [tableData(opened: true, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+        self.tableViewData = [tableData(opened: true, title: "Active", questsData:[]),tableData(opened: true, title: "Completed", questsData: [])]
     }
     
     override func viewDidAppear(_ animated: Bool) {
         loadQuests()
-        self.tableViewData[0].opened = true
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -90,7 +89,8 @@ class QuestsViewController: UITableViewController{
                 let quest = tableViewData[0].questsData[indexPath.row-1]
                 quest.quest_ref?.removeValue()
                 tableViewData[0].questsData.remove(at: indexPath.row-1)
-                self.tableView.reloadData()
+                tableView.reloadData()
+                print("COUNT \(tableViewData[0].questsData.count)")
             }
         }
     }
@@ -99,6 +99,18 @@ class QuestsViewController: UITableViewController{
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){}
     @IBAction func done(_ unwindSegue: UIStoryboardSegue) {}
     @IBAction func cancelEditing(_ unwindSegue: UIStoryboardSegue) {}
+    
+    @IBAction func doneEditing(_ unwindSegue: UIStoryboardSegue) {
+        let editedQuest = unwindSegue.source as! editQuestViewController
+        self.tableViewData[0].questsData[editedQuest.index!].title = editedQuest.quest?.title ?? ""
+        self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
+            "title": editedQuest.quest?.title ?? "",
+            "reward":editedQuest.quest?.reward,
+            "deadline":editedQuest.quest?.deadline,
+            "frequency":editedQuest.quest?.frequency
+            ])
+        tableView.reloadData()
+    }
     
     //DB-related functions
     private func loadQuests(){
@@ -122,8 +134,7 @@ class QuestsViewController: UITableViewController{
             let path = tableView.indexPathForSelectedRow?.row ?? 0
             let destination = segue.destination as! editQuestViewController
             destination.quest = self.tableViewData[0].questsData[path-1]
-            print(path)
-            print(destination.quest?.title)
+            destination.index = path-1
         }
     }
 }
