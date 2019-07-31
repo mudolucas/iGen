@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                     print("You have successfully signed up")
                     //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "tutorial")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "pin")
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-            
+            ref = Database.database().reference()
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
                 
                 if error == nil {
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
                     print("You have successfully logged in")
                     
                     //Go to the HomeViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "tutorial")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "pin")
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
@@ -95,7 +95,8 @@ class ViewController: UIViewController {
                     alertController.addAction(defaultAction)
                     
                     self.present(alertController, animated: true, completion: nil)
-                
+                    
+
   
                 }
             }
@@ -114,19 +115,19 @@ class ViewController: UIViewController {
         } else {
             ref = Database.database().reference()
             let userID = Auth.auth().currentUser?.uid
-            let userEmail = Auth.auth().currentUser?.email
             let pin = pinTextField.text
-            self.ref?.child("users/\(userID!)/pin").setValue(pin)
+            let userEmail = Auth.auth().currentUser?.email
             self.ref?.child("users/\(userID!)/email").setValue(userEmail)
             self.ref?.child("users/\(userID!)/uid").setValue(userID)
-            self.ref?.child("users/\(userID!)/quests").setValue([""])
             self.ref?.child("users/\(userID!)/parentMode").setValue(true)
+            self.ref?.child("users/\(userID!)/pin").setValue(pin)
         }
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Quests.loadAllQuestsForUser()
         // Do any additional setup after loading the view.
     }
 

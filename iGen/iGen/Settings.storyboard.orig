@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+<<<<<<< HEAD:iGen/iGen/Lia.storyboard
+        <!--Lia Kids Homepage View Controller-->
+        <scene sceneID="QtG-OR-yQ3">
+            <objects>
+                <viewController id="hyF-qm-zd1" customClass="liaKidsHomepage_ViewController" customModule="iGen" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sap-5Q-pGg">
+=======
+        <!--Settings Pincode Controller-->
+        <scene sceneID="mxV-r8-HCW">
+            <objects>
+                <viewController restorationIdentifier="settings" storyboardIdentifier="settings" id="aJr-Uz-41D" customClass="settingsPincodeController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CQq-M5-hrL">
+>>>>>>> f84eb3c2b5564dc92aa20c3985e1f77a084503e5:iGen/iGen/Settings.storyboard
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haP-PJ-64V">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Tommi" id="sO3-JI-OIQ"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walletCoins" translatesAutoresizingMaskIntoConstraints="NO" id="iuX-Um-6sn">
+                                <rect key="frame" x="131" y="107" width="152" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdA-fE-hPc">
+                                <rect key="frame" x="207" y="122" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tommiKidPage" translatesAutoresizingMaskIntoConstraints="NO" id="Yd0-BO-Npp">
+                                <rect key="frame" x="87" y="186" width="241" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<<<<<<< HEAD:iGen/iGen/Lia.storyboard
+                            </imageView>
+=======
+                                <connections>
+                                    <action selector="switchPressed:" destination="aJr-Uz-41D" eventType="valueChanged" id="dog-uf-YWd"/>
+                                    <segue destination="f2h-W5-n5z" kind="show" identifier="pinCheck" id="peC-ew-MGR"/>
+                                </connections>
+                            </switch>
+>>>>>>> f84eb3c2b5564dc92aa20c3985e1f77a084503e5:iGen/iGen/Settings.storyboard
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aXg-Cb-XPb"/>
+                    </view>
+                    <connections>
+<<<<<<< HEAD:iGen/iGen/Lia.storyboard
+                        <outlet property="childWalletAmount" destination="wdA-fE-hPc" id="2o0-Ms-90G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7i-S8-OOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+=======
+                        <outlet property="kidsModeButton" destination="zUO-Yd-fR0" id="45N-03-ryW"/>
+                        <outlet property="view" destination="CQq-M5-hrL" id="Cv5-i0-2bg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohG-xJ-x8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3157" y="-260"/>
+        </scene>
+        <!--Pincode Confirmation Controller-->
+        <scene sceneID="4qQ-db-hvM">
+            <objects>
+                <viewController storyboardIdentifier="pinCheck" id="f2h-W5-n5z" customClass="pincodeConfirmationController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0wA-y7-CNA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PIN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ygA-f0-FCJ">
+                                <rect key="frame" x="159" y="288" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALA-8X-Res">
+                                <rect key="frame" x="192" y="351" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okPinPressed:" destination="f2h-W5-n5z" eventType="touchUpInside" id="upZ-aA-nyy"/>
+                                    <segue destination="aJr-Uz-41D" kind="show" identifier="settings" id="Xbr-Jd-h7f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5OJ-8P-bni"/>
+                    </view>
+                    <connections>
+                        <outlet property="okPin" destination="ALA-8X-Res" id="Beu-Om-b2x"/>
+                        <outlet property="pinTextField" destination="ygA-f0-FCJ" id="fcO-Qa-WrQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2U-bT-vni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3863.7681159420295" y="-258.48214285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BbS-Z2-kol">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7IT-4q-GoC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EIt-DC-EZj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aJr-Uz-41D" kind="relationship" relationship="rootViewController" id="eao-6F-sPN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h35-xI-NDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+>>>>>>> f84eb3c2b5564dc92aa20c3985e1f77a084503e5:iGen/iGen/Settings.storyboard
+            </objects>
+            <point key="canvasLocation" x="324.63768115942031" y="-244.41964285714283"/>
+        </scene>
+    </scenes>
+<<<<<<< HEAD:iGen/iGen/Lia.storyboard
+    <resources>
+        <image name="tommiKidPage" width="586" height="578"/>
+        <image name="walletCoins" width="906" height="326"/>
+    </resources>
+=======
+    <inferredMetricsTieBreakers>
+        <segue reference="Xbr-Jd-h7f"/>
+    </inferredMetricsTieBreakers>
+>>>>>>> f84eb3c2b5564dc92aa20c3985e1f77a084503e5:iGen/iGen/Settings.storyboard
+</document>

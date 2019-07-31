@@ -1,4 +1,8 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 // HELPERS
 private struct tableData{
@@ -12,7 +16,7 @@ class tableViewOutlets: UITableViewCell{
     @IBOutlet weak var rewardCell: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var sectionTitle: UILabel!
-    
+    //@IBOutlet weak var description: UILabel!
 }
 
 class QuestsViewController: UITableViewController{
@@ -20,7 +24,11 @@ class QuestsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewData = [tableData(opened: false, title: "Active", questsData: []),tableData(opened: false, title: "Completed", questsData: [])]
+        self.tableViewData = [tableData(opened: false, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadQuests2()
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -52,7 +60,8 @@ class QuestsViewController: UITableViewController{
             let quest:Quests = tableViewData[indexPath.section].questsData[dataIndex]
             cell.questTitleCell.text = quest.title
             cell.rewardCell?.text = String(quest.reward)
-            cell.iconImage.image = UIImage(named: "Clock_icon")
+            cell.iconImage.image = DesignHelper.clockImageParent()
+            cell.detailTextLabel?.text = "Deadline:  \(quest.deadline)"
             return cell
         }
     }
@@ -72,32 +81,92 @@ class QuestsViewController: UITableViewController{
         }
     }
     
-    //DELETE A ROW
-    //MARK: IMPLEMENT DELETE!!
+    //DELETE A QUEST
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row != 0
-        {
-            
+        if indexPath.row != 0{
+            if editingStyle == .delete {
+                let quest = tableViewData[0].questsData[indexPath.row-1]
+                quest.quest_ref?.removeValue()
+                tableViewData[0].questsData.remove(at: indexPath.row-1)
+                tableView.reloadData()
+                print("COUNT \(tableViewData[0].questsData.count)")
+            }
         }
     }
     
+    //SEGUE FUNCTIONS
     @IBAction func cancel(_ unwindSegue: UIStoryboardSegue){}
+    @IBAction func done(_ unwindSegue: UIStoryboardSegue) {}
+    @IBAction func cancelEditing(_ unwindSegue: UIStoryboardSegue) {}
     
-    @IBAction func done(_ unwindSegue: UIStoryboardSegue) {
-        let newQuest = unwindSegue.source as! addQuestViewController
-        var f:Frequency
-        switch newQuest.newQuestFrequency {
-        case 0:
-            f = .one_time_only
-        case 1:
-            f = .weekly
-        case 2:
-            f = .everyday
-        default:
-            f = .one_time_only
-        }
-        tableViewData[0].questsData.append(Quests(title: newQuest.newQuestTitle, reward: newQuest.newQuestReward, frequency: f,deadline: newQuest.newQuestDeadline))
+    @IBAction func doneEditing(_ unwindSegue: UIStoryboardSegue) {
+        let editedQuest = unwindSegue.source as! editQuestViewController
+        //self.tableViewData[0].questsData[editedQuest.index!].title = editedQuest.quest?.title ?? ""
+        self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
+            "title": editedQuest.quest?.title ?? "",
+            "reward":editedQuest.quest?.reward,
+            "deadline":editedQuest.quest?.deadline,
+            "frequency":editedQuest.quest?.frequency
+            ])
         tableView.reloadData()
+    }
+    
+    //DB-related functions
+    private func loadQuests(){
+        self.tableViewData[0].questsData.removeAll()
+        let ref = Database.database().reference().child("quests")
+        let userID = Auth.auth().currentUser?.uid
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
+        query.observe(.value, with: { (snapshot) in
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot{
+                    if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                self.tableViewData[0].questsData.append(newQuest)
+                    }
+                }
+            }
+        })
+    }
+    
+    private func loadQuests2(){
+        self.tableViewData[0].questsData.removeAll()
+        let ref = Database.database().reference().child("quests")
+        let userID = Auth.auth().currentUser?.uid
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
+        query.observe(.value, with: { (snapshot) in
+            var loadedItems:[Quests] = []
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot{
+                    if let data = snapshot.value as? [String:Any]{
+                        let status = data["status"] as? String
+                        if status == "active"{
+                            if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                                self.tableViewData[0].questsData.append(newQuest)
+                            }
+                        }
+                        else{
+                            if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                                self.tableViewData[1].questsData.append(newQuest)
+                            }
+                        }
+                    }
+                }
+            }
+            print("---------------")
+            print(self.tableViewData[0].questsData.count)
+            print(self.tableViewData[1].questsData.count)
+            //self.tableData = loadedItems
+            //self.tableView.reloadData()
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editQuest" {
+            let path = tableView.indexPathForSelectedRow?.row ?? 0
+            let destination = segue.destination as! editQuestViewController
+            destination.quest = self.tableViewData[0].questsData[path-1]
+            destination.index = path-1
+        }
     }
 }

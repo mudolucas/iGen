@@ -19,4 +19,16 @@ class DesignHelper{
         // COLOR 5DBCD2
         return UIColor(red: 93/255, green: 188/255, blue: 210/255, alpha: 1.0)
     }
+    
+    class func clockImageParent() -> UIImage?{
+        return UIImage(named: "clock_2")
+    }
+    
+    class func checkedListIconImage() -> UIImage?{
+        return UIImage(named: "v")
+    }
+    
+    class func emptyListIconImage() -> UIImage?{
+        return UIImage(named: "o")
+    }
 }
