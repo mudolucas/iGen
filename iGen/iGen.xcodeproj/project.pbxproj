@@ -34,6 +34,8 @@
 		8F8F516E22E2669A00623B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8F516C22E2669A00623B34 /* LaunchScreen.storyboard */; };
 		8F8F517922E2669A00623B34 /* iGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F517822E2669A00623B34 /* iGenTests.swift */; };
 		8F8F518422E2669A00623B34 /* iGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F518322E2669A00623B34 /* iGenUITests.swift */; };
+		AE992F2A22F20F4D002F13D5 /* lia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE992F2922F20F4D002F13D5 /* lia.storyboard */; };
+		AE992F2C22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */; };
 		FB68FEEFE2B0808B94799EC3 /* Pods_iGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		8F8F517F22E2669A00623B34 /* iGenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iGenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8F518322E2669A00623B34 /* iGenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iGenUITests.swift; sourceTree = "<group>"; };
 		8F8F518522E2669A00623B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE992F2922F20F4D002F13D5 /* lia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = lia.storyboard; sourceTree = "<group>"; };
+		AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liaKidsHomepage_ViewController.swift; sourceTree = "<group>"; };
 		CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,6 +209,8 @@
 				661E975222EF6A0D00812A24 /* newColors.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
 				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
+				AE992F2922F20F4D002F13D5 /* lia.storyboard */,
+				AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */,
 			);
 			path = iGen;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */,
 				3F89210E22E6187300EF2193 /* GoogleService-Info.plist in Resources */,
 				3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */,
+				AE992F2A22F20F4D002F13D5 /* lia.storyboard in Resources */,
 				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
@@ -457,6 +464,7 @@
 				3FA80C3C22E7B90000B36517 /* QuestsViewController.swift in Sources */,
 				661E975122EF55F900812A24 /* AppTimeSet.swift in Sources */,
 				553D503D22EA573700EFFCC2 /* TutorialViewController.swift in Sources */,
+				AE992F2C22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift in Sources */,
 				3F83306822E6192C0067CBFB /* ViewController.swift in Sources */,
 				8F77938E22F0C54C0026A6A6 /* kidsTableViewController.swift in Sources */,
 				8F06438D22EF93A5001CF78D /* editQuestViewController.swift in Sources */,
