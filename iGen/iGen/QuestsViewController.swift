@@ -24,11 +24,11 @@ class QuestsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableViewData = [tableData(opened: true, title: "Active", questsData:[]),tableData(opened: true, title: "Completed", questsData: [])]
+        self.tableViewData = [tableData(opened: false, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadQuests()
+        loadQuests2()
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -102,7 +102,7 @@ class QuestsViewController: UITableViewController{
     
     @IBAction func doneEditing(_ unwindSegue: UIStoryboardSegue) {
         let editedQuest = unwindSegue.source as! editQuestViewController
-        self.tableViewData[0].questsData[editedQuest.index!].title = editedQuest.quest?.title ?? ""
+        //self.tableViewData[0].questsData[editedQuest.index!].title = editedQuest.quest?.title ?? ""
         self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
             "title": editedQuest.quest?.title ?? "",
             "reward":editedQuest.quest?.reward,
@@ -126,6 +126,38 @@ class QuestsViewController: UITableViewController{
                     }
                 }
             }
+        })
+    }
+    
+    private func loadQuests2(){
+        self.tableViewData[0].questsData.removeAll()
+        let ref = Database.database().reference().child("quests")
+        let userID = Auth.auth().currentUser?.uid
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
+        query.observe(.value, with: { (snapshot) in
+            var loadedItems:[Quests] = []
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot{
+                    if let data = snapshot.value as? [String:Any]{
+                        let status = data["status"] as? String
+                        if status == "active"{
+                            if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                                self.tableViewData[0].questsData.append(newQuest)
+                            }
+                        }
+                        else{
+                            if let newQuest = Quests(snapshot: snapshot) as? Quests{
+                                self.tableViewData[1].questsData.append(newQuest)
+                            }
+                        }
+                    }
+                }
+            }
+            print("---------------")
+            print(self.tableViewData[0].questsData.count)
+            print(self.tableViewData[1].questsData.count)
+            //self.tableData = loadedItems
+            //self.tableView.reloadData()
         })
     }
     
