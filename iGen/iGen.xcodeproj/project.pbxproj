@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25CE7E22F212190098A850 /* Settings.storyboard */; };
+		3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8022F2122D0098A850 /* settingsKidMode.swift */; };
 		3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */; };
 		3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D122EA5068005F4ACA /* Sara.storyboard */; };
 		3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D522EA5248005F4ACA /* Daniel.storyboard */; };
@@ -60,6 +62,8 @@
 		18BA21222B5E094F14BCB6B5 /* Pods_iGenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		226A9A9229CB0F8EB5FA0FEF /* Pods-iGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGen.release.xcconfig"; path = "Target Support Files/Pods-iGen/Pods-iGen.release.xcconfig"; sourceTree = "<group>"; };
 		2E4ADB65A4B790304DD751A0 /* Pods-iGenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.release.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F25CE7E22F212190098A850 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3F25CE8022F2122D0098A850 /* settingsKidMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsKidMode.swift; sourceTree = "<group>"; };
 		3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
 		3F3A11D122EA5068005F4ACA /* Sara.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sara.storyboard; sourceTree = "<group>"; };
 		3F3A11D522EA5248005F4ACA /* Daniel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Daniel.storyboard; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
 				553D503B22EA570D00EFFCC2 /* Tutotrial Code */,
 				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
+				3F25CE7E22F212190098A850 /* Settings.storyboard */,
+				3F25CE8022F2122D0098A850 /* settingsKidMode.swift */,
 				661E971222EBD2E300812A24 /* AppGroups.swift */,
 				661E975022EF55F900812A24 /* AppTimeSet.swift */,
 				3F83306722E6192C0067CBFB /* ViewController.swift */,
@@ -341,6 +347,7 @@
 				3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */,
 				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
+				3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
 				553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */,
 			);
@@ -467,6 +474,7 @@
 				8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */,
 				661E975322EF6A0D00812A24 /* newColors.swift in Sources */,
 				3FA80C3E22E7B91900B36517 /* addQuestViewController.swift in Sources */,
+				3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */,
 				559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
