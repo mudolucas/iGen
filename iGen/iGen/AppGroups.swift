@@ -7,34 +7,52 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
+
 
 class AppGroups: UIViewController {
+    //IBOutlets for Text Fields
     @IBOutlet weak var gamesTimer: UITextField!
     
     @IBOutlet weak var educationTimer: UITextField!
     
     @IBOutlet weak var productivityTimer: UITextField!
     
-    var lastClickedField : UITextField?
+    @IBOutlet weak var inputPin: UITextField!
     
+    @IBOutlet weak var pinButton: UIButton!
+    
+    private var limitation_ref: DatabaseReference?
+    //Date Pickers for each text field
     private var datePicker: UIDatePicker?
     private var educationdatePicker: UIDatePicker?
     private var productivitydatePicker: UIDatePicker?
+    //Initiate an App Time Set class
     var userLimits = AppTimeSet(gameLimit: "Unlimited", educationLimit: "Unlimited", productivityLimit: "Unlimited")
-   
+    
+    let timestamp = NSDate().timeIntervalSince1970
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Set UI Tool Bar
         let gamesToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setGameUnlimited), blockSelect: #selector(AppGroups.setGameBlocked))
         let educationToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setEducationUnlimited), blockSelect: #selector(AppGroups.setEducationBlocked))
-         let productivityToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setProductivityUnlimited), blockSelect: #selector(AppGroups.setProductivityBlocked))
+        let productivityToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setProductivityUnlimited), blockSelect: #selector(AppGroups.setProductivityBlocked))
+        //Background Color for Timers
         gamesTimer.backgroundColor = newColors.colorLightBlue()
         educationTimer.backgroundColor = newColors.colorLightBlue()
         productivityTimer.backgroundColor = newColors.colorLightBlue()
+        //Initialize Date Picker and Set it up as a Count Down Timer
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .countDownTimer
         gamesTimer.inputAccessoryView = gamesToolBar
+        //Set Date when DatePicker is clicked
         datePicker?.addTarget(self, action: #selector(AppGroups.dateChanged(datePicker:)), for: .valueChanged)
         gamesTimer.inputView = datePicker
+        //Repeat for education and productivity
         educationdatePicker = UIDatePicker()
         educationdatePicker?.datePickerMode = .countDownTimer
         educationdatePicker?.addTarget(self, action: #selector(AppGroups.edudateChanged(datePicker:)), for: .valueChanged)
@@ -45,16 +63,22 @@ class AppGroups: UIViewController {
         productivitydatePicker?.addTarget(self, action: #selector(AppGroups.prodateChanged(datePicker:)), for: .valueChanged)
         productivityTimer.inputView = productivitydatePicker
         productivityTimer.inputAccessoryView = productivityToolBar
+        //Tap Gesture for the screen
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AppGroups.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        loadLimits()
+    }
+    //set time for the text fields and save to data base
     @objc func dateChanged(datePicker: UIDatePicker){
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "HH:mm"
         gamesTimer.text = dateformatter.string(from: datePicker.date)
         userLimits.changeGameLimit(newGameLimit: dateformatter.string(from: datePicker.date))
+       // enterNewScreen()
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func edudateChanged(datePicker: UIDatePicker){
@@ -62,13 +86,19 @@ class AppGroups: UIViewController {
         dateformatter.dateFormat = "HH:mm"
         educationTimer.text = dateformatter.string(from: datePicker.date)
         userLimits.changeEducationLimit(newEducationLimit: dateformatter.string(from: datePicker.date))
+        
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func prodateChanged(datePicker: UIDatePicker){
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "HH:mm"
         productivityTimer.text = dateformatter.string(from: datePicker.date)
+        
         userLimits.changeProductivityLimit(newProdcutivityLimit: dateformatter.string(from: datePicker.date))
+        
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        
         view.endEditing(true)
     }
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
@@ -76,45 +106,84 @@ class AppGroups: UIViewController {
         view.endEditing(true)
         
     }
+    //Set an unlimited setting
     @objc func setGameUnlimited(){
         userLimits.changeGameLimit(newGameLimit: "Unlimited")
         gamesTimer.text = "Unlimited"
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        view.endEditing(true)
     }
+    //set a blocked setting
     @objc func setGameBlocked(){
         userLimits.changeGameLimit(newGameLimit: "Blocked")
         gamesTimer.text = "Blocked"
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        view.endEditing(true)
     }
     @objc func setEducationUnlimited(){
         userLimits.changeGameLimit(newGameLimit: "Unlimited")
         educationTimer.text = "Unlimited"
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        view.endEditing(true)
     }
     @objc func setEducationBlocked(){
         userLimits.changeGameLimit(newGameLimit: "Blocked")
         educationTimer.text = "Blocked"
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        view.endEditing(true)
     }
     @objc func setProductivityUnlimited(){
         userLimits.changeGameLimit(newGameLimit: "Unlimited")
         productivityTimer.text = "Unlimited"
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        view.endEditing(true)
     }
     @objc func setProductivityBlocked(){
         userLimits.changeGameLimit(newGameLimit: "Blocked")
         productivityTimer.text = "Blocked"
+        userLimits.saveChildLimits(limitRef: self.limitation_ref)
+        view.endEditing(true)
+    }
+    
+//    func enterNewScreen(){
+//        let storyboard = UIStoryboard(name: "Daniel", bundle: nil);
+//        let vc = storyboard.instantiateViewController(withIdentifier: "inputPin") ;
+//        self.present(vc, animated: true, completion: nil);
+//
+//    }
+    
+    private func loadLimits(){
+        let ref = Database.database().reference().child("CategoryLimits")
+        let userID = Auth.auth().currentUser?.uid
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID)
+        query.observe(.value, with: { (snapshot) in
+            for child in snapshot.children{
+                if let snapshot = child as? DataSnapshot{
+                    if let newLoadTimes = AppTimeSet(snapshot: snapshot) as? AppTimeSet{
+                        self.gamesTimer.text = newLoadTimes.gameLimit
+                        self.educationTimer.text = newLoadTimes.educationLimit
+                        self.productivityTimer.text = newLoadTimes.productivityLimit
+                        self.limitation_ref = snapshot.ref
+                    }
+                }
+            }
+        })
     }
     
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension UIToolbar {
     
@@ -138,3 +207,4 @@ extension UIToolbar {
     }
     
 }
+
