@@ -77,7 +77,7 @@ class AppGroups: UIViewController {
         dateformatter.dateFormat = "HH:mm"
         gamesTimer.text = dateformatter.string(from: datePicker.date)
         userLimits.changeGameLimit(newGameLimit: dateformatter.string(from: datePicker.date))
-        enterNewScreen()
+       // enterNewScreen()
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
@@ -145,12 +145,12 @@ class AppGroups: UIViewController {
         view.endEditing(true)
     }
     
-    func enterNewScreen(){
-        let storyboard = UIStoryboard(name: "Daniel", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "inputPin") ;
-        self.present(vc, animated: true, completion: nil);
-        
-    }
+//    func enterNewScreen(){
+//        let storyboard = UIStoryboard(name: "Daniel", bundle: nil);
+//        let vc = storyboard.instantiateViewController(withIdentifier: "inputPin") ;
+//        self.present(vc, animated: true, completion: nil);
+//
+//    }
     
     private func loadLimits(){
         let ref = Database.database().reference().child("CategoryLimits")
