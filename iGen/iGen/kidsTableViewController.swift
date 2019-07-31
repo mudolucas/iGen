@@ -85,6 +85,7 @@ class kidsTableViewController: UITableViewController{
             if let inputedPin = alert.textFields?[0].text as? String {
                 if inputedPin == self.parentPin{
                     self.tableData[indexPath.row].quest_ref?.updateChildValues(["status": Status.completed.description])
+                    //MARK: UPDATE USER WALLET
                     self.tableView.reloadData()
                 }
             }

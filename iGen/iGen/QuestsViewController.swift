@@ -131,6 +131,7 @@ class QuestsViewController: UITableViewController{
     
     private func loadQuests2(){
         self.tableViewData[0].questsData.removeAll()
+        self.tableViewData[1].questsData.removeAll()
         let ref = Database.database().reference().child("quests")
         let userID = Auth.auth().currentUser?.uid
         let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
@@ -153,9 +154,6 @@ class QuestsViewController: UITableViewController{
                     }
                 }
             }
-            print("---------------")
-            print(self.tableViewData[0].questsData.count)
-            print(self.tableViewData[1].questsData.count)
             //self.tableData = loadedItems
             //self.tableView.reloadData()
         })

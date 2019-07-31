@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bg3-TX-BbZ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Charlie's Statistics -->
+        <scene sceneID="u05-L0-H9p">
+            <objects>
+                <viewController storyboardIdentifier="parentDashboard" id="V5a-DV-V9b" customClass="parentDashboardViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Ut-el-MNy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e3E-2u-DuZ">
+                                <rect key="frame" x="110" y="102" width="195" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="App Usage"/>
+                                    <segment title="Time Spent"/>
+                                </segments>
+                                <color key="tintColor" red="0.36470588240000001" green="0.73725490199999999" blue="0.82352941180000006" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="V5a-DV-V9b" eventType="valueChanged" id="1kW-x7-M0u"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dayAppUsage" translatesAutoresizingMaskIntoConstraints="NO" id="vJf-pR-1kW">
+                                <rect key="frame" x="31" y="235" width="336" height="287"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm9-bZ-Ktb">
+                                <rect key="frame" x="170" y="583" width="74" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1 Week" image="week_blank"/>
+                                <connections>
+                                    <action selector="touchedWeekButton:" destination="V5a-DV-V9b" eventType="touchUpInside" id="Aen-zh-83y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eog-bX-azu">
+                                <rect key="frame" x="272" y="583" width="74" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="month_blank"/>
+                                <connections>
+                                    <action selector="touchedMonthButton:" destination="V5a-DV-V9b" eventType="touchUpInside" id="qJY-or-zlg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appCategoriesDashboard" translatesAutoresizingMaskIntoConstraints="NO" id="sg0-5Q-ETB">
+                                <rect key="frame" x="103" y="656" width="208" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gaph Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT2-R5-cgt">
+                                <rect key="frame" x="70" y="173" width="276" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJE-iz-w7f">
+                                <rect key="frame" x="70" y="583" width="74" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="day_blank"/>
+                                <connections>
+                                    <action selector="touchedDayButton:" destination="V5a-DV-V9b" eventType="touchUpInside" id="bQA-Fg-Qbt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="I3G-yL-qIy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Charlie's Statistics " id="V1n-wr-DRa"/>
+                    <connections>
+                        <outlet property="dayButton" destination="sJE-iz-w7f" id="BpM-IZ-sgW"/>
+                        <outlet property="graphImage" destination="vJf-pR-1kW" id="qXu-Yx-UCy"/>
+                        <outlet property="graphTitleLabel" destination="fT2-R5-cgt" id="mC5-Fd-agC"/>
+                        <outlet property="monthButton" destination="Eog-bX-azu" id="G6t-Hn-xQu"/>
+                        <outlet property="segmented" destination="e3E-2u-DuZ" id="4bt-73-hAH"/>
+                        <outlet property="weekButton" destination="qm9-bZ-Ktb" id="9Ik-gq-KPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3e-ya-Hr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371.0144927536235" y="-32.142857142857139"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ksn-g8-m4a">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wB9-QZ-TiY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vez-fn-fPu" kind="relationship" relationship="viewControllers" id="xZg-xA-94f"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nlC-aD-u29" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553.62318840579712" y="-32.142857142857139"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Ayk-6f-k9k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vez-fn-fPu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="MHr-mJ-2n9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWy-jr-u3n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="V5a-DV-V9b" kind="relationship" relationship="rootViewController" id="FQx-Gl-7BP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YeX-QN-8Li" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462.3188405797102" y="-32.142857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="appCategoriesDashboard" width="526" height="184"/>
+        <image name="dayAppUsage" width="760" height="600"/>
+        <image name="day_blank" width="191" height="90"/>
+        <image name="month_blank" width="188" height="89"/>
+        <image name="week_blank" width="189" height="90"/>
+    </resources>
+</document>
