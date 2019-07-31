@@ -28,6 +28,9 @@
 		661E975322EF6A0D00812A24 /* newColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E975222EF6A0D00812A24 /* newColors.swift */; };
 		67CC08621F84D8FD3E707DE5 /* Pods_iGenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */; };
 		8F06438D22EF93A5001CF78D /* editQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F06438C22EF93A5001CF78D /* editQuestViewController.swift */; };
+		8F23C8A322F2116A00F9E0F6 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */; };
+		8F23C8A522F2129400F9E0F6 /* Final.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8A422F2129400F9E0F6 /* Final.storyboard */; };
+		8F23C8A722F2186600F9E0F6 /* parentDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */; };
 		8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */; };
 		8F77938E22F0C54C0026A6A6 /* kidsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */; };
 		8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F516322E2669800623B34 /* AppDelegate.swift */; };
@@ -84,6 +87,9 @@
 		66FCB0F6BAFC8FE7802F9F82 /* Pods-iGenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenUITests.release.xcconfig"; path = "Target Support Files/Pods-iGenUITests/Pods-iGenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F06438C22EF93A5001CF78D /* editQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editQuestViewController.swift; sourceTree = "<group>"; };
+		8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		8F23C8A422F2129400F9E0F6 /* Final.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Final.storyboard; sourceTree = "<group>"; };
+		8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentDashboardViewController.swift; sourceTree = "<group>"; };
 		8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHelper.swift; sourceTree = "<group>"; };
 		8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kidsTableViewController.swift; sourceTree = "<group>"; };
 		8F8F516022E2669800623B34 /* iGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,10 +213,13 @@
 				3FA80C3B22E7B90000B36517 /* QuestsViewController.swift */,
 				8F06438C22EF93A5001CF78D /* editQuestViewController.swift */,
 				3FA80C3D22E7B91900B36517 /* addQuestViewController.swift */,
+				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
 				3FA80C3F22E7B93300B36517 /* SectionList.swift */,
 				661E975222EF6A0D00812A24 /* newColors.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
-				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
+				8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */,
+				8F23C8A422F2129400F9E0F6 /* Final.storyboard */,
+				8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */,
 			);
 			path = iGen;
 			sourceTree = "<group>";
@@ -346,9 +355,11 @@
 				3F89210E22E6187300EF2193 /* GoogleService-Info.plist in Resources */,
 				3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */,
 				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
+				8F23C8A522F2129400F9E0F6 /* Final.storyboard in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
 				3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
+				8F23C8A322F2116A00F9E0F6 /* Dashboard.storyboard in Resources */,
 				553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +478,7 @@
 				3F83306822E6192C0067CBFB /* ViewController.swift in Sources */,
 				8F77938E22F0C54C0026A6A6 /* kidsTableViewController.swift in Sources */,
 				8F06438D22EF93A5001CF78D /* editQuestViewController.swift in Sources */,
+				8F23C8A722F2186600F9E0F6 /* parentDashboardViewController.swift in Sources */,
 				8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */,
 				3FA80C4022E7B93300B36517 /* SectionList.swift in Sources */,
 				553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */,

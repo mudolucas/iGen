@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "round_text_fields_black_24dp.png",
+      "filename" : "week_filled.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "round_text_fields_black_24dp-1.png",
       "scale" : "2x"
     },
     {
