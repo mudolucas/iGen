@@ -130,6 +130,39 @@
             </objects>
             <point key="canvasLocation" x="-297.10144927536237" y="-160.04464285714286"/>
         </scene>
+        <!--App Groups-->
+        <scene sceneID="Prb-Nq-a75">
+            <objects>
+                <viewController storyboardIdentifier="inputPin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E65-0g-UxP" customClass="AppGroups" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mnv-6R-PMb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIT-1u-2vO">
+                                <rect key="frame" x="113" y="148" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDi-dr-eNr">
+                                <rect key="frame" x="146" y="239" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b31-8A-Us6"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputPin" destination="dIT-1u-2vO" id="RNW-Pb-0cj"/>
+                        <outlet property="pinButton" destination="vDi-dr-eNr" id="bxf-g1-yNA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YLV-kL-VsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-160"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1200x630wa" width="439" height="453"/>
