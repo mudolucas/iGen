@@ -51,7 +51,7 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.delegate = self
+        scrollView.delegate = self as? UIScrollViewDelegate
         
         slides = createSlides()
         setupSlideScrollView(slides: slides)
