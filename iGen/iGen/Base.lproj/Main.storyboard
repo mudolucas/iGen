@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="1805" y="574"/>
         </scene>
-        <!--quests-->
+        <!--kidQuest-->
         <scene sceneID="2Wf-y7-feV">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="quests" storyboardName="Quest" referencedIdentifier="quests" id="p8j-mG-2f8" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="quests" storyboardName="Quest" referencedIdentifier="kidQuest" id="p8j-mG-2f8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffd-ch-efa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2347" y="556"/>

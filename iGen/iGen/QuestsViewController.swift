@@ -28,7 +28,7 @@ class QuestsViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadQuests2()
+        loadQuests()
     }
     
     // DEFINE THE NUMBER OF SECTIONS IN THE TABLE
@@ -113,23 +113,8 @@ class QuestsViewController: UITableViewController{
     }
     
     //DB-related functions
-    private func loadQuests(){
-        self.tableViewData[0].questsData.removeAll()
-        let ref = Database.database().reference().child("quests")
-        let userID = Auth.auth().currentUser?.uid
-        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID!)
-        query.observe(.value, with: { (snapshot) in
-            for child in snapshot.children{
-                if let snapshot = child as? DataSnapshot{
-                    if let newQuest = Quests(snapshot: snapshot) as? Quests{
-                self.tableViewData[0].questsData.append(newQuest)
-                    }
-                }
-            }
-        })
-    }
     
-    private func loadQuests2(){
+    private func loadQuests(){
         self.tableViewData[0].questsData.removeAll()
         self.tableViewData[1].questsData.removeAll()
         let ref = Database.database().reference().child("quests")
@@ -154,8 +139,7 @@ class QuestsViewController: UITableViewController{
                     }
                 }
             }
-            //self.tableData = loadedItems
-            //self.tableView.reloadData()
+            self.tableView.reloadData()
         })
     }
     
