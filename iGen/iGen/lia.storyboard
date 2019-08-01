@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AK8-yR-dJ1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rm2-Z0-nyz">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Tommi-->
         <scene sceneID="Ibf-ii-Pt9">
             <objects>
-                <viewController storyboardIdentifier="kidDashboard" id="AK8-yR-dJ1" customClass="liaKidsHomepage_ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AK8-yR-dJ1" customClass="liaKidsHomepage_ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f8K-jO-XN1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Tommi" id="S5u-zf-LDq"/>
+                                    <navigationItem title="Tommi" id="S5u-zf-LDq">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="settingsIcon3" id="1wu-bi-BcE">
+                                            <connections>
+                                                <segue destination="z4v-EL-Qd1" kind="show" id="rm8-Jq-RzC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walletCoins" translatesAutoresizingMaskIntoConstraints="NO" id="l87-NN-N5X">
@@ -192,12 +198,21 @@
             </objects>
             <point key="canvasLocation" x="750.72463768115949" y="-198.21428571428569"/>
         </scene>
+        <!--settings-->
+        <scene sceneID="AaR-9q-CFI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="settings" id="z4v-EL-Qd1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZP-oQ-aKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350" y="-401"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5e0-MY-Uhm">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Rm2-Z0-nyz" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="kidDashboard" automaticallyAdjustsScrollViewInsets="NO" id="Rm2-Z0-nyz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5MC-eI-AMe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -237,6 +252,7 @@
         <image name="gamesIconTommi" width="300" height="308"/>
         <image name="plusButton" width="196" height="202"/>
         <image name="productivityIconTommi" width="334" height="334"/>
+        <image name="settingsIcon3" width="24" height="24"/>
         <image name="tommiKidPage" width="586" height="578"/>
         <image name="walletCoins" width="906" height="326"/>
     </resources>
