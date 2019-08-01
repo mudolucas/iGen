@@ -40,6 +40,12 @@ class liaKidsHomepage_ViewController: UIViewController {
     @IBOutlet weak var educationIncreaseBUTTON: UIButton!
     
     
+    // ***** PRODUCTIVITY VARIABLES *****
+    var currentProductivityTime = 0.0
+    var maxTime = -10.0
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -81,6 +87,9 @@ class liaKidsHomepage_ViewController: UIViewController {
             educationSetupHelper((currentEducationTime / maxEducationTime), String(toInt(currentEducationTime)))
         }
         
+        // SETTING UP THE PRODUCTIVITY CATEGORY
+        
+        
         
         
     }
@@ -93,9 +102,9 @@ class liaKidsHomepage_ViewController: UIViewController {
     func educationSetupHelper(_ progress: Double, _ text: String) {
         educationStatusBar.progress = Float(progress)
         timeLeftEducationLabel.text = text
-        
-        
     }
+    
+    
     
     
     @IBAction func increaseGameTime(_ sender: UIButton) {
