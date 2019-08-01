@@ -23,11 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-<<<<<<< HEAD
-	<string>childStore</string>
-=======
 	<string>Main</string>
->>>>>>> b4f9c3a8c6bc088f19221d997493ea842cdf5566
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

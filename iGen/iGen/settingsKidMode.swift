@@ -68,18 +68,18 @@ class settingsKidMode: UIViewController {
                     if inputedPin == self.parentPin{
                         self.kidSwitch.setOn(false, animated: true)
                         self.updateUserDictionary(false)
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidStoryboardSettings")
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "parentStoryboardSettings")
                         self.present(vc!, animated: true, completion: nil)
                     } else {
                         self.kidSwitch.setOn(true, animated: true)
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "parentStoryboardSettings")
-                        self.present(vc!, animated: true, completion: nil)
                     }
                 }
             }))
             // Present the alert to the user
             self.present(alert, animated: true, completion: nil)
         } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidStoryboardSettings")
+            self.present(vc!, animated: true, completion: nil)
             updateUserDictionary(true)
         }
     }
