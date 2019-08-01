@@ -23,11 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-<<<<<<< HEAD
 	<string>lia</string>
-=======
-	<string>Main</string>
->>>>>>> 9602044f01852858e9dc3d43c830c2507e3eff99
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
