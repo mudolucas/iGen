@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25CE7E22F212190098A850 /* Settings.storyboard */; };
 		3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8022F2122D0098A850 /* settingsKidMode.swift */; };
+		3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8522F34D950098A850 /* TabViewController.swift */; };
 		3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */; };
 		3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D122EA5068005F4ACA /* Sara.storyboard */; };
 		3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D522EA5248005F4ACA /* Daniel.storyboard */; };
@@ -29,7 +30,6 @@
 		67CC08621F84D8FD3E707DE5 /* Pods_iGenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */; };
 		8F06438D22EF93A5001CF78D /* editQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F06438C22EF93A5001CF78D /* editQuestViewController.swift */; };
 		8F23C8A322F2116A00F9E0F6 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */; };
-		8F23C8A522F2129400F9E0F6 /* Final.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8A422F2129400F9E0F6 /* Final.storyboard */; };
 		8F23C8A722F2186600F9E0F6 /* parentDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */; };
 		8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */; };
 		8F77938E22F0C54C0026A6A6 /* kidsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */; };
@@ -69,6 +69,7 @@
 		2E4ADB65A4B790304DD751A0 /* Pods-iGenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.release.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F25CE7E22F212190098A850 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		3F25CE8022F2122D0098A850 /* settingsKidMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsKidMode.swift; sourceTree = "<group>"; };
+		3F25CE8522F34D950098A850 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
 		3F3A11D122EA5068005F4ACA /* Sara.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sara.storyboard; sourceTree = "<group>"; };
 		3F3A11D522EA5248005F4ACA /* Daniel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Daniel.storyboard; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F06438C22EF93A5001CF78D /* editQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editQuestViewController.swift; sourceTree = "<group>"; };
 		8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
-		8F23C8A422F2129400F9E0F6 /* Final.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Final.storyboard; sourceTree = "<group>"; };
 		8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentDashboardViewController.swift; sourceTree = "<group>"; };
 		8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHelper.swift; sourceTree = "<group>"; };
 		8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kidsTableViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +202,7 @@
 				3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */,
 				559551E122EB68A6003E3FEF /* KidViewController.swift */,
 				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
+				3F25CE8522F34D950098A850 /* TabViewController.swift */,
 				553D503B22EA570D00EFFCC2 /* Tutotrial Code */,
 				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
 				3F25CE7E22F212190098A850 /* Settings.storyboard */,
@@ -221,7 +222,6 @@
 				661E975222EF6A0D00812A24 /* newColors.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
 				8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */,
-				8F23C8A422F2129400F9E0F6 /* Final.storyboard */,
 				8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */,
 				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
 				AE992F2922F20F4D002F13D5 /* lia.storyboard */,
@@ -362,7 +362,6 @@
 				3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */,
 				AE992F2A22F20F4D002F13D5 /* lia.storyboard in Resources */,
 				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
-				8F23C8A522F2129400F9E0F6 /* Final.storyboard in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
 				3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
@@ -496,6 +495,7 @@
 				3FA80C3E22E7B91900B36517 /* addQuestViewController.swift in Sources */,
 				3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */,
 				559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */,
+				3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
