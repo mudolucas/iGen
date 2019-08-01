@@ -74,7 +74,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="I3G-yL-qIy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Charlie's Statistics " id="V1n-wr-DRa"/>
+                    <navigationItem key="navigationItem" title="Charlie's Statistics " id="V1n-wr-DRa">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="settingsIcon3" id="e36-Rd-jXw">
+                            <connections>
+                                <segue destination="C62-Pl-B3S" kind="show" id="hvc-8R-r2B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dayButton" destination="sJE-iz-w7f" id="BpM-IZ-sgW"/>
                         <outlet property="graphImage" destination="vJf-pR-1kW" id="qXu-Yx-UCy"/>
@@ -87,6 +93,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3e-ya-Hr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2371.0144927536235" y="-32.142857142857139"/>
+        </scene>
+        <!--settings-->
+        <scene sceneID="zJ7-B2-YDN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="settings" id="C62-Pl-B3S" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yc2-Ly-J04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3006" y="-31"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ksn-g8-m4a">
@@ -153,6 +167,7 @@
         <image name="dayAppUsage" width="760" height="600"/>
         <image name="day_blank" width="191" height="90"/>
         <image name="month_blank" width="188" height="89"/>
+        <image name="settingsIcon3" width="24" height="24"/>
         <image name="week_blank" width="189" height="90"/>
     </resources>
 </document>
