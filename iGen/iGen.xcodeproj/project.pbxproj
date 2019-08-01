@@ -42,6 +42,7 @@
 		8F8F518422E2669A00623B34 /* iGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F518322E2669A00623B34 /* iGenUITests.swift */; };
 		AE992F2A22F20F4D002F13D5 /* lia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE992F2922F20F4D002F13D5 /* lia.storyboard */; };
 		AE992F2C22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */; };
+		AE992F2E22F38B39002F13D5 /* childStore_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE992F2D22F38B39002F13D5 /* childStore_ViewController.swift */; };
 		FB68FEEFE2B0808B94799EC3 /* Pods_iGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		8F8F518522E2669A00623B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE992F2922F20F4D002F13D5 /* lia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = lia.storyboard; sourceTree = "<group>"; };
 		AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liaKidsHomepage_ViewController.swift; sourceTree = "<group>"; };
+		AE992F2D22F38B39002F13D5 /* childStore_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = childStore_ViewController.swift; sourceTree = "<group>"; };
 		CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 			children = (
 				8F8F516322E2669800623B34 /* AppDelegate.swift */,
 				55C3773922F357EB002F29C8 /* childStore.storyboard */,
+				AE992F2D22F38B39002F13D5 /* childStore_ViewController.swift */,
 				8F8F516722E2669800623B34 /* Main.storyboard */,
 				3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */,
 				559551E122EB68A6003E3FEF /* KidViewController.swift */,
@@ -498,6 +501,7 @@
 				661E975322EF6A0D00812A24 /* newColors.swift in Sources */,
 				3FA80C3E22E7B91900B36517 /* addQuestViewController.swift in Sources */,
 				3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */,
+				AE992F2E22F38B39002F13D5 /* childStore_ViewController.swift in Sources */,
 				559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */,
 				3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */,
 			);

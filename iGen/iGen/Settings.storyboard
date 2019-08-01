@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Settings Kid Mode-->
         <scene sceneID="Bmt-X7-7jA">
             <objects>
                 <viewController storyboardIdentifier="settings" id="NHg-Ig-QVm" customClass="settingsKidMode" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,32 +36,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gtg-eE-YlM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="r0c-GE-BAk"/>
                     <connections>
                         <outlet property="kidSwitch" destination="suM-bo-UWW" id="IMD-fi-W1h"/>
+                        <segue destination="UGr-go-Vfe" kind="show" id="eoc-mm-7Nk"/>
+                        <segue destination="TMn-LN-mHU" kind="show" id="OAO-iR-KzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJL-eK-LGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="721.73913043478262" y="72.991071428571431"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CgU-y4-feI">
+        <!--kidDashboard-->
+        <scene sceneID="3Qo-Q6-rzm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B9H-6G-wcy" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zze-wt-fM5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="NHg-Ig-QVm" kind="relationship" relationship="rootViewController" id="cAH-f4-hBq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Noe-OO-DXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="kidStoryboardSettings" storyboardName="lia" referencedIdentifier="kidDashboard" id="UGr-go-Vfe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aun-2l-P2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-188.40579710144928" y="72.991071428571431"/>
+            <point key="canvasLocation" x="1383" y="-30"/>
+        </scene>
+        <!--parentDashboard-->
+        <scene sceneID="v9n-18-gTj">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="parentStoryboardSettings" storyboardName="Dashboard" referencedIdentifier="parentDashboard" id="TMn-LN-mHU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYV-8n-gWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="131"/>
         </scene>
     </scenes>
 </document>
