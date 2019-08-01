@@ -258,8 +258,6 @@ class liaKidsHomepage_ViewController: UIViewController {
         }
     }
     
-    
-    
     // ******
     // HELPER METHODS
     // *****
