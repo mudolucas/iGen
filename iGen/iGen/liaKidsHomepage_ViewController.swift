@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 class liaKidsHomepage_ViewController: UIViewController {
 
@@ -18,7 +22,8 @@ class liaKidsHomepage_ViewController: UIViewController {
     // Label for the coins
     @IBOutlet weak var childWalletAmount: UILabel!
     // Total number of coins they currently have
-    var timeCoins = 12
+    var timeCoins = Int()
+    var userRef: DatabaseReference?
     
     
     // ***** GAMES VARIABLES ******
@@ -29,15 +34,28 @@ class liaKidsHomepage_ViewController: UIViewController {
     @IBOutlet weak var gameStatusBar: UIProgressView!
     @IBOutlet weak var timeLeftGamesLabel: UILabel!
     @IBOutlet weak var gameIncreaseBUTTON: UIButton!
+    @IBOutlet weak var minutesLeftGameLABEL: UILabel!
     
     
     // ***** EDUCATION VARIABLES ******
     var currentEducationTime = 10.0
-    var maxEducationTime = 90.0
+    var maxEducationTime = -1.0
     @IBOutlet weak var educationLabel: UILabel!
     @IBOutlet weak var educationStatusBar: UIProgressView!
     @IBOutlet weak var timeLeftEducationLabel: UILabel!
     @IBOutlet weak var educationIncreaseBUTTON: UIButton!
+    @IBOutlet weak var minutesLeftEducationLABEL: UILabel!
+    
+    
+    // ***** PRODUCTIVITY VARIABLES *****
+    var currentProductivityTime = 0.0
+    var maxProductivityTime = -10.0
+    @IBOutlet weak var productivityLabel: UILabel!
+    @IBOutlet weak var productivityStatusBar: UIProgressView!
+    @IBOutlet weak var timeLeftProductivityLabel: UILabel!
+    @IBOutlet weak var productivityIncreaseBUTTON: UIButton!
+    @IBOutlet weak var minutesLeftProductivityLABEL: UILabel!
+    
     
     
     
@@ -48,23 +66,28 @@ class liaKidsHomepage_ViewController: UIViewController {
         // Setting the size of the status bars
         gameStatusBar.transform = gameStatusBar.transform.scaledBy(x: 1, y: 10)
         educationStatusBar.transform = educationStatusBar.transform.scaledBy(x: 1, y: 10)
+        productivityStatusBar.transform = productivityStatusBar.transform.scaledBy(x: 1, y: 10)
         
         // Setting up the font size of category labels
         gamesLabel.font = gamesLabel.font.withSize(20)
         educationLabel.font = educationLabel.font.withSize(20)
+        productivityLabel.font = productivityLabel.font.withSize(20)
         
-        // Setting up the kids wallet viewing
+        // Setting up the kids wallet
+        getWallet()
         childWalletAmount.text = String(timeCoins)
         
         
         // SETTING UP THE GAMES CATEGORY
         if (maxGameTime == -1.0) {
             gameIncreaseBUTTON.isHidden = true;
+            minutesLeftGameLABEL.isHidden = true;
             gameSetupHelper(1.0, "Unlimited")
             
         } else if (maxGameTime == -10.0) {
             gameIncreaseBUTTON.isHidden = true;
-            gameSetupHelper(0.0, "Blocked")
+            minutesLeftGameLABEL.isHidden = true;
+            gameSetupHelper(0.0, "Blocked ❌")
         } else {
             gameSetupHelper((currentGameTime / maxGameTime), String(toInt(currentGameTime)))
         }
@@ -72,13 +95,29 @@ class liaKidsHomepage_ViewController: UIViewController {
         // SETTING UP THE EDUCATION CATEGORY
         if (maxEducationTime == -1.0) {
             educationIncreaseBUTTON.isHidden = true;
-            educationSetupHelper(1.0, "Unlimited")
+            minutesLeftEducationLABEL.isHidden = true;
+            educationSetupHelper(1.0, "Unlimited ♾")
             
         } else if (maxEducationTime == -10.0) {
             educationIncreaseBUTTON.isHidden = true;
-            educationSetupHelper(0.0, "Blocked")
+            minutesLeftEducationLABEL.isHidden = true;
+            educationSetupHelper(0.0, "Blocked ❌")
         } else {
             educationSetupHelper((currentEducationTime / maxEducationTime), String(toInt(currentEducationTime)))
+        }
+        
+        // SETTING UP THE PRODUCTIVITY CATEGORY
+        if (maxProductivityTime == -1.0) {
+            productivityIncreaseBUTTON.isHidden = true;
+            minutesLeftProductivityLABEL.isHidden = true;
+            productivitySetupHelper(1.0, "Unlimited ♾")
+            
+        } else if (maxProductivityTime == -10.0) {
+            productivityIncreaseBUTTON.isHidden = true;
+            minutesLeftProductivityLABEL.isHidden = true;
+            productivitySetupHelper(0.0, "Blocked ❌")
+        } else {
+            productivitySetupHelper((currentProductivityTime / maxProductivityTime), String(toInt(currentProductivityTime)))
         }
         
         
@@ -93,11 +132,40 @@ class liaKidsHomepage_ViewController: UIViewController {
     func educationSetupHelper(_ progress: Double, _ text: String) {
         educationStatusBar.progress = Float(progress)
         timeLeftEducationLabel.text = text
-        
-        
+    }
+    
+    func productivitySetupHelper(_ progress: Double, _ text: String) {
+        productivityStatusBar.progress = Float(progress)
+        timeLeftProductivityLabel.text = text
     }
     
     
+    // Get the child's wallet amount
+    func getWallet() {
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        // TESTING: let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+        if let value = snapshot.value as? [String:Any]{
+            if let wallet = value["wallet"] as? Int{
+                    self.timeCoins = wallet
+            }
+        }
+        self.userRef = snapshot.ref
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateWallet() {
+        self.userRef?.updateChildValues(["wallet": self.timeCoins])
+    }
+    
+    
+    
+
     @IBAction func increaseGameTime(_ sender: UIButton) {
         
         if (timeCoins - DECREASE_TIME_COINS < 0) { // Not enough coins
@@ -108,6 +176,7 @@ class liaKidsHomepage_ViewController: UIViewController {
         } else { // Has enough coins and time isnt full
             // 1: Decrease coins by 5
             timeCoins -= DECREASE_TIME_COINS
+            updateWallet()
             // 2: Show the new coin amount
             childWalletAmount.text = String(timeCoins)
             // 3: Increase the time
@@ -124,11 +193,12 @@ class liaKidsHomepage_ViewController: UIViewController {
         if (timeCoins - DECREASE_TIME_COINS < 0) { // Not enough coins
             // Throw alert that child doesnt have enough time coins
             alertChildCoins()
-        } else if (currentGameTime + INCREASE_CATEGORY_TIME > maxGameTime) {
+        } else if (currentEducationTime + INCREASE_CATEGORY_TIME > maxEducationTime) {
             alertChildFull()
         } else { // Has enough coins and time isnt full
             // 1: Decrease coins by 5
             timeCoins -= DECREASE_TIME_COINS
+            updateWallet()
             // 2: Show the new coin amount
             childWalletAmount.text = String(timeCoins)
             // 3: Increase the time
@@ -141,9 +211,26 @@ class liaKidsHomepage_ViewController: UIViewController {
     }
     
     
-    
-    
-    
+    @IBAction func increaseProductivityTime(_ sender: Any) {
+        if (timeCoins - DECREASE_TIME_COINS < 0) { // Not enough coins
+            // Throw alert that child doesnt have enough time coins
+            alertChildCoins()
+        } else if (currentProductivityTime + INCREASE_CATEGORY_TIME > maxProductivityTime) {
+            alertChildFull()
+        } else { // Has enough coins and time isnt full
+            // 1: Decrease coins by 5
+            timeCoins -= DECREASE_TIME_COINS
+            updateWallet()
+            // 2: Show the new coin amount
+            childWalletAmount.text = String(timeCoins)
+            // 3: Increase the time
+            currentProductivityTime = currentProductivityTime + INCREASE_CATEGORY_TIME
+            // 4: Update the progress bar
+            educationStatusBar.setProgress(Float(currentProductivityTime / maxProductivityTime), animated: true)
+            // 5: Update the amount of time left
+            timeLeftProductivityLabel.text = String(toInt(currentProductivityTime))
+        }
+    }
     
     
     
