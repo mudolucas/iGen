@@ -13,7 +13,7 @@
         <!--Charlie's Statistics -->
         <scene sceneID="u05-L0-H9p">
             <objects>
-                <viewController storyboardIdentifier="parentDashboard" id="V5a-DV-V9b" customClass="parentDashboardViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V5a-DV-V9b" customClass="parentDashboardViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ut-el-MNy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,25 +91,28 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Ksn-g8-m4a">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="parentDashboard" automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wB9-QZ-TiY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="ef4-Rb-Ux4" kind="relationship" relationship="viewControllers" id="cw7-VM-WRj"/>
                         <segue destination="vez-fn-fPu" kind="relationship" relationship="viewControllers" id="xZg-xA-94f"/>
+                        <segue destination="6QJ-aR-Xjd" kind="relationship" relationship="viewControllers" id="R9N-38-3fn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlC-aD-u29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553.62318840579712" y="-32.142857142857139"/>
+            <point key="canvasLocation" x="470" y="-5"/>
         </scene>
-        <!--Item-->
+        <!--Dashboard-->
         <scene sceneID="Ayk-6f-k9k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vez-fn-fPu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MHr-mJ-2n9"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="MHr-mJ-2n9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWy-jr-u3n">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -123,6 +126,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeX-QN-8Li" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1462.3188405797102" y="-32.142857142857139"/>
+        </scene>
+        <!--quests-->
+        <scene sceneID="gNF-Lj-Eux">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="quests" storyboardName="Quest" referencedIdentifier="quests" id="6QJ-aR-Xjd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Quests" id="DaZ-oF-DBK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BpS-S6-pUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="563"/>
+        </scene>
+        <!--apptime-->
+        <scene sceneID="l6L-mc-wtt">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="apptime" storyboardName="Daniel" referencedIdentifier="apptime" id="ef4-Rb-Ux4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="App Time" id="fQv-re-gDH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1a-JH-MOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="412"/>
         </scene>
     </scenes>
     <resources>

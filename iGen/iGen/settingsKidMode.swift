@@ -21,6 +21,7 @@ class settingsKidMode: UIViewController {
     let userID = Auth.auth().currentUser?.uid
     var parentPin : String!
     var kidMode : Bool?
+    private var userReference: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,12 +82,7 @@ class settingsKidMode: UIViewController {
     
     
     private func updateUserDictionary(_ mode: Bool) {
-        var user = ["uid": userID,
-                    "email": userDictionary["email"] as! String,
-                    "pin": userDictionary["pin"] as! String,
-                    "kidMode": mode] as [String: Any]
-        let userUpdates = ["/users/\(userID!)": user]
-        ref.updateChildValues(userUpdates)
+        userReference?.updateChildValues(["kidMode":mode])
         getPinCode()
     }
     
@@ -102,6 +98,7 @@ class settingsKidMode: UIViewController {
                 if let kidMode = value["kidMode"] as? Bool{
                     self.kidMode = kidMode
                 }
+                self.userReference = snapshot.ref
             }
             self.parentPin = loadedPin
         }) { (error) in
