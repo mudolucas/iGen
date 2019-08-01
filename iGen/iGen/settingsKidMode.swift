@@ -72,6 +72,8 @@ class settingsKidMode: UIViewController {
                         self.present(vc!, animated: true, completion: nil)
                     } else {
                         self.kidSwitch.setOn(true, animated: true)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "parentStoryboardSettings")
+                        self.present(vc!, animated: true, completion: nil)
                     }
                 }
             }))
