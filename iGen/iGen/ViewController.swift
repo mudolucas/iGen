@@ -19,16 +19,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var pinTextField: UITextField!
     
     var ref: DatabaseReference?
+    var kidMode : Bool?
     
     @IBAction func pressCreateAccount(_ sender: Any) {
     }
     
     @IBAction func pressLogin(_ sender: Any) {
     }
-
+    
     
     @IBAction func createAccountAction(_ sender: Any) {
-
+        
         if emailTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
@@ -74,20 +75,22 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-            ref = Database.database().reference()
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
                 
+                //self.kidMode = user?.user.dictionaryWithValues(forKeys: <#T##[String]#>) as? Bool
                 if error == nil {
-                    
-                    //Print into the console if successfully logged in
-                    print("You have successfully logged in")
-                    
-                    //Go to the HomeViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "pin")
-                    self.present(vc!, animated: true, completion: nil)
+                     print("You have successfully logged in")
+                    self.getUserInfo()
+                    if (self.kidMode == true) {
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidDashboard")
+                        self.present(vc!, animated: true, completion: nil)
+                    } else {
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "parentDashboard")
+                        self.present(vc!, animated: true, completion: nil)
+                    }
+                    //   self.present(vc!, animated: true, completion: nil)
                     
                 } else {
-                    
                     //Tells the user that there is an error and then gets firebase to tell them the error
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
@@ -96,8 +99,6 @@ class ViewController: UIViewController {
                     
                     self.present(alertController, animated: true, completion: nil)
                     
-
-  
                 }
             }
         }
@@ -107,10 +108,10 @@ class ViewController: UIViewController {
         if (pinTextField.text == nil || pinTextField.text?.count != 4) {
             //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
             let alertController = UIAlertController(title: "Error", message: "Please enter a 4 digit pin.", preferredStyle: .alert)
-                
+            
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
-                
+            
             self.present(alertController, animated: true, completion: nil)
         } else {
             ref = Database.database().reference()
@@ -124,13 +125,28 @@ class ViewController: UIViewController {
             //self.ref?.child("users/\(userID!)/wallet").setValue(0)
         }
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Quests.loadAllQuestsForUser()
         // Do any additional setup after loading the view.
     }
-
+    
+    private func getUserInfo(){
+        let ref = Database.database().reference(withPath: "users")
+        let userID = Auth.auth().currentUser?.uid
+        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            if let value = snapshot.value as? [String:Any]{
+                if let kidMode = value["kidMode"] as? Bool{
+                    self.kidMode = kidMode
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
 }
 
