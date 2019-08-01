@@ -141,6 +141,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmD-L3-67p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="989.85507246376824" y="-23.4375"/>
+        </scene>
+        <!--Store-->
+        <scene sceneID="R9D-Vj-1Ar">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BD7-zW-Aee" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Store" id="WE2-9Y-2hm"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wef-pj-K6c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YY0-w8-DSR" kind="relationship" relationship="rootViewController" id="S6z-Bx-Sls"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJN-Ck-WBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="79.710144927536234" y="-23.4375"/>
         </scene>
     </scenes>

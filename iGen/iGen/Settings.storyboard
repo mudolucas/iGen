@@ -39,6 +39,7 @@
                     <connections>
                         <outlet property="kidSwitch" destination="suM-bo-UWW" id="IMD-fi-W1h"/>
                         <segue destination="UGr-go-Vfe" kind="show" id="eoc-mm-7Nk"/>
+                        <segue destination="TMn-LN-mHU" kind="show" id="OAO-iR-KzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJL-eK-LGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,6 +53,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aun-2l-P2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383" y="-30"/>
+        </scene>
+        <!--parentDashboard-->
+        <scene sceneID="v9n-18-gTj">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="parentStoryboardSettings" storyboardName="Dashboard" referencedIdentifier="parentDashboard" id="TMn-LN-mHU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYV-8n-gWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="131"/>
         </scene>
     </scenes>
 </document>
