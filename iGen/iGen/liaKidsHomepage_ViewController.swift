@@ -102,8 +102,8 @@ class liaKidsHomepage_ViewController: UIViewController {
     // Get the child's wallet amount
     func getWallet() {
         let ref = Database.database().reference()
-        //let userID = Auth.auth().currentUser?.uid
-        let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
+        let userID = Auth.auth().currentUser?.uid
+        //let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
         if let value = snapshot.value as? [String:Any]{
@@ -127,8 +127,8 @@ class liaKidsHomepage_ViewController: UIViewController {
     // Get the app category times --> Call in the init
     func getCategoryTime() {
         let ref = Database.database().reference().child("CategoryLimits")
-        //let userID = Auth.auth().currentUser?.uid
-        let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
+        let userID = Auth.auth().currentUser?.uid
+        //let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
         let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID)
         query.observe(.value) { (snapshot) in
             for child in snapshot.children {
