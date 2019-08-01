@@ -129,7 +129,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //Quests.loadAllQuestsForUser()
         // Do any additional setup after loading the view.
-        self.getUserInfo()
+        //self.getUserInfo()
     }
     
     private func getUserInfo(){
