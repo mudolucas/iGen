@@ -20,13 +20,63 @@ class childStore_ViewController: UIViewController {
     var timeCoins = Int()
     var userRef: DatabaseReference?
     
-
+    // HAT VARIABLES
+    @IBOutlet weak var hatBuyButton: UIButton!
+    @IBOutlet weak var hatButtonText: UILabel!
+    let hatPrice = 30
+    
+    // MITTENS VARIABLES
+    @IBOutlet weak var mittensBuyButton: UIButton!
+    @IBOutlet weak var mittensButtonText: UILabel!
+    let mittensPrice = 45
+    
+    // GLASSES VARIABLES
+    @IBOutlet weak var glassesBuyButton: UIButton!
+    @IBOutlet weak var glassesButtonText: UILabel!
+    let glassesPrice = 60
+    
+    // MUSTACHE VARIABLES
+    @IBOutlet weak var mustacheBuyButton: UIButton!
+    @IBOutlet weak var mustacheButtonText: UILabel!
+    let mustachePrice = 90
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getWallet()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func mustacheClickButton(_ sender: Any) {
+        mustacheButtonText.text = "Bought"
+        mustacheBuyButton.isEnabled = false
+        timeCoins -= glassesPrice
+        childWallet.text = String(timeCoins)
+        updateWallet()
+    }
+    
+    @IBAction func glassesClickButton(_ sender: Any) {
+        glassesButtonText.text = "Bought"
+        glassesBuyButton.isEnabled = false
+        timeCoins -= glassesPrice
+        childWallet.text = String(timeCoins)
+        updateWallet()
+    }
+    
+    @IBAction func hatClickButton(_ sender: Any) {
+        hatButtonText.text = "Bought"
+        hatBuyButton.isEnabled = false
+        timeCoins -= hatPrice
+        childWallet.text = String(timeCoins)
+        updateWallet()
+    }
+    
+    @IBAction func mittensClickButton(_ sender: Any) {
+        mittensButtonText.text = "Bought"
+        mittensBuyButton.isEnabled = false
+        timeCoins -= mittensPrice
+        childWallet.text = String(timeCoins)
+        updateWallet()
     }
     
     

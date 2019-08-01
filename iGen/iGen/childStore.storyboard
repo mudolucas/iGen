@@ -40,8 +40,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w02-Ai-jsn">
-                                <rect key="frame" x="206" y="128" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w02-Ai-jsn">
+                                <rect key="frame" x="189" y="128" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -63,12 +63,80 @@
                                 <rect key="frame" x="232" y="630" width="143" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-KO-cA0">
+                                <rect key="frame" x="78" y="557" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="hatClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="ACV-rb-WCX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgT-cg-G5h">
+                                <rect key="frame" x="264" y="557" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="mittensClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="XAP-cB-Lor"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO2-4h-eYv">
+                                <rect key="frame" x="86" y="566" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2N-yd-bPK">
+                                <rect key="frame" x="273" y="565" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oza-qD-Ttj">
+                                <rect key="frame" x="78" y="731" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="glassesClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="vXj-AN-EEU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuS-R3-a28">
+                                <rect key="frame" x="86" y="740" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aji-VF-xwd">
+                                <rect key="frame" x="262" y="731" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="mustacheClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="Ra3-M1-fQ5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-Ut-f50">
+                                <rect key="frame" x="269" y="740" width="65" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XSR-Ce-mUy"/>
                     </view>
                     <connections>
                         <outlet property="childWallet" destination="w02-Ai-jsn" id="MqG-1e-QCt"/>
+                        <outlet property="glassesButtonText" destination="LuS-R3-a28" id="0Us-f0-P3z"/>
+                        <outlet property="glassesBuyButton" destination="oza-qD-Ttj" id="fSR-9c-Qui"/>
+                        <outlet property="hatButtonText" destination="SO2-4h-eYv" id="MHa-2N-SbX"/>
+                        <outlet property="hatBuyButton" destination="dDS-KO-cA0" id="ZJO-fL-gT2"/>
+                        <outlet property="mittensButtonText" destination="c2N-yd-bPK" id="5lI-nc-26x"/>
+                        <outlet property="mittensBuyButton" destination="RgT-cg-G5h" id="6u7-PP-fnY"/>
+                        <outlet property="mustacheButtonText" destination="tRw-Ut-f50" id="gKe-0n-mng"/>
+                        <outlet property="mustacheBuyButton" destination="Aji-VF-xwd" id="Ma6-GB-U3w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UmD-L3-67p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -77,6 +145,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buyButton" width="374" height="184"/>
         <image name="glassesTommi" width="526" height="516"/>
         <image name="hatTommi" width="526" height="522"/>
         <image name="mittensTommi" width="520" height="518"/>
