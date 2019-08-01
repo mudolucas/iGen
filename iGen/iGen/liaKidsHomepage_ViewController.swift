@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 class liaKidsHomepage_ViewController: UIViewController {
 
@@ -68,7 +72,8 @@ class liaKidsHomepage_ViewController: UIViewController {
         educationLabel.font = educationLabel.font.withSize(20)
         productivityLabel.font = productivityLabel.font.withSize(20)
         
-        // Setting up the kids wallet viewing
+        // Setting up the kids wallet
+        
         childWalletAmount.text = String(timeCoins)
         
         
@@ -131,6 +136,15 @@ class liaKidsHomepage_ViewController: UIViewController {
     func productivitySetupHelper(_ progress: Double, _ text: String) {
         productivityStatusBar.progress = Float(progress)
         timeLeftProductivityLabel.text = text
+    }
+    
+    
+    // Get the child's wallet amount
+    func getWallet() {
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        
+        
     }
     
     
@@ -199,7 +213,6 @@ class liaKidsHomepage_ViewController: UIViewController {
         }
     }
     
-
     
     
     // ******
