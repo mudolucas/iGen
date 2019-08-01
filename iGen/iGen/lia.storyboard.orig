@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rm2-Z0-nyz">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AK8-yR-dJ1">
+>>>>>>> fa4af0993821eb8587d13c6b3cb2f0e129fff9d4
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tommi-->
+        <scene sceneID="Ibf-ii-Pt9">
+            <objects>
+                <viewController storyboardIdentifier="kidDashboard" id="AK8-yR-dJ1" customClass="liaKidsHomepage_ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f8K-jO-XN1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zZ-X9-g4I">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Tommi" id="S5u-zf-LDq"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walletCoins" translatesAutoresizingMaskIntoConstraints="NO" id="l87-NN-N5X">
+                                <rect key="frame" x="143" y="104" width="128" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tommiKidPage" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-ey-bzk">
+                                <rect key="frame" x="66" y="176" width="282" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLA-SV-lEE">
+                                <rect key="frame" x="205" y="116" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLd-Xr-gPY">
+                                <rect key="frame" x="339" y="466" width="55" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plusButton"/>
+                                <connections>
+                                    <action selector="increaseGameTime:" destination="AK8-yR-dJ1" eventType="touchUpInside" id="Znf-Lw-LYF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gamesIconTommi" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-2f-fuC">
+                                <rect key="frame" x="35" y="454" width="81" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htC-zt-lpl">
+                                <rect key="frame" x="143" y="454" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nnS-Ou-gdS">
+                                <rect key="frame" x="143" y="499" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.74509803921568629" green="0.9137254901960784" blue="0.90980392156862744" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-FT-VLc">
+                                <rect key="frame" x="243" y="509" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="educationIconTommi" translatesAutoresizingMaskIntoConstraints="NO" id="Ozz-3o-Tm4">
+                                <rect key="frame" x="33" y="577" width="85" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t4-IO-CHP">
+                                <rect key="frame" x="143" y="577" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMF-U5-6zl">
+                                <rect key="frame" x="137" y="221" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-Od-Ak4">
+                                <rect key="frame" x="143" y="617" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.74509803921568629" green="0.9137254901960784" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mZ-18-G0D">
+                                <rect key="frame" x="339" y="577" width="55" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plusButton"/>
+                                <connections>
+                                    <action selector="increaseEducationTime:" destination="AK8-yR-dJ1" eventType="touchUpInside" id="t8y-tM-me7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDJ-DK-mIA">
+                                <rect key="frame" x="339" y="701" width="55" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plusButton"/>
+                                <connections>
+                                    <action selector="increaseProductivityTime:" destination="AK8-yR-dJ1" eventType="touchUpInside" id="ken-mk-VGS"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="productivityIconTommi" translatesAutoresizingMaskIntoConstraints="NO" id="bT5-02-3Vc">
+                                <rect key="frame" x="27" y="701" width="91" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Productivity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hR-pe-Lce">
+                                <rect key="frame" x="143" y="701" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sog-Vz-aAT">
+                                <rect key="frame" x="137" y="741" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.74509803921568629" green="0.9137254901960784" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKD-45-mKL">
+                                <rect key="frame" x="243" y="751" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="minutes left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEW-aS-e0x">
+                                <rect key="frame" x="243" y="526" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="minutes left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAH-lm-1er">
+                                <rect key="frame" x="243" y="770" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-rp-wDr">
+                                <rect key="frame" x="243" y="627" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="minutes left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5J-fU-7Z7">
+                                <rect key="frame" x="243" y="647" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ysv-CW-8s3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tommi" id="iXq-HM-J76"/>
+                    <connections>
+                        <outlet property="childWalletAmount" destination="QLA-SV-lEE" id="npA-Uu-Dzd"/>
+                        <outlet property="educationIncreaseBUTTON" destination="1mZ-18-G0D" id="Iyw-ic-0eL"/>
+                        <outlet property="educationLabel" destination="9t4-IO-CHP" id="09R-c6-GUq"/>
+                        <outlet property="educationStatusBar" destination="bN3-Od-Ak4" id="xNM-oL-V1U"/>
+                        <outlet property="gameIncreaseBUTTON" destination="PLd-Xr-gPY" id="Jgz-0y-d0a"/>
+                        <outlet property="gameStatusBar" destination="nnS-Ou-gdS" id="bjq-xT-6qi"/>
+                        <outlet property="gamesLabel" destination="htC-zt-lpl" id="HSg-gB-1u4"/>
+                        <outlet property="minutesLeftEducationLABEL" destination="E5J-fU-7Z7" id="J1a-0H-hhC"/>
+                        <outlet property="minutesLeftGameLABEL" destination="EEW-aS-e0x" id="Xh7-Dd-i8T"/>
+                        <outlet property="minutesLeftProductivityLABEL" destination="cAH-lm-1er" id="F0B-Gu-XDg"/>
+                        <outlet property="productivityLabel" destination="1hR-pe-Lce" id="4yc-pC-YsD"/>
+                        <outlet property="productivityStatusBar" destination="sog-Vz-aAT" id="JJ0-tZ-IMh"/>
+                        <outlet property="timeLeftEducationLabel" destination="Bf8-rp-wDr" id="jw7-cp-7Fr"/>
+                        <outlet property="timeLeftGamesLabel" destination="ktE-FT-VLc" id="qSd-F6-g5y"/>
+                        <outlet property="timeLeftProductivityLabel" destination="OKD-45-mKL" id="UKg-Uo-slp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ke7-qv-H3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750.72463768115949" y="-198.21428571428569"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5e0-MY-Uhm">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Rm2-Z0-nyz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5MC-eI-AMe">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AK8-yR-dJ1" kind="relationship" relationship="viewControllers" id="6fF-xu-7da"/>
+                        <segue destination="IUb-Na-ogH" kind="relationship" relationship="viewControllers" id="ZXc-0v-KET"/>
+                        <segue destination="U4j-cf-ibA" kind="relationship" relationship="viewControllers" id="7jL-Rk-vzO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMY-BG-bNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159.42028985507247" y="-198.21428571428569"/>
+        </scene>
+        <!--childstore-->
+        <scene sceneID="6aa-eq-4zj">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="childstore" storyboardName="childStore" referencedIdentifier="childstore" id="IUb-Na-ogH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Xs8-Zr-PP9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqK-ev-L6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402" y="228"/>
+        </scene>
+        <!--kidQuest-->
+        <scene sceneID="yE0-zl-Ztq">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="kidQuest" storyboardName="Quest" referencedIdentifier="kidQuest" id="U4j-cf-ibA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="b89-Nf-sHn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKV-qf-3cG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="226"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="educationIconTommi" width="306" height="310"/>
+        <image name="gamesIconTommi" width="300" height="308"/>
+        <image name="plusButton" width="196" height="202"/>
+        <image name="productivityIconTommi" width="334" height="334"/>
+        <image name="tommiKidPage" width="586" height="578"/>
+        <image name="walletCoins" width="906" height="326"/>
+    </resources>
+</document>

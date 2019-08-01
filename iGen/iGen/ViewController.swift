@@ -79,7 +79,7 @@ class ViewController: UIViewController {
                 
                 if error == nil {
                      print("You have successfully logged in")
-                    self.getUserInfo()
+                  //  self.getUserInfo()
                     if (self.kidMode == true) {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidDashboard")
                         self.present(vc!, animated: true, completion: nil)
@@ -129,6 +129,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //Quests.loadAllQuestsForUser()
         // Do any additional setup after loading the view.
+        self.getUserInfo()
     }
     
     private func getUserInfo(){
