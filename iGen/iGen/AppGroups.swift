@@ -21,9 +21,7 @@ class AppGroups: UIViewController {
     
     @IBOutlet weak var productivityTimer: UITextField!
     
-    @IBOutlet weak var inputPin: UITextField!
-    
-    @IBOutlet weak var pinButton: UIButton!
+   
     
     private var limitation_ref: DatabaseReference?
     //Date Pickers for each text field
@@ -33,7 +31,6 @@ class AppGroups: UIViewController {
     //Initiate an App Time Set class
     var userLimits = AppTimeSet(gameLimit: "Unlimited", educationLimit: "Unlimited", productivityLimit: "Unlimited")
     
-    let timestamp = NSDate().timeIntervalSince1970
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,9 +74,9 @@ class AppGroups: UIViewController {
         dateformatter.dateFormat = "HH:mm"
         gamesTimer.text = dateformatter.string(from: datePicker.date)
         userLimits.changeGameLimit(newGameLimit: dateformatter.string(from: datePicker.date))
-       // enterNewScreen()
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
+
     }
     @objc func edudateChanged(datePicker: UIDatePicker){
         let dateformatter = DateFormatter()
@@ -111,6 +108,7 @@ class AppGroups: UIViewController {
         userLimits.changeGameLimit(newGameLimit: "Unlimited")
         gamesTimer.text = "Unlimited"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
+
         view.endEditing(true)
     }
     //set a blocked setting
@@ -145,12 +143,6 @@ class AppGroups: UIViewController {
         view.endEditing(true)
     }
     
-//    func enterNewScreen(){
-//        let storyboard = UIStoryboard(name: "Daniel", bundle: nil);
-//        let vc = storyboard.instantiateViewController(withIdentifier: "inputPin") ;
-//        self.present(vc, animated: true, completion: nil);
-//
-//    }
     
     private func loadLimits(){
         let ref = Database.database().reference().child("CategoryLimits")
