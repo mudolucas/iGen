@@ -155,7 +155,7 @@ class AppGroups: UIViewController {
     private func loadLimits(){
         let ref = Database.database().reference().child("CategoryLimits")
         let userID = Auth.auth().currentUser?.uid
-        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2")
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID)
         query.observe(.value, with: { (snapshot) in
             for child in snapshot.children{
                 if let snapshot = child as? DataSnapshot{
