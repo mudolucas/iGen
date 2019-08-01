@@ -22,7 +22,8 @@ class liaKidsHomepage_ViewController: UIViewController {
     // Label for the coins
     @IBOutlet weak var childWalletAmount: UILabel!
     // Total number of coins they currently have
-    var timeCoins = 12
+    var timeCoins = Int()
+    var userRef: DatabaseReference?
     
     
     // ***** GAMES VARIABLES ******
@@ -73,7 +74,7 @@ class liaKidsHomepage_ViewController: UIViewController {
         productivityLabel.font = productivityLabel.font.withSize(20)
         
         // Setting up the kids wallet
-        
+        getWallet()
         childWalletAmount.text = String(timeCoins)
         
         
@@ -143,13 +144,28 @@ class liaKidsHomepage_ViewController: UIViewController {
     func getWallet() {
         let ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
-        
-        
+        // TESTING: let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+        if let value = snapshot.value as? [String:Any]{
+            if let wallet = value["wallet"] as? Int{
+                    self.timeCoins = wallet
+            }
+        }
+        self.userRef = snapshot.ref
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateWallet() {
+        self.userRef?.updateChildValues(["wallet": self.timeCoins])
     }
     
     
     
-    
+
     @IBAction func increaseGameTime(_ sender: UIButton) {
         
         if (timeCoins - DECREASE_TIME_COINS < 0) { // Not enough coins
@@ -160,6 +176,7 @@ class liaKidsHomepage_ViewController: UIViewController {
         } else { // Has enough coins and time isnt full
             // 1: Decrease coins by 5
             timeCoins -= DECREASE_TIME_COINS
+            updateWallet()
             // 2: Show the new coin amount
             childWalletAmount.text = String(timeCoins)
             // 3: Increase the time
@@ -181,6 +198,7 @@ class liaKidsHomepage_ViewController: UIViewController {
         } else { // Has enough coins and time isnt full
             // 1: Decrease coins by 5
             timeCoins -= DECREASE_TIME_COINS
+            updateWallet()
             // 2: Show the new coin amount
             childWalletAmount.text = String(timeCoins)
             // 3: Increase the time
@@ -202,6 +220,7 @@ class liaKidsHomepage_ViewController: UIViewController {
         } else { // Has enough coins and time isnt full
             // 1: Decrease coins by 5
             timeCoins -= DECREASE_TIME_COINS
+            updateWallet()
             // 2: Show the new coin amount
             childWalletAmount.text = String(timeCoins)
             // 3: Increase the time
