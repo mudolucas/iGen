@@ -221,12 +221,15 @@
 				3FA80C3F22E7B93300B36517 /* SectionList.swift */,
 				661E975222EF6A0D00812A24 /* newColors.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
-				8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */,
-				8F23C8A422F2129400F9E0F6 /* Final.storyboard */,
-				8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */,
+<<<<<<< HEAD
 				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
 				AE992F2922F20F4D002F13D5 /* lia.storyboard */,
 				AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */,
+=======
+				8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */,
+				8F23C8A422F2129400F9E0F6 /* Final.storyboard */,
+				8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */,
+>>>>>>> 7cc1a84644e640df10c175069fbe0bbe1dc0ef69
 			);
 			path = iGen;
 			sourceTree = "<group>";
