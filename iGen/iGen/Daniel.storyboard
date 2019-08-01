@@ -125,7 +125,6 @@
                         <outlet property="educationTimer" destination="c6d-Ra-Jl3" id="utI-Ri-Xbm"/>
                         <outlet property="gamesTimer" destination="7O8-Hb-WqV" id="nM9-Jq-MHX"/>
                         <outlet property="productivityTimer" destination="39z-FR-3LT" id="byi-AK-Udk"/>
-                        <segue destination="QNC-sa-dZJ" kind="show" id="XLH-jw-HQE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4g-dN-v68" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,41 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5T-R5-s0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-297.10144927536237" y="-160.04464285714286"/>
-        </scene>
-        <!--Input Pin-->
-        <scene sceneID="cB5-8F-LaI">
-            <objects>
-                <viewController storyboardIdentifier="appPin" id="QNC-sa-dZJ" customClass="InputPin" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lBI-ad-tqh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PIN" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trZ-Iw-g2f">
-                                <rect key="frame" x="138" y="278" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvK-7N-9CE">
-                                <rect key="frame" x="132" y="342" width="150" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74509803919999995" green="0.91372549020000005" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Set Pin">
-                                    <color key="titleColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="8zF-kz-KWW"/>
-                    </view>
-                    <connections>
-                        <outlet property="view" destination="lBI-ad-tqh" id="9nK-JI-f7L"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uy1-B8-3of" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1664" y="-160"/>
         </scene>
     </scenes>
     <resources>
