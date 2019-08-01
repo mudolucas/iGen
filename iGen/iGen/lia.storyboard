@@ -180,6 +180,7 @@
                         <outlet property="minutesLeftEducationLABEL" destination="E5J-fU-7Z7" id="J1a-0H-hhC"/>
                         <outlet property="minutesLeftGameLABEL" destination="EEW-aS-e0x" id="Xh7-Dd-i8T"/>
                         <outlet property="minutesLeftProductivityLABEL" destination="cAH-lm-1er" id="F0B-Gu-XDg"/>
+                        <outlet property="productivityIncreaseBUTTON" destination="hDJ-DK-mIA" id="QXJ-LL-dhw"/>
                         <outlet property="productivityLabel" destination="1hR-pe-Lce" id="4yc-pC-YsD"/>
                         <outlet property="productivityStatusBar" destination="sog-Vz-aAT" id="JJ0-tZ-IMh"/>
                         <outlet property="timeLeftEducationLabel" destination="Bf8-rp-wDr" id="jw7-cp-7Fr"/>
