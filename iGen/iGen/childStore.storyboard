@@ -13,7 +13,7 @@
         <!--Child Store View Controller-->
         <scene sceneID="qHE-r5-Ve0">
             <objects>
-                <viewController id="YY0-w8-DSR" customClass="childStore_ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YY0-w8-DSR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="br6-Dk-HRu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +146,7 @@
         <!--Store-->
         <scene sceneID="R9D-Vj-1Ar">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BD7-zW-Aee" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="childstore" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BD7-zW-Aee" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Store" id="WE2-9Y-2hm"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
