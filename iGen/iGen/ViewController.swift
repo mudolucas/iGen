@@ -78,8 +78,8 @@ class ViewController: UIViewController {
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
                 
                 if error == nil {
-                     print("You have successfully logged in")
-                  //  self.getUserInfo()
+                    print("You have successfully logged in")
+                    self.getUserInfo()
                     if (self.kidMode == true) {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidDashboard")
                         self.present(vc!, animated: true, completion: nil)
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
             let userEmail = Auth.auth().currentUser?.email
             self.ref?.child("users/\(userID!)/email").setValue(userEmail)
             self.ref?.child("users/\(userID!)/uid").setValue(userID)
-            self.ref?.child("users/\(userID!)/kidMode").setValue(true)
+            self.ref?.child("users/\(userID!)/kidMode").setValue(false)
             self.ref?.child("users/\(userID!)/pin").setValue(pin)
             //self.ref?.child("users/\(userID!)/wallet").setValue(0)
         }
