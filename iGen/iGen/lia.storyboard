@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rm2-Z0-nyz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AK8-yR-dJ1">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -108,6 +108,9 @@
                                 <rect key="frame" x="339" y="701" width="55" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="plusButton"/>
+                                <connections>
+                                    <action selector="increaseProductivityTime:" destination="AK8-yR-dJ1" eventType="touchUpInside" id="ken-mk-VGS"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="productivityIconTommi" translatesAutoresizingMaskIntoConstraints="NO" id="bT5-02-3Vc">
                                 <rect key="frame" x="27" y="701" width="91" height="83"/>
@@ -177,7 +180,6 @@
                         <outlet property="minutesLeftEducationLABEL" destination="E5J-fU-7Z7" id="J1a-0H-hhC"/>
                         <outlet property="minutesLeftGameLABEL" destination="EEW-aS-e0x" id="Xh7-Dd-i8T"/>
                         <outlet property="minutesLeftProductivityLABEL" destination="cAH-lm-1er" id="F0B-Gu-XDg"/>
-                        <outlet property="productivityIncreaseBUTTON" destination="hDJ-DK-mIA" id="QEx-gU-5hg"/>
                         <outlet property="productivityLabel" destination="1hR-pe-Lce" id="4yc-pC-YsD"/>
                         <outlet property="productivityStatusBar" destination="sog-Vz-aAT" id="JJ0-tZ-IMh"/>
                         <outlet property="timeLeftEducationLabel" destination="Bf8-rp-wDr" id="jw7-cp-7Fr"/>
