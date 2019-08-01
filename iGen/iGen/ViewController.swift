@@ -77,10 +77,9 @@ class ViewController: UIViewController {
         } else {
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
                 
-                //self.kidMode = user?.user.dictionaryWithValues(forKeys: <#T##[String]#>) as? Bool
                 if error == nil {
                      print("You have successfully logged in")
-                    self.getUserInfo()
+                  //  self.getUserInfo()
                     if (self.kidMode == true) {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidDashboard")
                         self.present(vc!, animated: true, completion: nil)
@@ -88,7 +87,6 @@ class ViewController: UIViewController {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "parentDashboard")
                         self.present(vc!, animated: true, completion: nil)
                     }
-                    //   self.present(vc!, animated: true, completion: nil)
                     
                 } else {
                     //Tells the user that there is an error and then gets firebase to tell them the error
@@ -131,6 +129,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //Quests.loadAllQuestsForUser()
         // Do any additional setup after loading the view.
+        self.getUserInfo()
     }
     
     private func getUserInfo(){
