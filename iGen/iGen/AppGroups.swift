@@ -121,25 +121,25 @@ class AppGroups: UIViewController {
         view.endEditing(true)
     }
     @objc func setEducationUnlimited(){
-        userLimits.changeGameLimit(newGameLimit: "Unlimited")
+        userLimits.changeEducationLimit(newEducationLimit: "Unlimited")
         educationTimer.text = "Unlimited"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func setEducationBlocked(){
-        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        userLimits.changeEducationLimit(newEducationLimit: "Blocked")
         educationTimer.text = "Blocked"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func setProductivityUnlimited(){
-        userLimits.changeGameLimit(newGameLimit: "Unlimited")
+        userLimits.changeProductivityLimit(newProdcutivityLimit: "Unlimited")
         productivityTimer.text = "Unlimited"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func setProductivityBlocked(){
-        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        userLimits.changeProductivityLimit(newProdcutivityLimit: "Blocked")
         productivityTimer.text = "Blocked"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
