@@ -72,15 +72,17 @@ class liaKidsHomepage_ViewController: UIViewController {
         educationLabel.font = educationLabel.font.withSize(20)
         productivityLabel.font = productivityLabel.font.withSize(20)
         
-        // Setting up the kids wallet
-        getWallet() // Get from firebase
+        
+        //getWallet() // Get from firebase
         
         // Get the category time limits
         getCategoryTime() // Get from firebase
         
-        
-        
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Setting up the kids wallet
+        getWallet()
     }
     
     func gameSetupHelper (_ progress: Double, _ text: String) {
