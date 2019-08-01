@@ -92,7 +92,7 @@ class AppTimeSet{
         }
         else{
             self.ref = limitRef
-            userID = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
+            userID = Auth.auth().currentUser?.uid
             guard let key = ref?.child("CategoryLimits").childByAutoId().key else { return }
             self.ref?.updateChildValues(["uid": userID,
                                          "GameLimits": self.gameLimit,

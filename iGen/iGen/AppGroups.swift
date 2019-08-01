@@ -121,25 +121,25 @@ class AppGroups: UIViewController {
         view.endEditing(true)
     }
     @objc func setEducationUnlimited(){
-        userLimits.changeGameLimit(newGameLimit: "Unlimited")
+        userLimits.changeEducationLimit(newEducationLimit: "Unlimited")
         educationTimer.text = "Unlimited"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func setEducationBlocked(){
-        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        userLimits.changeEducationLimit(newEducationLimit: "Blocked")
         educationTimer.text = "Blocked"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func setProductivityUnlimited(){
-        userLimits.changeGameLimit(newGameLimit: "Unlimited")
+        userLimits.changeProductivityLimit(newProdcutivityLimit: "Unlimited")
         productivityTimer.text = "Unlimited"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
     }
     @objc func setProductivityBlocked(){
-        userLimits.changeGameLimit(newGameLimit: "Blocked")
+        userLimits.changeProductivityLimit(newProdcutivityLimit: "Blocked")
         productivityTimer.text = "Blocked"
         userLimits.saveChildLimits(limitRef: self.limitation_ref)
         view.endEditing(true)
@@ -155,7 +155,7 @@ class AppGroups: UIViewController {
     private func loadLimits(){
         let ref = Database.database().reference().child("CategoryLimits")
         let userID = Auth.auth().currentUser?.uid
-        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2")
+        let query = ref.queryOrdered(byChild: "uid").queryEqual(toValue: userID)
         query.observe(.value, with: { (snapshot) in
             for child in snapshot.children{
                 if let snapshot = child as? DataSnapshot{
