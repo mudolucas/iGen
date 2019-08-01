@@ -58,7 +58,7 @@
         <!--parentDashboard-->
         <scene sceneID="Gid-EC-AcB">
             <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" referencedIdentifier="parentDashboard" id="MEi-8R-jOq" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="parentDashboard" storyboardName="Dashboard" referencedIdentifier="parentDashboard" id="MEi-8R-jOq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqG-bP-C5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1619" y="1003"/>

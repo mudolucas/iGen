@@ -196,11 +196,13 @@
             </objects>
             <point key="canvasLocation" x="1578" y="809"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Quests-->
         <scene sceneID="l8Q-nx-rNu">
             <objects>
                 <navigationController storyboardIdentifier="quests" automaticallyAdjustsScrollViewInsets="NO" id="WoJ-bE-B2j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Quests" id="VnS-Jq-IAB"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccx-DI-jgu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
