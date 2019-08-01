@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25CE7E22F212190098A850 /* Settings.storyboard */; };
+		3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8022F2122D0098A850 /* settingsKidMode.swift */; };
+		3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8522F34D950098A850 /* TabViewController.swift */; };
 		3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */; };
 		3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D122EA5068005F4ACA /* Sara.storyboard */; };
 		3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D522EA5248005F4ACA /* Daniel.storyboard */; };
@@ -20,12 +23,15 @@
 		553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D504022EA5CCB00EFFCC2 /* Slide.swift */; };
 		553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 553D504222EA5D1200EFFCC2 /* Slide.xib */; };
 		559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559551E122EB68A6003E3FEF /* KidViewController.swift */; };
+		55C3773A22F357EB002F29C8 /* childStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C3773922F357EB002F29C8 /* childStore.storyboard */; };
 		56A0F88E2E6654645BEC27AC /* Pods_iGenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BA21222B5E094F14BCB6B5 /* Pods_iGenUITests.framework */; };
 		661E971322EBD2E300812A24 /* AppGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E971222EBD2E300812A24 /* AppGroups.swift */; };
 		661E975122EF55F900812A24 /* AppTimeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E975022EF55F900812A24 /* AppTimeSet.swift */; };
 		661E975322EF6A0D00812A24 /* newColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E975222EF6A0D00812A24 /* newColors.swift */; };
 		67CC08621F84D8FD3E707DE5 /* Pods_iGenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */; };
 		8F06438D22EF93A5001CF78D /* editQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F06438C22EF93A5001CF78D /* editQuestViewController.swift */; };
+		8F23C8A322F2116A00F9E0F6 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */; };
+		8F23C8A722F2186600F9E0F6 /* parentDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */; };
 		8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */; };
 		8F77938E22F0C54C0026A6A6 /* kidsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */; };
 		8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F516322E2669800623B34 /* AppDelegate.swift */; };
@@ -36,6 +42,7 @@
 		8F8F518422E2669A00623B34 /* iGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F518322E2669A00623B34 /* iGenUITests.swift */; };
 		AE992F2A22F20F4D002F13D5 /* lia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE992F2922F20F4D002F13D5 /* lia.storyboard */; };
 		AE992F2C22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */; };
+		AE992F2E22F38B39002F13D5 /* childStore_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE992F2D22F38B39002F13D5 /* childStore_ViewController.swift */; };
 		FB68FEEFE2B0808B94799EC3 /* Pods_iGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +69,9 @@
 		18BA21222B5E094F14BCB6B5 /* Pods_iGenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		226A9A9229CB0F8EB5FA0FEF /* Pods-iGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGen.release.xcconfig"; path = "Target Support Files/Pods-iGen/Pods-iGen.release.xcconfig"; sourceTree = "<group>"; };
 		2E4ADB65A4B790304DD751A0 /* Pods-iGenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.release.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F25CE7E22F212190098A850 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		3F25CE8022F2122D0098A850 /* settingsKidMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsKidMode.swift; sourceTree = "<group>"; };
+		3F25CE8522F34D950098A850 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
 		3F3A11D122EA5068005F4ACA /* Sara.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sara.storyboard; sourceTree = "<group>"; };
 		3F3A11D522EA5248005F4ACA /* Daniel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Daniel.storyboard; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 		553D504022EA5CCB00EFFCC2 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		553D504222EA5D1200EFFCC2 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		559551E122EB68A6003E3FEF /* KidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidViewController.swift; sourceTree = "<group>"; };
+		55C3773922F357EB002F29C8 /* childStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = childStore.storyboard; sourceTree = "<group>"; };
 		6481EA1BE883923E34359232 /* Pods-iGenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.debug.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		661E971222EBD2E300812A24 /* AppGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroups.swift; sourceTree = "<group>"; };
 		661E975022EF55F900812A24 /* AppTimeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTimeSet.swift; sourceTree = "<group>"; };
@@ -82,6 +93,8 @@
 		66FCB0F6BAFC8FE7802F9F82 /* Pods-iGenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenUITests.release.xcconfig"; path = "Target Support Files/Pods-iGenUITests/Pods-iGenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D124EA656C4C5FC537588DF /* Pods_iGenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F06438C22EF93A5001CF78D /* editQuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editQuestViewController.swift; sourceTree = "<group>"; };
+		8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentDashboardViewController.swift; sourceTree = "<group>"; };
 		8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHelper.swift; sourceTree = "<group>"; };
 		8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kidsTableViewController.swift; sourceTree = "<group>"; };
 		8F8F516022E2669800623B34 /* iGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +111,7 @@
 		8F8F518522E2669A00623B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE992F2922F20F4D002F13D5 /* lia.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = lia.storyboard; sourceTree = "<group>"; };
 		AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liaKidsHomepage_ViewController.swift; sourceTree = "<group>"; };
+		AE992F2D22F38B39002F13D5 /* childStore_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = childStore_ViewController.swift; sourceTree = "<group>"; };
 		CCC0FA25E6417F6ABC80C8D8 /* Pods_iGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -188,12 +202,17 @@
 			isa = PBXGroup;
 			children = (
 				8F8F516322E2669800623B34 /* AppDelegate.swift */,
+				55C3773922F357EB002F29C8 /* childStore.storyboard */,
+				AE992F2D22F38B39002F13D5 /* childStore_ViewController.swift */,
 				8F8F516722E2669800623B34 /* Main.storyboard */,
 				3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */,
 				559551E122EB68A6003E3FEF /* KidViewController.swift */,
 				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
+				3F25CE8522F34D950098A850 /* TabViewController.swift */,
 				553D503B22EA570D00EFFCC2 /* Tutotrial Code */,
 				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
+				3F25CE7E22F212190098A850 /* Settings.storyboard */,
+				3F25CE8022F2122D0098A850 /* settingsKidMode.swift */,
 				661E971222EBD2E300812A24 /* AppGroups.swift */,
 				661E975022EF55F900812A24 /* AppTimeSet.swift */,
 				3F83306722E6192C0067CBFB /* ViewController.swift */,
@@ -208,6 +227,8 @@
 				3FA80C3F22E7B93300B36517 /* SectionList.swift */,
 				661E975222EF6A0D00812A24 /* newColors.swift */,
 				8F4BEA1822E8CF76006A9CFB /* DesignHelper.swift */,
+				8F23C8A222F2116A00F9E0F6 /* Dashboard.storyboard */,
+				8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */,
 				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
 				AE992F2922F20F4D002F13D5 /* lia.storyboard */,
 				AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */,
@@ -348,7 +369,10 @@
 				AE992F2A22F20F4D002F13D5 /* lia.storyboard in Resources */,
 				3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */,
 				8F8F516B22E2669A00623B34 /* Assets.xcassets in Resources */,
+				3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */,
 				8F8F516922E2669800623B34 /* Main.storyboard in Resources */,
+				55C3773A22F357EB002F29C8 /* childStore.storyboard in Resources */,
+				8F23C8A322F2116A00F9E0F6 /* Dashboard.storyboard in Resources */,
 				553D504322EA5D1200EFFCC2 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +492,7 @@
 				3F83306822E6192C0067CBFB /* ViewController.swift in Sources */,
 				8F77938E22F0C54C0026A6A6 /* kidsTableViewController.swift in Sources */,
 				8F06438D22EF93A5001CF78D /* editQuestViewController.swift in Sources */,
+				8F23C8A722F2186600F9E0F6 /* parentDashboardViewController.swift in Sources */,
 				8F4BEA1922E8CF76006A9CFB /* DesignHelper.swift in Sources */,
 				3FA80C4022E7B93300B36517 /* SectionList.swift in Sources */,
 				553D504122EA5CCB00EFFCC2 /* Slide.swift in Sources */,
@@ -475,7 +500,10 @@
 				8F8F516422E2669800623B34 /* AppDelegate.swift in Sources */,
 				661E975322EF6A0D00812A24 /* newColors.swift in Sources */,
 				3FA80C3E22E7B91900B36517 /* addQuestViewController.swift in Sources */,
+				3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */,
+				AE992F2E22F38B39002F13D5 /* childStore_ViewController.swift in Sources */,
 				559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */,
+				3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

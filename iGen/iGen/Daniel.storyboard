@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XIS-TI-WGA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yp1-2Q-15s">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--App Groups-->
+        <!--App Time Limits-->
         <scene sceneID="trD-2U-Xhg">
             <objects>
                 <viewController id="XIS-TI-WGA" customClass="AppGroups" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,6 +120,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ByR-PI-3cu"/>
                     </view>
+                    <navigationItem key="navigationItem" title="App Time Limits" id="lnl-bK-aBx"/>
                     <connections>
                         <outlet property="educationTimer" destination="c6d-Ra-Jl3" id="utI-Ri-Xbm"/>
                         <outlet property="gamesTimer" destination="7O8-Hb-WqV" id="nM9-Jq-MHX"/>
@@ -127,6 +128,59 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4g-dN-v68" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.04347826086962" y="-160.04464285714286"/>
+        </scene>
+        <!--App Groups-->
+        <scene sceneID="Prb-Nq-a75">
+            <objects>
+                <viewController storyboardIdentifier="inputPin" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E65-0g-UxP" customClass="AppGroups" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mnv-6R-PMb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIT-1u-2vO">
+                                <rect key="frame" x="113" y="148" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDi-dr-eNr">
+                                <rect key="frame" x="146" y="239" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b31-8A-Us6"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputPin" destination="dIT-1u-2vO" id="RNW-Pb-0cj"/>
+                        <outlet property="pinButton" destination="vDi-dr-eNr" id="bxf-g1-yNA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YLV-kL-VsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571.0144927536232" y="-160.04464285714286"/>
+        </scene>
+        <!--App Time-->
+        <scene sceneID="FhE-jX-Uz7">
+            <objects>
+                <navigationController storyboardIdentifier="apptime" automaticallyAdjustsScrollViewInsets="NO" id="yp1-2Q-15s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="App Time" id="fxz-km-phy"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHI-Ht-VHY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XIS-TI-WGA" kind="relationship" relationship="rootViewController" id="3GS-Th-XNu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5T-R5-s0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-297.10144927536237" y="-160.04464285714286"/>
         </scene>

@@ -22,14 +22,11 @@ class kidQuestTableOutlets: UITableViewCell{
 class kidsTableViewController: UITableViewController{
     private var tableData:[Quests] = []
     private var parentPin = String()
+    private var userReference: DatabaseReference?
+    private var wallet = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
@@ -85,6 +82,8 @@ class kidsTableViewController: UITableViewController{
             if let inputedPin = alert.textFields?[0].text as? String {
                 if inputedPin == self.parentPin{
                     self.tableData[indexPath.row].quest_ref?.updateChildValues(["status": Status.completed.description])
+                    let updatedWallet:Int = self.wallet + self.tableData[indexPath.row].reward
+                    self.userReference?.updateChildValues(["wallet":updatedWallet])
                     self.tableView.reloadData()
                 }
             }
@@ -129,7 +128,11 @@ class kidsTableViewController: UITableViewController{
                 if let pin = value["pin"] as? String{
                     loadedPin = pin
                 }
+                if let wallet = value["wallet"] as? Int{
+                    self.wallet = wallet
+                }
             }
+            self.userReference = snapshot.ref
             self.parentPin = loadedPin
         }) { (error) in
             print(error.localizedDescription)
