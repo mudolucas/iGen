@@ -121,7 +121,7 @@ class ViewController: UIViewController {
             self.ref?.child("users/\(userID!)/uid").setValue(userID)
             self.ref?.child("users/\(userID!)/kidMode").setValue(true)
             self.ref?.child("users/\(userID!)/pin").setValue(pin)
-            self.ref?.child("users/\(userID!)/wallet").setValue(0)
+            //self.ref?.child("users/\(userID!)/wallet").setValue(0)
         }
     }
 
