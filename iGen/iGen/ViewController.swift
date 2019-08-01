@@ -119,8 +119,9 @@ class ViewController: UIViewController {
             let userEmail = Auth.auth().currentUser?.email
             self.ref?.child("users/\(userID!)/email").setValue(userEmail)
             self.ref?.child("users/\(userID!)/uid").setValue(userID)
-            self.ref?.child("users/\(userID!)/parentMode").setValue(true)
+            self.ref?.child("users/\(userID!)/kidMode").setValue(true)
             self.ref?.child("users/\(userID!)/pin").setValue(pin)
+            self.ref?.child("users/\(userID!)/wallet").setValue(0)
         }
     }
 

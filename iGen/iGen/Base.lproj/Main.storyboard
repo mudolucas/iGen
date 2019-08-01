@@ -118,7 +118,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="tutorial" storyboardName="Sara" referencedIdentifier="tutorial" id="iCh-Xb-zSG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZr-Uh-SFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1199" y="737"/>
+            <point key="canvasLocation" x="2495" y="118"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ubs-Se-k1K">
@@ -144,6 +144,7 @@
                                 </state>
                                 <connections>
                                     <action selector="setPinPressed:" destination="aSj-Al-zXE" eventType="touchUpInside" id="hsK-UJ-32w"/>
+                                    <segue destination="iCh-Xb-zSG" kind="show" id="Xku-6k-SRY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjE-bz-6AU">
