@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YY0-w8-DSR">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BD7-zW-Aee">
+>>>>>>> b4f9c3a8c6bc088f19221d997493ea842cdf5566
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+<<<<<<< HEAD
+        <!--Child Store View Controller-->
+        <scene sceneID="qHE-r5-Ve0">
+            <objects>
+                <viewController id="YY0-w8-DSR" customClass="childStore_ViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
+=======
+        <!--Store-->
+        <scene sceneID="qHE-r5-Ve0">
+            <objects>
+                <viewController storyboardIdentifier="childstore" id="YY0-w8-DSR" sceneMemberID="viewController">
+>>>>>>> b4f9c3a8c6bc088f19221d997493ea842cdf5566
+                    <view key="view" contentMode="scaleToFill" id="br6-Dk-HRu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tommiKidPage" translatesAutoresizingMaskIntoConstraints="NO" id="GqC-wT-9pX">
+                                <rect key="frame" x="66" y="177" width="282" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="walletCoins" translatesAutoresizingMaskIntoConstraints="NO" id="XIc-Q6-aMc">
+                                <rect key="frame" x="143" y="116" width="128" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGn-ie-gZ4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Store" id="ahx-hV-efo"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Store!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-eK-Mu9">
+                                <rect key="frame" x="100" y="211" width="98" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w02-Ai-jsn">
+                                <rect key="frame" x="189" y="128" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hatTommi" translatesAutoresizingMaskIntoConstraints="NO" id="Xa7-QF-MLk">
+                                <rect key="frame" x="46" y="458" width="143" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mittensTommi" translatesAutoresizingMaskIntoConstraints="NO" id="FqW-sF-Mj1">
+                                <rect key="frame" x="232" y="458" width="143" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="glassesTommi" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-ZR-bOj">
+                                <rect key="frame" x="46" y="630" width="143" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mustacheTommi" translatesAutoresizingMaskIntoConstraints="NO" id="W0v-gy-gkT">
+                                <rect key="frame" x="232" y="630" width="143" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-KO-cA0">
+                                <rect key="frame" x="78" y="557" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="hatClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="ACV-rb-WCX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgT-cg-G5h">
+                                <rect key="frame" x="264" y="557" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="mittensClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="XAP-cB-Lor"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO2-4h-eYv">
+                                <rect key="frame" x="86" y="566" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2N-yd-bPK">
+                                <rect key="frame" x="273" y="565" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oza-qD-Ttj">
+                                <rect key="frame" x="78" y="731" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="glassesClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="vXj-AN-EEU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuS-R3-a28">
+                                <rect key="frame" x="86" y="740" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aji-VF-xwd">
+                                <rect key="frame" x="262" y="731" width="78" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buyButton"/>
+                                <connections>
+                                    <action selector="mustacheClickButton:" destination="YY0-w8-DSR" eventType="touchUpInside" id="Ra3-M1-fQ5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-Ut-f50">
+                                <rect key="frame" x="269" y="740" width="65" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XSR-Ce-mUy"/>
+                    </view>
+<<<<<<< HEAD
+                    <connections>
+                        <outlet property="childWallet" destination="w02-Ai-jsn" id="MqG-1e-QCt"/>
+                        <outlet property="glassesButtonText" destination="LuS-R3-a28" id="0Us-f0-P3z"/>
+                        <outlet property="glassesBuyButton" destination="oza-qD-Ttj" id="fSR-9c-Qui"/>
+                        <outlet property="hatButtonText" destination="SO2-4h-eYv" id="MHa-2N-SbX"/>
+                        <outlet property="hatBuyButton" destination="dDS-KO-cA0" id="ZJO-fL-gT2"/>
+                        <outlet property="mittensButtonText" destination="c2N-yd-bPK" id="5lI-nc-26x"/>
+                        <outlet property="mittensBuyButton" destination="RgT-cg-G5h" id="6u7-PP-fnY"/>
+                        <outlet property="mustacheButtonText" destination="tRw-Ut-f50" id="gKe-0n-mng"/>
+                        <outlet property="mustacheBuyButton" destination="Aji-VF-xwd" id="Ma6-GB-U3w"/>
+                    </connections>
+=======
+                    <navigationItem key="navigationItem" title="Store" id="Mzy-Q9-96w"/>
+>>>>>>> b4f9c3a8c6bc088f19221d997493ea842cdf5566
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UmD-L3-67p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.85507246376824" y="-23.4375"/>
+        </scene>
+        <!--Store-->
+        <scene sceneID="R9D-Vj-1Ar">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BD7-zW-Aee" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Store" id="WE2-9Y-2hm"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wef-pj-K6c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YY0-w8-DSR" kind="relationship" relationship="rootViewController" id="S6z-Bx-Sls"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJN-Ck-WBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="-23.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buyButton" width="374" height="184"/>
+        <image name="glassesTommi" width="526" height="516"/>
+        <image name="hatTommi" width="526" height="522"/>
+        <image name="mittensTommi" width="520" height="518"/>
+        <image name="mustacheTommi" width="520" height="514"/>
+        <image name="tommiKidPage" width="586" height="578"/>
+        <image name="walletCoins" width="906" height="326"/>
+    </resources>
+</document>

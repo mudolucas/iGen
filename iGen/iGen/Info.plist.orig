@@ -24,10 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 <<<<<<< HEAD
-	<string>Main</string>
-=======
 	<string>childStore</string>
->>>>>>> 55640e27902afc52751e837f8b6e50423f03d198
+=======
+	<string>Main</string>
+>>>>>>> b4f9c3a8c6bc088f19221d997493ea842cdf5566
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
