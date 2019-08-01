@@ -18,9 +18,9 @@ class AppTimeSet{
     var gameLimit: String
     var educationLimit: String
     var productivityLimit: String
-//    var gameLimitInt: Int
-//    var educationLimitInt: Int
-//    var productivityLimitInt: Int
+    var gameLimitInt: Int
+    var educationLimitInt: Int
+    var productivityLimitInt: Int
     let limitRef: DatabaseReference?
     private var ref: DatabaseReference?
     init(gameLimit: String, educationLimit: String, productivityLimit: String) {
@@ -28,9 +28,9 @@ class AppTimeSet{
         self.educationLimit = educationLimit
         self.productivityLimit = productivityLimit
         self.limitRef = nil
-//        self.gameLimitInt = 0
-//        self.educationLimitInt = 0
-//        self.productivityLimitInt = 0
+        self.gameLimitInt = 0
+        self.educationLimitInt = 0
+        self.productivityLimitInt = 0
     }
     
     init?(snapshot: DataSnapshot){
@@ -38,36 +38,41 @@ class AppTimeSet{
             let savedLimits = snapshot.value as?[String: AnyObject],
             let gameLimit: String = savedLimits["GameLimits"] as? String,
             let educationLimit: String = savedLimits["EducationLimits"] as? String,
-            let productivityLimit: String = savedLimits["ProductivityLimits"] as? String else{
+            let productivityLimit: String = savedLimits["ProductivityLimits"] as? String,
+            let gameLimitInt: Int = savedLimits["GameTimeInInt"] as? Int,
+            let educationLimitInt: Int = savedLimits["EducationTimeInInt"] as? Int,
+            let productivityLimitInt: Int = savedLimits["ProductivityTimeInInt"] as? Int
+        else{
                 return nil
         }
         self.limitRef = snapshot.ref
         self.gameLimit = gameLimit
         self.educationLimit = educationLimit
         self.productivityLimit = productivityLimit
+        self.gameLimitInt = gameLimitInt
+        self.educationLimitInt = educationLimitInt
+        self.productivityLimitInt = productivityLimitInt
     }
     
     func changeGameLimit(newGameLimit: String){
         self.gameLimit = newGameLimit
-        let limit = newGameLimit.prefix(2)
-        let lim = Int(limit)
-//        self.gameLimitInt = lim!
+        let totalTime = calculateTotalLim(limit: newGameLimit)
+        self.gameLimitInt = totalTime
     }
     
     func changeEducationLimit(newEducationLimit: String){
         self.educationLimit = newEducationLimit
-        let limit = newEducationLimit.prefix(2)
-        let lim = Int(limit)
-//        self.educationLimitInt = lim!
+        let totalTime = calculateTotalLim(limit: newEducationLimit)
+        self.educationLimitInt = totalTime
     }
     
     func changeProductivityLimit(newProdcutivityLimit: String){
         self.productivityLimit = newProdcutivityLimit
-        let limit = newProdcutivityLimit.prefix(2)
-        let lim = Int(limit)
-//        self.productivityLimitInt = lim!
+        let totalTime = calculateTotalLim(limit: newProdcutivityLimit)
+        self.productivityLimitInt = totalTime
     }
     
+  
     func saveChildLimits(limitRef:DatabaseReference?){
         var userID:String? = ""
         if (limitRef == nil){
@@ -78,6 +83,9 @@ class AppTimeSet{
                           "GameLimits": self.gameLimit,
                           "EducationLimits": self.educationLimit,
                           "ProductivityLimits": self.productivityLimit,
+                          "GameTimeInInt": self.gameLimitInt,
+                          "EducationTimeInInt": self.educationLimitInt,
+                          "ProductivityTimeInInt": self.productivityLimitInt
                 ] as [String : Any]
             let limitUpdate = ["/CategoryLimits/\(key)": limits]
             self.ref?.updateChildValues(limitUpdate)
@@ -89,7 +97,22 @@ class AppTimeSet{
             self.ref?.updateChildValues(["uid": userID,
                                          "GameLimits": self.gameLimit,
                                          "EducationLimits": self.educationLimit,
-                                         "ProductivityLimits": self.productivityLimit])
+                                         "ProductivityLimits": self.productivityLimit,
+                                         "GameTimeInInt": self.gameLimitInt,
+                                         "EducationTimeInInt": self.educationLimitInt,
+                                         "ProductivityTimeInInt": self.productivityLimitInt])
         }
     }
+   
+    private func calculateTotalLim(limit: String) -> Int{
+        let lim = limit.prefix(2)
+        let stringHour = Int(lim)
+        let hour = stringHour! * 60
+        let it = limit.suffix(2)
+        let stringMin = Int(it)
+        let min = stringMin!
+        let total = hour + min
+        return total
+    }
+    
 }
