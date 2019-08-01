@@ -43,8 +43,12 @@ class childStore_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWallet()
+        self.navigationItem.title = "Tommi's Store"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getWallet()
     }
     
     @IBAction func mustacheClickButton(_ sender: Any) {
@@ -83,8 +87,8 @@ class childStore_ViewController: UIViewController {
     // Get the child's wallet amount
     func getWallet() {
         let ref = Database.database().reference()
-        //let userID = Auth.auth().currentUser?.uid
-        let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
+        let userID = Auth.auth().currentUser?.uid
+        //let userID:String? = "IVDw4blq8qgyJ6fKQxDoVb9h6YZ2"
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             if let value = snapshot.value as? [String:Any]{
