@@ -68,6 +68,8 @@ class settingsKidMode: UIViewController {
                     if inputedPin == self.parentPin{
                         self.kidSwitch.setOn(false, animated: true)
                         self.updateUserDictionary(false)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidStoryboardSettings")
+                        self.present(vc!, animated: true, completion: nil)
                     } else {
                         self.kidSwitch.setOn(true, animated: true)
                     }
