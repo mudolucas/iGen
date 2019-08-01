@@ -77,7 +77,6 @@ class ViewController: UIViewController {
         } else {
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
                 
-                //self.kidMode = user?.user.dictionaryWithValues(forKeys: <#T##[String]#>) as? Bool
                 if error == nil {
                      print("You have successfully logged in")
                     self.getUserInfo()
@@ -88,7 +87,6 @@ class ViewController: UIViewController {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "parentDashboard")
                         self.present(vc!, animated: true, completion: nil)
                     }
-                    //   self.present(vc!, animated: true, completion: nil)
                     
                 } else {
                     //Tells the user that there is an error and then gets firebase to tell them the error

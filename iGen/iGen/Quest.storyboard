@@ -314,7 +314,7 @@
             </objects>
             <point key="canvasLocation" x="1578" y="1488"/>
         </scene>
-        <!--Tommi Quests-->
+        <!--Quests-->
         <scene sceneID="5SP-Ff-PAd">
             <objects>
                 <tableViewController id="i94-2Y-t41" customClass="kidsTableViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
@@ -369,17 +369,19 @@
                             <outlet property="delegate" destination="i94-2Y-t41" id="zqI-Yv-leh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tommi Quests" id="n6t-jw-HI0"/>
+                    <navigationItem key="navigationItem" title="Quests" id="n6t-jw-HI0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3u7-LY-0wq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1676.8115942028987" y="2397.3214285714284"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Quests-->
         <scene sceneID="Shs-ei-fZ9">
             <objects>
                 <navigationController storyboardIdentifier="kidQuest" automaticallyAdjustsScrollViewInsets="NO" id="2wQ-bf-PGv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Quests" id="Vii-Yo-3Mw"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9qJ-6y-oOM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
