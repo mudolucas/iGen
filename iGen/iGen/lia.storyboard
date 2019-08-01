@@ -66,7 +66,7 @@
                                 <color key="trackTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-FT-VLc">
-                                <rect key="frame" x="205" y="509" width="88" height="21"/>
+                                <rect key="frame" x="243" y="509" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -83,16 +83,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMF-U5-6zl">
+                                <rect key="frame" x="137" y="221" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-Od-Ak4">
+                                <rect key="frame" x="143" y="617" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" red="0.74509803921568629" green="0.9137254901960784" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-rp-wDr">
+                                <rect key="frame" x="243" y="627" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mZ-18-G0D">
+                                <rect key="frame" x="339" y="577" width="55" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plusButton"/>
+                                <connections>
+                                    <action selector="increaseEducationTime:" destination="AK8-yR-dJ1" eventType="touchUpInside" id="t8y-tM-me7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ysv-CW-8s3"/>
                     </view>
                     <connections>
                         <outlet property="childWalletAmount" destination="QLA-SV-lEE" id="npA-Uu-Dzd"/>
+                        <outlet property="educationIncreaseBUTTON" destination="1mZ-18-G0D" id="Iyw-ic-0eL"/>
                         <outlet property="educationLabel" destination="9t4-IO-CHP" id="09R-c6-GUq"/>
+                        <outlet property="educationStatusBar" destination="bN3-Od-Ak4" id="xNM-oL-V1U"/>
                         <outlet property="gameIncreaseBUTTON" destination="PLd-Xr-gPY" id="Jgz-0y-d0a"/>
                         <outlet property="gameStatusBar" destination="nnS-Ou-gdS" id="bjq-xT-6qi"/>
                         <outlet property="gamesLabel" destination="htC-zt-lpl" id="HSg-gB-1u4"/>
+                        <outlet property="timeLeftEducationLabel" destination="Bf8-rp-wDr" id="jw7-cp-7Fr"/>
                         <outlet property="timeLeftGamesLabel" destination="ktE-FT-VLc" id="qSd-F6-g5y"/>
                     </connections>
                 </viewController>
