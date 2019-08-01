@@ -32,10 +32,12 @@ class liaKidsHomepage_ViewController: UIViewController {
     
     
     // ***** EDUCATION VARIABLES ******
-    var currentEducationTime = 0.0
-    var maxEducationTime = -1.0
+    var currentEducationTime = 10.0
+    var maxEducationTime = 90.0
     @IBOutlet weak var educationLabel: UILabel!
-    
+    @IBOutlet weak var educationStatusBar: UIProgressView!
+    @IBOutlet weak var timeLeftEducationLabel: UILabel!
+    @IBOutlet weak var educationIncreaseBUTTON: UIButton!
     
     
     
@@ -45,9 +47,11 @@ class liaKidsHomepage_ViewController: UIViewController {
         
         // Setting the size of the status bars
         gameStatusBar.transform = gameStatusBar.transform.scaledBy(x: 1, y: 10)
+        educationStatusBar.transform = educationStatusBar.transform.scaledBy(x: 1, y: 10)
         
         // Setting up the font size of category labels
         gamesLabel.font = gamesLabel.font.withSize(20)
+        educationLabel.font = educationLabel.font.withSize(20)
         
         // Setting up the kids wallet viewing
         childWalletAmount.text = String(timeCoins)
@@ -65,6 +69,18 @@ class liaKidsHomepage_ViewController: UIViewController {
             gameSetupHelper((currentGameTime / maxGameTime), String(toInt(currentGameTime)))
         }
         
+        // SETTING UP THE EDUCATION CATEGORY
+        if (maxEducationTime == -1.0) {
+            educationIncreaseBUTTON.isHidden = true;
+            educationSetupHelper(1.0, "Unlimited")
+            
+        } else if (maxEducationTime == -10.0) {
+            educationIncreaseBUTTON.isHidden = true;
+            educationSetupHelper(0.0, "Blocked")
+        } else {
+            educationSetupHelper((currentEducationTime / maxEducationTime), String(toInt(currentEducationTime)))
+        }
+        
         
         
     }
@@ -72,6 +88,13 @@ class liaKidsHomepage_ViewController: UIViewController {
     func gameSetupHelper (_ progress: Double, _ text: String) {
         gameStatusBar.progress = Float(progress)
         timeLeftGamesLabel.text = text
+    }
+    
+    func educationSetupHelper(_ progress: Double, _ text: String) {
+        educationStatusBar.progress = Float(progress)
+        timeLeftEducationLabel.text = text
+        
+        
     }
     
     
@@ -93,12 +116,30 @@ class liaKidsHomepage_ViewController: UIViewController {
             gameStatusBar.setProgress(Float(currentGameTime / maxGameTime), animated: true)
             // 5: Update the amount of time left
             timeLeftGamesLabel.text = String(toInt(currentGameTime))
-            
         }
     }
     
     
-   
+    @IBAction func increaseEducationTime(_ sender: Any) {
+        if (timeCoins - DECREASE_TIME_COINS < 0) { // Not enough coins
+            // Throw alert that child doesnt have enough time coins
+            alertChildCoins()
+        } else if (currentGameTime + INCREASE_CATEGORY_TIME > maxGameTime) {
+            alertChildFull()
+        } else { // Has enough coins and time isnt full
+            // 1: Decrease coins by 5
+            timeCoins -= DECREASE_TIME_COINS
+            // 2: Show the new coin amount
+            childWalletAmount.text = String(timeCoins)
+            // 3: Increase the time
+            currentEducationTime = currentEducationTime + INCREASE_CATEGORY_TIME
+            // 4: Update the progress bar
+            educationStatusBar.setProgress(Float(currentEducationTime / maxEducationTime), animated: true)
+            // 5: Update the amount of time left
+            timeLeftEducationLabel.text = String(toInt(currentEducationTime))
+        }
+    }
+    
     
     
     
