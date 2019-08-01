@@ -105,13 +105,22 @@ class AppTimeSet{
     }
    
     private func calculateTotalLim(limit: String) -> Int{
+        var total: Int
         let lim = limit.prefix(2)
-        let stringHour = Int(lim)
-        let hour = stringHour! * 60
-        let it = limit.suffix(2)
-        let stringMin = Int(it)
-        let min = stringMin!
-        let total = hour + min
+        if (lim == "Un"){
+            total = -1
+        }
+        else if (lim == "Bl"){
+            total = -10
+        }
+        else{
+            let stringHour = Int(lim)
+            let hour = stringHour! * 60
+            let it = limit.suffix(2)
+            let stringMin = Int(it)
+            let min = stringMin!
+            total = hour + min
+        }
         return total
     }
     
