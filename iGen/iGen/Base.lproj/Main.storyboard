@@ -105,12 +105,29 @@
                         <outlet property="loginEmail" destination="vzW-hb-sQI" id="pLq-8d-1g3"/>
                         <outlet property="loginPassword" destination="fBk-aJ-4xZ" id="Xw5-ft-qnO"/>
                         <outlet property="view" destination="kMb-0V-dbP" id="FjS-3h-I0h"/>
-                        <segue destination="aSj-Al-zXE" kind="show" id="s1W-Cv-JPn"/>
+                        <segue destination="OJM-O3-0n0" kind="show" id="VPK-57-hWF"/>
+                        <segue destination="zkQ-qr-zog" kind="show" id="Ls7-gC-Nk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuG-T7-4wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="829"/>
+            <point key="canvasLocation" x="354" y="879"/>
+        </scene>
+        <!--parentDashboard-->
+        <scene sceneID="i7P-Xy-D0b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" referencedIdentifier="parentDashboard" id="OJM-O3-0n0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81q-OY-R8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="746"/>
+        </scene>
+        <!--kidDashboard-->
+        <scene sceneID="uQ1-fa-7aZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="kidDashboard" storyboardName="lia" referencedIdentifier="kidDashboard" id="zkQ-qr-zog" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gsE-2z-qZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040" y="1032"/>
         </scene>
         <!--tutorial-->
         <scene sceneID="IdB-AN-fM9">
@@ -238,7 +255,4 @@
             <point key="canvasLocation" x="-297" y="110"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="s1W-Cv-JPn"/>
-    </inferredMetricsTieBreakers>
 </document>
