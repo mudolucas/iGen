@@ -135,12 +135,13 @@
         <scene sceneID="FhE-jX-Uz7">
             <objects>
                 <navigationController storyboardIdentifier="apptime" automaticallyAdjustsScrollViewInsets="NO" id="yp1-2Q-15s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="App Time" id="fxz-km-phy"/>
+                    <tabBarItem key="tabBarItem" title="App Time" image="clock" id="fxz-km-phy"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EHI-Ht-VHY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.85098039219999999" green="0.94901960780000005" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -156,6 +157,7 @@
         <image name="1200x630wa" width="439" height="453"/>
         <image name="4-512" width="512" height="512"/>
         <image name="bluey" width="171" height="173"/>
+        <image name="clock" width="24" height="24"/>
         <image name="dims" width="201" height="203"/>
         <image name="game-1" width="165" height="111"/>
         <image name="output-onlinepngtools-3" width="558" height="519"/>

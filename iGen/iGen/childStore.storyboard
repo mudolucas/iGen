@@ -140,12 +140,13 @@
         <scene sceneID="R9D-Vj-1Ar">
             <objects>
                 <navigationController storyboardIdentifier="childstore" automaticallyAdjustsScrollViewInsets="NO" id="BD7-zW-Aee" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" id="WE2-9Y-2hm"/>
+                    <tabBarItem key="tabBarItem" title="Store" image="store" id="WE2-9Y-2hm"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wef-pj-K6c">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.85098039219999999" green="0.94901960780000005" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -163,6 +164,7 @@
         <image name="hatTommi" width="526" height="522"/>
         <image name="mittensTommi" width="520" height="518"/>
         <image name="mustacheTommi" width="520" height="514"/>
+        <image name="store" width="24" height="24"/>
         <image name="tommiKidPage" width="586" height="578"/>
         <image name="walletCoins" width="906" height="326"/>
     </resources>
