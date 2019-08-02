@@ -94,6 +94,11 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
         titleTextField.textColor = DesignHelper.colorDarkestBlue()
         rewardTextField.textColor = DesignHelper.colorDarkestBlue()
         deadlineTextField.placeholder = "Pick a date"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let myString = formatter.string(from: Date())
+        deadlineTextField.text = myString
     }
  
 }

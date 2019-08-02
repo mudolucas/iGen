@@ -85,7 +85,7 @@ class QuestsViewController: UITableViewController{
     //DELETE A QUEST
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row != 0{
+        if indexPath.row != 0 && indexPath.section == 0{
             if editingStyle == .delete {
                 let quest = tableViewData[0].questsData[indexPath.row-1]
                 quest.quest_ref?.removeValue()
