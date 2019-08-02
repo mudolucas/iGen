@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="3006" y="-31"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="Ksn-g8-m4a">
             <objects>
-                <tabBarController storyboardIdentifier="parentDashboard" automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="parentDashboard" automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" customClass="tabViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wB9-QZ-TiY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

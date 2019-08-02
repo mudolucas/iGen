@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             
         } else {
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
-                
+                self.getUserInfo()
                 if error == nil {
                     print("You have successfully logged in")
                     
@@ -127,9 +127,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Quests.loadAllQuestsForUser()
-        // Do any additional setup after loading the view.
-        //self.getUserInfo()
         self.getUserInfo()
     }
     
