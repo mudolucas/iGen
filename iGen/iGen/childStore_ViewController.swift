@@ -14,8 +14,10 @@ import FirebaseStorage
 
 class childStore_ViewController: UIViewController {
 
+    @IBOutlet weak var tommi: UIImageView!
     // Label for the timeCoins the kid has currently
     @IBOutlet weak var childWallet: UILabel!
+    @IBOutlet weak var tommiSpeech: UILabel!
     
     var timeCoins = Int()
     var userRef: DatabaseReference?
@@ -25,23 +27,25 @@ class childStore_ViewController: UIViewController {
     @IBOutlet weak var hatButtonText: UILabel!
     let hatPrice = 30
     var hatBought = false
-    
+    var hatEquipped = false
     // MITTENS VARIABLES
     @IBOutlet weak var mittensBuyButton: UIButton!
     @IBOutlet weak var mittensButtonText: UILabel!
-    let mittensPrice = 45
-    var mittensBought = false
+    let magicPrice = 35
+    var magicBought = false
+    var magicEquipped = false
     // GLASSES VARIABLES
     @IBOutlet weak var glassesBuyButton: UIButton!
     @IBOutlet weak var glassesButtonText: UILabel!
-    let glassesPrice = 60
-    var glassesBought = false
+    let bowPrice = 40
+    var bowBought = false
+    var bowEquipped = false
     // MUSTACHE VARIABLES
     @IBOutlet weak var mustacheBuyButton: UIButton!
     @IBOutlet weak var mustacheButtonText: UILabel!
     let mustachePrice = 90
     var mustacheBought = false
-    
+    var mustacheEquppied = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Tommi's Store"
@@ -55,26 +59,27 @@ class childStore_ViewController: UIViewController {
     @IBAction func mustacheClickButton(_ sender: Any) {
         if self.mustacheBought == false{
             mustacheButtonText.text = "Equip"
-            timeCoins -= glassesPrice
+            timeCoins -= mustachePrice
             childWallet.text = String(timeCoins)
             updateWallet()
             self.mustacheBought = true
+            tommiSpeech.text = "Yay a mustache!"
         }
         else{
-            //equipMustache()
+            equipMustache()
         }
     }
     
     @IBAction func glassesClickButton(_ sender: Any) {
-        if self.glassesBought == false{
+        if self.bowBought == false{
             glassesButtonText.text = "Equip"
-            timeCoins -= glassesPrice
+            timeCoins -= bowPrice
             childWallet.text = String(timeCoins)
             updateWallet()
-            self.glassesBought = true
+            self.bowBought = true
         }
         else{
-            //equipGlasses()
+            equipBow()
         }
     }
     
@@ -85,22 +90,23 @@ class childStore_ViewController: UIViewController {
             childWallet.text = String(timeCoins)
             updateWallet()
             self.hatBought = true
+            tommiSpeech.text = "Yay a Hat!"
         }
         else{
-            //equipHat()
+            equipHat()
         }
     }
     
     @IBAction func mittensClickButton(_ sender: Any) {
-        if self.mittensBought == false{
+        if self.magicBought == false{
             mittensButtonText.text = "Equip"
-            timeCoins -= mittensPrice
+            timeCoins -= magicPrice
             childWallet.text = String(timeCoins)
             updateWallet()
-            self.mittensBought = true
+            self.magicBought = true
         }
         else{
-            //equipMittens
+            equipMagicianHat()
         }
     }
     
@@ -124,7 +130,41 @@ class childStore_ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func equipHat(){
+        self.hatEquipped = true
+        self.magicEquipped = false
+        self.bowEquipped = false
+        self.mustacheEquppied = false
+        tommi.image = UIImage(named: "hatTommi-1.png")
+    }
 
+    func equipMagicianHat(){
+        self.hatEquipped = false
+        self.magicEquipped = true
+        self.bowEquipped = false
+        self.mustacheEquppied = false
+        tommi.image = UIImage(named: "magicianTommi")
+        tommiSpeech.text = "I feel magical!"
+    }
+    
+    func equipMustache(){
+        self.hatEquipped = false
+        self.magicEquipped = false
+        self.bowEquipped = false
+        self.mustacheEquppied = true
+        tommi.image = UIImage(named: "mustacheTommi-1")
+        tommiSpeech.text = "My face feels furry!"
+    }
+    
+    func equipBow(){
+        self.hatEquipped = false
+        self.magicEquipped = false
+        self.bowEquipped = true
+        self.mustacheEquppied = false
+        tommi.image = UIImage(named: "bowTommi")
+        tommiSpeech.text = "I feel pretty!"
+    }
     // Update the firebase wallet amount
     func updateWallet() {
         self.userRef?.updateChildValues(["wallet": self.timeCoins])
