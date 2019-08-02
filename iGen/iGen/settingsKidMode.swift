@@ -52,6 +52,7 @@ class settingsKidMode: UIViewController {
                 textField.keyboardType = .numberPad
                 textField.autocorrectionType = .default
                 textField.placeholder = "PIN"
+                textField.text = "1234"
                 textField.isSecureTextEntry = true
                 textField.textAlignment = .center
                 textField.clearButtonMode = .whileEditing
