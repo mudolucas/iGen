@@ -148,7 +148,16 @@ class QuestsViewController: UITableViewController{
         if segue.identifier == "editQuest" {
             let path = tableView.indexPathForSelectedRow?.row ?? 0
             let destination = segue.destination as! editQuestViewController
-            destination.quest = self.tableViewData[0].questsData[path-1]
+            if path <= tableViewData[0].questsData.count{
+                if let quest = self.tableViewData[0].questsData[path-1] as? Quests{
+                    destination.quest = quest
+                }
+            }
+            if path <= tableViewData[1].questsData.count{
+                if let quest = self.tableViewData[1].questsData[path-1] as? Quests{
+                    destination.quest = quest
+                }
+            }
             destination.index = path-1
         }
     }
