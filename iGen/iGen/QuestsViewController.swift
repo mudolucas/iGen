@@ -25,6 +25,9 @@ class QuestsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewData = [tableData(opened: false, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+        self.tableViewData[0].opened = true
+        let sections = IndexSet.init(integer: 0)
+        tableView.reloadSections(sections, with: .none)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +54,8 @@ class QuestsViewController: UITableViewController{
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! tableViewOutlets
             cell.sectionTitle.text = tableViewData[indexPath.section].title
-            cell.backgroundColor = DesignHelper.colorDarkBlue()
+            //cell.backgroundColor = DesignHelper.colorDarkBlue()
+            cell.backgroundColor = UIColor(displayP3Red: 190/255, green: 233/255, blue: 232/255, alpha: 1.0)
             return cell
         }else{
             //CONTENT CELLS
@@ -84,12 +88,13 @@ class QuestsViewController: UITableViewController{
     //DELETE A QUEST
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row != 0{
+        if indexPath.row != 0 && indexPath.section == 0{
             if editingStyle == .delete {
                 let quest = tableViewData[0].questsData[indexPath.row-1]
                 quest.quest_ref?.removeValue()
                 tableViewData[0].questsData.remove(at: indexPath.row-1)
-                tableView.reloadData()
+                //loadQuests()
+                //self.tableView.reloadData()
                 print("COUNT \(tableViewData[0].questsData.count)")
             }
         }
@@ -103,13 +108,15 @@ class QuestsViewController: UITableViewController{
     @IBAction func doneEditing(_ unwindSegue: UIStoryboardSegue) {
         let editedQuest = unwindSegue.source as! editQuestViewController
         //self.tableViewData[0].questsData[editedQuest.index!].title = editedQuest.quest?.title ?? ""
-        self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
-            "title": editedQuest.quest?.title ?? "",
-            "reward":editedQuest.quest?.reward,
-            "deadline":editedQuest.quest?.deadline,
-            "frequency":editedQuest.quest?.frequency
-            ])
-        tableView.reloadData()
+        if editedQuest.quest?.status.description == "Active"{
+            self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
+                "title": editedQuest.quest?.title ?? "",
+                "reward":editedQuest.quest?.reward,
+                "deadline":editedQuest.quest?.deadline,
+                "frequency":editedQuest.quest?.frequency
+                ])
+            tableView.reloadData()
+        }
     }
     
     //DB-related functions
@@ -147,7 +154,16 @@ class QuestsViewController: UITableViewController{
         if segue.identifier == "editQuest" {
             let path = tableView.indexPathForSelectedRow?.row ?? 0
             let destination = segue.destination as! editQuestViewController
-            destination.quest = self.tableViewData[0].questsData[path-1]
+            if path <= tableViewData[0].questsData.count{
+                if let quest = self.tableViewData[0].questsData[path-1] as? Quests{
+                    destination.quest = quest
+                }
+            }
+            if path <= tableViewData[1].questsData.count{
+                if let quest = self.tableViewData[1].questsData[path-1] as? Quests{
+                    destination.quest = quest
+                }
+            }
             destination.index = path-1
         }
     }

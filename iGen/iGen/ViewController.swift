@@ -76,10 +76,10 @@ class ViewController: UIViewController {
             
         } else {
             Auth.auth().signIn(withEmail: loginEmail.text!, password: loginPassword.text!) { (user, error) in
-                
+                self.getUserInfo()
                 if error == nil {
-                     print("You have successfully logged in")
-                  //  self.getUserInfo()
+                    print("You have successfully logged in")
+                    
                     if (self.kidMode == true) {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "kidDashboard")
                         self.present(vc!, animated: true, completion: nil)
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
             let userEmail = Auth.auth().currentUser?.email
             self.ref?.child("users/\(userID!)/email").setValue(userEmail)
             self.ref?.child("users/\(userID!)/uid").setValue(userID)
-            self.ref?.child("users/\(userID!)/kidMode").setValue(true)
+            self.ref?.child("users/\(userID!)/kidMode").setValue(false)
             self.ref?.child("users/\(userID!)/pin").setValue(pin)
             //self.ref?.child("users/\(userID!)/wallet").setValue(0)
         }
@@ -127,9 +127,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Quests.loadAllQuestsForUser()
-        // Do any additional setup after loading the view.
-        //self.getUserInfo()
+        self.getUserInfo()
     }
     
     private func getUserInfo(){

@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="App Usage"/>
-                                    <segment title="Time Spent"/>
+                                    <segment title="Coins Spent"/>
                                 </segments>
                                 <color key="tintColor" red="0.36470588240000001" green="0.73725490199999999" blue="0.82352941180000006" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -76,6 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Charlie's Statistics " id="V1n-wr-DRa">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="settingsIcon3" id="e36-Rd-jXw">
+                            <color key="tintColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="C62-Pl-B3S" kind="show" id="hvc-8R-r2B"/>
                             </connections>
@@ -102,10 +103,10 @@
             </objects>
             <point key="canvasLocation" x="3006" y="-31"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="Ksn-g8-m4a">
             <objects>
-                <tabBarController storyboardIdentifier="parentDashboard" automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="parentDashboard" automaticallyAdjustsScrollViewInsets="NO" id="bg3-TX-BbZ" customClass="tabViewController" customModule="iGen" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wB9-QZ-TiY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -126,11 +127,12 @@
         <scene sceneID="Ayk-6f-k9k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vez-fn-fPu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="MHr-mJ-2n9"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="bar_chart" id="MHr-mJ-2n9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWy-jr-u3n">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.85098039215686272" green="0.94901960784313721" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -145,7 +147,7 @@
         <scene sceneID="gNF-Lj-Eux">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="quests" storyboardName="Quest" referencedIdentifier="quests" id="6QJ-aR-Xjd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Quests" id="DaZ-oF-DBK"/>
+                    <tabBarItem key="tabBarItem" title="Quests" image="quest_icon" id="DaZ-oF-DBK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpS-S6-pUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +157,7 @@
         <scene sceneID="l6L-mc-wtt">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="apptime" storyboardName="Daniel" referencedIdentifier="apptime" id="ef4-Rb-Ux4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="App Time" id="fQv-re-gDH"/>
+                    <tabBarItem key="tabBarItem" title="App Time" image="Clock" id="fQv-re-gDH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1a-JH-MOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,10 +165,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Clock" width="16" height="16"/>
         <image name="appCategoriesDashboard" width="526" height="184"/>
+        <image name="bar_chart" width="24" height="24"/>
         <image name="dayAppUsage" width="760" height="600"/>
         <image name="day_blank" width="191" height="90"/>
         <image name="month_blank" width="188" height="89"/>
+        <image name="quest_icon" width="31" height="31"/>
         <image name="settingsIcon3" width="24" height="24"/>
         <image name="week_blank" width="189" height="90"/>
     </resources>

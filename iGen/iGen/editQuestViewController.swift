@@ -22,6 +22,7 @@ class editQuestViewController: UIViewController, UITextFieldDelegate{
         viewDesign()
         setUpDatePicker()
         rewardTextField.delegate = self
+        allowEditing(status: quest!.status.description)
     }
     
     @IBAction func doneEditing(_ sender: Any) {
@@ -97,6 +98,15 @@ class editQuestViewController: UIViewController, UITextFieldDelegate{
     //SETTING THE REWARD TEXT FIELD INPUT TO BE NUMBERS ONLY
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return string.isEmpty || string.rangeOfCharacter(from: NSCharacterSet.decimalDigits) != nil
+    }
+
+    private func allowEditing(status:String){
+        if status != "active"{
+            self.rewardTextField.isUserInteractionEnabled = false
+            self.titleTextField.isUserInteractionEnabled = false
+            self.deadlineTextField.isUserInteractionEnabled = false
+            self.selectionList.isUserInteractionEnabled = false
+        }
     }
    
 }

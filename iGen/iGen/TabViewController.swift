@@ -1,20 +1,31 @@
 //
-//  TabViewController.swift
+//  tabViewController.swift
 //  iGen
 //
-//  Created by Vivian Hua on 8/1/19.
+//  Created by Vivian Hua on 8/2/19.
 //  Copyright © 2019 Lucas Mudo de Araujo. All rights reserved.
 //
 
 import UIKit
 
-class TabViewController: UIViewController {
+class tabViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.selectedIndex = 1
+        
         // Do any additional setup after loading the view.
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
