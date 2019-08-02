@@ -51,7 +51,8 @@ class QuestsViewController: UITableViewController{
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! tableViewOutlets
             cell.sectionTitle.text = tableViewData[indexPath.section].title
-            cell.backgroundColor = DesignHelper.colorDarkBlue()
+            //cell.backgroundColor = DesignHelper.colorDarkBlue()
+            cell.backgroundColor = UIColor(displayP3Red: 190/255, green: 233/255, blue: 232/255, alpha: 1.0)
             return cell
         }else{
             //CONTENT CELLS

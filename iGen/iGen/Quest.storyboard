@@ -163,6 +163,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vhs-EE-wPe">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.85098039215686272" green="0.94901960784313721" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Create a Quest" id="aFF-88-TBR">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8r7-ov-qsX">
@@ -206,6 +207,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccx-DI-jgu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.85098039215686272" green="0.94901960784313721" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -281,6 +283,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVg-0c-Xec">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.85098039215686272" green="0.94901960784313721" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Edit a Quest" id="wiv-hI-bLq">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rje-4N-fxZ">
@@ -385,6 +388,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9qJ-6y-oOM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.85098039219999999" green="0.94901960780000005" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
