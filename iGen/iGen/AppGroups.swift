@@ -21,7 +21,11 @@ class AppGroups: UIViewController {
     
     @IBOutlet weak var productivityTimer: UITextField!
     
-   
+    @IBOutlet weak var gamesLabel: UILabel!
+    
+    @IBOutlet weak var educationLabel: UILabel!
+    
+    @IBOutlet weak var productivityLabel: UILabel!
     
     private var limitation_ref: DatabaseReference?
     //Date Pickers for each text field
@@ -38,6 +42,9 @@ class AppGroups: UIViewController {
         let gamesToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setGameUnlimited), blockSelect: #selector(AppGroups.setGameBlocked))
         let educationToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setEducationUnlimited), blockSelect: #selector(AppGroups.setEducationBlocked))
         let productivityToolBar = UIToolbar().ToolbarPiker(unlimitedSelect: #selector(AppGroups.setProductivityUnlimited), blockSelect: #selector(AppGroups.setProductivityBlocked))
+        gamesLabel.font = UIFont.boldSystemFont(ofSize: gamesLabel.font.pointSize)
+        educationLabel.font = UIFont.boldSystemFont(ofSize: educationLabel.font.pointSize)
+         productivityLabel.font = UIFont.boldSystemFont(ofSize: productivityLabel.font.pointSize)
         //Background Color for Timers
         gamesTimer.backgroundColor = newColors.colorLightBlue()
         educationTimer.backgroundColor = newColors.colorLightBlue()
