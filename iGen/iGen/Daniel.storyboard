@@ -132,7 +132,7 @@
                                 <rect key="frame" x="11" y="630" width="161" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="output-onlinepngtools-3" translatesAutoresizingMaskIntoConstraints="NO" id="1xY-1k-QCf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="productivity" translatesAutoresizingMaskIntoConstraints="NO" id="1xY-1k-QCf">
                                 <rect key="frame" x="52" y="639" width="77" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -221,10 +221,10 @@
         <image name="dims" width="201" height="203"/>
         <image name="game-1" width="165" height="111"/>
         <image name="gears2" width="101" height="103"/>
-        <image name="output-onlinepngtools-3" width="558" height="519"/>
         <image name="output-onlinepngtools-4" width="558" height="519"/>
         <image name="output-onlinepngtools-5" width="202" height="206"/>
         <image name="pinkGuy" width="205" height="223"/>
+        <image name="productivity" width="146" height="139"/>
         <image name="radio" width="187" height="203"/>
         <image name="slack" width="231" height="235"/>
         <image name="unnamed" width="512" height="512"/>
