@@ -200,7 +200,6 @@
         <!--Quests-->
         <scene sceneID="l8Q-nx-rNu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gS5-aW-PSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="quests" automaticallyAdjustsScrollViewInsets="NO" id="WoJ-bE-B2j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Quests" image="quest_icon" id="gBG-KL-PgT"/>
                     <toolbarItems/>
@@ -215,6 +214,7 @@
                         <segue destination="Qov-vd-WVe" kind="relationship" relationship="rootViewController" id="ZTb-tU-E2n"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gS5-aW-PSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905.79710144927549" y="1094.8660714285713"/>
         </scene>
