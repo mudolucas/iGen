@@ -87,6 +87,7 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
         selectionList.setupCell = { (cell: UITableViewCell, _: Int) in
             cell.textLabel?.textColor = DesignHelper.colorDarkestBlue()
             cell.textLabel?.font = UIFont(name:"Avenir", size:15)
+            cell.backgroundColor = UIColor(displayP3Red: 248/255, green: 254/255, blue: 254/255, alpha: 1.0)
         }
     
         //TEXT FIELDS
@@ -94,6 +95,11 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
         titleTextField.textColor = DesignHelper.colorDarkestBlue()
         rewardTextField.textColor = DesignHelper.colorDarkestBlue()
         deadlineTextField.placeholder = "Pick a date"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        let myString = formatter.string(from: Date())
+        deadlineTextField.text = myString
     }
  
 }
