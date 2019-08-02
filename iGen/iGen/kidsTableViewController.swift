@@ -83,6 +83,7 @@ class kidsTableViewController: UITableViewController{
                 if inputedPin == self.parentPin{
                     self.tableData[indexPath.row].quest_ref?.updateChildValues(["status": Status.completed.description])
                     let updatedWallet:Int = self.wallet + self.tableData[indexPath.row].reward
+                    self.imageReward(reward: self.tableData[indexPath.row].reward)
                     self.userReference?.updateChildValues(["wallet":updatedWallet])
                     self.tableView.reloadData()
                 }
@@ -92,6 +93,21 @@ class kidsTableViewController: UITableViewController{
         // Present the alert to the user
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    private func imageReward(reward:Int){
+        let showAlert = UIAlertController(title: "Congrats!!", message: "You've earned \(reward) coins", preferredStyle: .alert)
+        let imageView = UIImageView(frame: CGRect(x: 20, y: 60, width: 250, height: 260))
+        imageView.image = UIImage(named: "rewardTommi")
+        showAlert.view.addSubview(imageView)
+        let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 360)
+        let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 290)
+        showAlert.view.addConstraint(height)
+        showAlert.view.addConstraint(width)
+        showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            // your actions here...
+        }))
+        self.present(showAlert, animated: true, completion: nil)
     }
     
     private func loadKidQuests(){

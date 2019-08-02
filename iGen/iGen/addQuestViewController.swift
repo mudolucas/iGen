@@ -95,4 +95,5 @@ class addQuestViewController: UIViewController, UITextFieldDelegate {
         rewardTextField.textColor = DesignHelper.colorDarkestBlue()
         deadlineTextField.placeholder = "Pick a date"
     }
+ 
 }
