@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F25CE7F22F212190098A850 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F25CE7E22F212190098A850 /* Settings.storyboard */; };
 		3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8022F2122D0098A850 /* settingsKidMode.swift */; };
-		3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8522F34D950098A850 /* TabViewController.swift */; };
+		3F25CE8F22F4DB260098A850 /* tabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F25CE8E22F4DB260098A850 /* tabViewController.swift */; };
 		3F3A11D022EA4CF3005F4ACA /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */; };
 		3F3A11D222EA5068005F4ACA /* Sara.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D122EA5068005F4ACA /* Sara.storyboard */; };
 		3F3A11D622EA5248005F4ACA /* Daniel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A11D522EA5248005F4ACA /* Daniel.storyboard */; };
@@ -71,7 +71,7 @@
 		2E4ADB65A4B790304DD751A0 /* Pods-iGenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGenTests.release.xcconfig"; path = "Target Support Files/Pods-iGenTests/Pods-iGenTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F25CE7E22F212190098A850 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		3F25CE8022F2122D0098A850 /* settingsKidMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsKidMode.swift; sourceTree = "<group>"; };
-		3F25CE8522F34D950098A850 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		3F25CE8E22F4DB260098A850 /* tabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabViewController.swift; sourceTree = "<group>"; };
 		3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
 		3F3A11D122EA5068005F4ACA /* Sara.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sara.storyboard; sourceTree = "<group>"; };
 		3F3A11D522EA5248005F4ACA /* Daniel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Daniel.storyboard; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 				3F3A11CF22EA4CF3005F4ACA /* Quest.storyboard */,
 				559551E122EB68A6003E3FEF /* KidViewController.swift */,
 				3F3A11D122EA5068005F4ACA /* Sara.storyboard */,
-				3F25CE8522F34D950098A850 /* TabViewController.swift */,
 				553D503B22EA570D00EFFCC2 /* Tutotrial Code */,
 				3F3A11D522EA5248005F4ACA /* Daniel.storyboard */,
 				3F25CE7E22F212190098A850 /* Settings.storyboard */,
@@ -231,6 +230,7 @@
 				8F23C8A622F2186600F9E0F6 /* parentDashboardViewController.swift */,
 				8F77938D22F0C54C0026A6A6 /* kidsTableViewController.swift */,
 				AE992F2922F20F4D002F13D5 /* lia.storyboard */,
+				3F25CE8E22F4DB260098A850 /* tabViewController.swift */,
 				AE992F2B22F20F65002F13D5 /* liaKidsHomepage_ViewController.swift */,
 			);
 			path = iGen;
@@ -484,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F25CE8F22F4DB260098A850 /* tabViewController.swift in Sources */,
 				3FA80C3A22E7B8E400B36517 /* Quests.swift in Sources */,
 				3FA80C3C22E7B90000B36517 /* QuestsViewController.swift in Sources */,
 				661E975122EF55F900812A24 /* AppTimeSet.swift in Sources */,
@@ -503,7 +504,6 @@
 				3F25CE8122F2122D0098A850 /* settingsKidMode.swift in Sources */,
 				AE992F2E22F38B39002F13D5 /* childStore_ViewController.swift in Sources */,
 				559551E222EB68A6003E3FEF /* KidViewController.swift in Sources */,
-				3F25CE8622F34D950098A850 /* TabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
