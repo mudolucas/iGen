@@ -163,6 +163,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tommi" id="dGT-HR-Y4L">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="settingsIcon3" id="UZf-k8-ifc">
+                            <color key="tintColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="z4v-EL-Qd1" kind="show" id="XDQ-ix-1VH"/>
                             </connections>

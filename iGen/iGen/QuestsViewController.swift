@@ -25,6 +25,9 @@ class QuestsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewData = [tableData(opened: false, title: "Active", questsData:[]),tableData(opened: false, title: "Completed", questsData: [])]
+        self.tableViewData[0].opened = true
+        let sections = IndexSet.init(integer: 0)
+        tableView.reloadSections(sections, with: .none)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,7 +93,8 @@ class QuestsViewController: UITableViewController{
                 let quest = tableViewData[0].questsData[indexPath.row-1]
                 quest.quest_ref?.removeValue()
                 tableViewData[0].questsData.remove(at: indexPath.row-1)
-                tableView.reloadData()
+                //loadQuests()
+                //self.tableView.reloadData()
                 print("COUNT \(tableViewData[0].questsData.count)")
             }
         }
@@ -104,13 +108,15 @@ class QuestsViewController: UITableViewController{
     @IBAction func doneEditing(_ unwindSegue: UIStoryboardSegue) {
         let editedQuest = unwindSegue.source as! editQuestViewController
         //self.tableViewData[0].questsData[editedQuest.index!].title = editedQuest.quest?.title ?? ""
-        self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
-            "title": editedQuest.quest?.title ?? "",
-            "reward":editedQuest.quest?.reward,
-            "deadline":editedQuest.quest?.deadline,
-            "frequency":editedQuest.quest?.frequency
-            ])
-        tableView.reloadData()
+        if editedQuest.quest?.status.description == "Active"{
+            self.tableViewData[0].questsData[editedQuest.index!].quest_ref?.updateChildValues([
+                "title": editedQuest.quest?.title ?? "",
+                "reward":editedQuest.quest?.reward,
+                "deadline":editedQuest.quest?.deadline,
+                "frequency":editedQuest.quest?.frequency
+                ])
+            tableView.reloadData()
+        }
     }
     
     //DB-related functions
