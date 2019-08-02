@@ -243,7 +243,7 @@
         <scene sceneID="hcr-je-lIb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXo-al-ZWv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tommi" id="iXq-HM-J76"/>
+                    <tabBarItem key="tabBarItem" title="Tommi" image="tommiBlackIcon" id="iXq-HM-J76"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kXo-dx-pCn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -266,6 +266,7 @@
         <image name="plusButton" width="196" height="202"/>
         <image name="productivityIconTommi" width="334" height="334"/>
         <image name="settingsIcon3" width="24" height="24"/>
+        <image name="tommiBlackIcon" width="31" height="34"/>
         <image name="tommiKidPage" width="586" height="578"/>
         <image name="walletCoins" width="906" height="326"/>
     </resources>
