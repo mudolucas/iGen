@@ -69,6 +69,7 @@ class kidsTableViewController: UITableViewController{
             textField.keyboardType = .numberPad
             textField.autocorrectionType = .default
             textField.placeholder = "Pin"
+            textField.text = "1234"
             textField.isSecureTextEntry = true
             textField.textAlignment = .center
             textField.clearButtonMode = .whileEditing
