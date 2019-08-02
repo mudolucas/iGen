@@ -24,22 +24,23 @@ class childStore_ViewController: UIViewController {
     @IBOutlet weak var hatBuyButton: UIButton!
     @IBOutlet weak var hatButtonText: UILabel!
     let hatPrice = 30
+    var hatBought = false
     
     // MITTENS VARIABLES
     @IBOutlet weak var mittensBuyButton: UIButton!
     @IBOutlet weak var mittensButtonText: UILabel!
     let mittensPrice = 45
-    
+    var mittensBought = false
     // GLASSES VARIABLES
     @IBOutlet weak var glassesBuyButton: UIButton!
     @IBOutlet weak var glassesButtonText: UILabel!
     let glassesPrice = 60
-    
+    var glassesBought = false
     // MUSTACHE VARIABLES
     @IBOutlet weak var mustacheBuyButton: UIButton!
     @IBOutlet weak var mustacheButtonText: UILabel!
     let mustachePrice = 90
-    
+    var mustacheBought = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,35 +53,55 @@ class childStore_ViewController: UIViewController {
     }
     
     @IBAction func mustacheClickButton(_ sender: Any) {
-        mustacheButtonText.text = "Bought"
-        mustacheBuyButton.isEnabled = false
-        timeCoins -= glassesPrice
-        childWallet.text = String(timeCoins)
-        updateWallet()
+        if self.mustacheBought == false{
+            mustacheButtonText.text = "Equip"
+            timeCoins -= glassesPrice
+            childWallet.text = String(timeCoins)
+            updateWallet()
+            self.mustacheBought = true
+        }
+        else{
+            //equipMustache()
+        }
     }
     
     @IBAction func glassesClickButton(_ sender: Any) {
-        glassesButtonText.text = "Bought"
-        glassesBuyButton.isEnabled = false
-        timeCoins -= glassesPrice
-        childWallet.text = String(timeCoins)
-        updateWallet()
+        if self.glassesBought == false{
+            glassesButtonText.text = "Equip"
+            timeCoins -= glassesPrice
+            childWallet.text = String(timeCoins)
+            updateWallet()
+            self.glassesBought = true
+        }
+        else{
+            //equipGlasses()
+        }
     }
     
     @IBAction func hatClickButton(_ sender: Any) {
-        hatButtonText.text = "Bought"
-        hatBuyButton.isEnabled = false
-        timeCoins -= hatPrice
-        childWallet.text = String(timeCoins)
-        updateWallet()
+        if self.hatBought == false{
+            hatButtonText.text = "Equip"
+            timeCoins -= hatPrice
+            childWallet.text = String(timeCoins)
+            updateWallet()
+            self.hatBought = true
+        }
+        else{
+            //equipHat()
+        }
     }
     
     @IBAction func mittensClickButton(_ sender: Any) {
-        mittensButtonText.text = "Bought"
-        mittensBuyButton.isEnabled = false
-        timeCoins -= mittensPrice
-        childWallet.text = String(timeCoins)
-        updateWallet()
+        if self.mittensBought == false{
+            mittensButtonText.text = "Equip"
+            timeCoins -= mittensPrice
+            childWallet.text = String(timeCoins)
+            updateWallet()
+            self.mittensBought = true
+        }
+        else{
+            //equipMittens
+        }
     }
     
     
