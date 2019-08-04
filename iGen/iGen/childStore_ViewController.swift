@@ -58,12 +58,17 @@ class childStore_ViewController: UIViewController {
     
     @IBAction func mustacheClickButton(_ sender: Any) {
         if self.mustacheBought == false{
-            mustacheButtonText.text = "Equip"
-            timeCoins -= mustachePrice
-            childWallet.text = String(timeCoins)
-            updateWallet()
-            self.mustacheBought = true
-            tommiSpeech.text = "Yay a mustache!"
+            if (timeCoins - mustachePrice < 0) {
+                alertChildCoins()
+            } else {
+                mustacheButtonText.text = "Equip"
+                timeCoins -= mustachePrice
+                childWallet.text = String(timeCoins)
+                updateWallet()
+                self.mustacheBought = true
+                tommiSpeech.text = "Yay a mustache!"
+            }
+            
         }
         else{
             equipMustache()
@@ -71,26 +76,35 @@ class childStore_ViewController: UIViewController {
     }
     
     @IBAction func glassesClickButton(_ sender: Any) {
-        if self.bowBought == false{
-            glassesButtonText.text = "Equip"
-            timeCoins -= bowPrice
-            childWallet.text = String(timeCoins)
-            updateWallet()
-            self.bowBought = true
+        if self.bowBought == false {
+            if (timeCoins - bowPrice < 0) {
+                alertChildCoins()
+            } else {
+                glassesButtonText.text = "Equip"
+                timeCoins -= bowPrice
+                childWallet.text = String(timeCoins)
+                updateWallet()
+                self.bowBought = true
+            }
         }
-        else{
+        else {
             equipBow()
         }
     }
     
     @IBAction func hatClickButton(_ sender: Any) {
         if self.hatBought == false{
-            hatButtonText.text = "Equip"
-            timeCoins -= hatPrice
-            childWallet.text = String(timeCoins)
-            updateWallet()
-            self.hatBought = true
-            tommiSpeech.text = "Yay a Hat!"
+            if (timeCoins - hatPrice < 0) {
+                alertChildCoins()
+            } else {
+                hatButtonText.text = "Equip"
+                timeCoins -= hatPrice
+                childWallet.text = String(timeCoins)
+                updateWallet()
+                self.hatBought = true
+                tommiSpeech.text = "Yay a Hat!"
+            }
+            
         }
         else{
             equipHat()
@@ -99,11 +113,15 @@ class childStore_ViewController: UIViewController {
     
     @IBAction func mittensClickButton(_ sender: Any) {
         if self.magicBought == false{
-            mittensButtonText.text = "Equip"
-            timeCoins -= magicPrice
-            childWallet.text = String(timeCoins)
-            updateWallet()
-            self.magicBought = true
+            if (timeCoins - magicPrice < 0) {
+                alertChildCoins()
+            } else {
+                mittensButtonText.text = "Equip"
+                timeCoins -= magicPrice
+                childWallet.text = String(timeCoins)
+                updateWallet()
+                self.magicBought = true
+            }
         }
         else{
             equipMagicianHat()
@@ -168,6 +186,18 @@ class childStore_ViewController: UIViewController {
     // Update the firebase wallet amount
     func updateWallet() {
         self.userRef?.updateChildValues(["wallet": self.timeCoins])
+    }
+    
+    // Function to alert child that they are out of coins
+    func alertChildCoins() {
+        // create the alert
+        let alert = UIAlertController(title: "Oh no! Out of time coins", message: "Go check your quests to earn more time coins!!!", preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     
