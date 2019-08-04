@@ -32,7 +32,7 @@ class parentDashboardViewController: UIViewController {
         }else{
             dayButtonSelected()
             graphImage.image = UIImage(named: "dayMoneySpent")
-            graphTitleLabel.text = "Charlie's Spendatures"
+            graphTitleLabel.text = "Charlie's Spendings"
         }
     }
     

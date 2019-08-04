@@ -52,7 +52,7 @@ class editQuestViewController: UIViewController, UITextFieldDelegate{
     
     private func viewDesign(){
         //FREQUENCY LIST
-        selectionList.items = ["One time only","Once a week","Weekly"]
+        selectionList.items = ["One time only","Daily","Weekly"]
         selectionList.allowsMultipleSelection = false
         selectionList.selectionImage = UIImage(named: "v")
         selectionList.deselectionImage = UIImage(named: "o")
